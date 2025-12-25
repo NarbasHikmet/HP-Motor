@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+hp_motor/__init__.py
+hp_motor/data_gateway.py
+hp_motor/schema.py
+hp_motor.egg-info/PKG-INFO
+hp_motor.egg-info/SOURCES.txt
+hp_motor.egg-info/dependency_links.txt
+hp_motor.egg-info/requires.txt
+hp_motor.egg-info/top_level.txt
+tests/test_data_gateway.py
+tests/test_smoke.py
