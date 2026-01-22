@@ -1,55 +1,42 @@
 import streamlit as st
 import pandas as pd
-from engine.orchestrator import MasterOrchestrator
-from engine.processor import HPProcessor
-from engine.analysis import HPAnalysisEngine
+from engine.signal_processor import SignalProcessor
+from engine.claim_engine import ClaimEngine
 
-st.set_page_config(page_title="HP Motor v1.0", layout="wide")
+st.set_page_config(page_title="HP Motor | Sovereign Intelligence", layout="wide")
 
-# Caravaggio UI: Chiaroscuro (Siyah zemin, altın vurgu)
-st.markdown("""
-    <style>
-    .main { background-color: #050505; color: #ffffff; }
-    .stExpander { background-color: #111111; border: 1px solid #FFD700; }
-    </style>
-    """, unsafe_allow_html=True)
+# Chiaroscuro CSS
+st.markdown("<style>.main { background-color: #050505; color: #ffffff; }</style>", unsafe_allow_html=True)
 
-st.title("🛡️ HP Motor v1.0 | Sovereign Intelligence")
+st.title("🛡️ HP Motor v1.0")
 
-uploaded_file = st.file_uploader("Dosyayı Yükle (CSV/XLSX/ZIP)", type=['csv', 'xlsx', 'zip'])
+uploaded_file = st.file_uploader("Veri Kaynağını (CSV/ZIP) Yükle", type=['csv', 'zip'])
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file, sep=';')
     
-    # 1. Processing (6 Faz & Katman)
-    processor = HPProcessor()
-    df = processor.segment_phases(df)
-    df = processor.apply_layers(df)
+    # 1. Sinyal İşleme
+    sp = SignalProcessor()
+    signals = sp.ingest(df, provider="SportsBase")
     
-    # 2. Analysis (Claims)
-    analyst = HPAnalysisEngine()
-    # Örnek hipotez üretimi
-    claim = analyst.create_claim(
-        "Atletico duran top (F5) organizasyonunda domine ediyor.",
-        df,
-        "set_piece_xg > 0.3"
+    # 2. Analiz ve Hipotez (Örnek)
+    ce = ClaimEngine()
+    report = ce.generate_tactical_claim(
+        "Atletico Madrid Phase 5 (Set-Piece) Dominansı Mevcut.",
+        {"set_piece_xg": 0.45},
+        "set_piece_xg > 0.1"
     )
     
-    # UI Yerleşimi: Altın Oran (%61.8 - %38.2)
+    # UI: Altın Oran Yerleşimi
     col_main, col_side = st.columns([618, 382])
     
     with col_main:
-        st.subheader("🏟️ Saper Vedere (Görmeyi Bilmek)")
-        # Buraya Da Vinci hassasiyetinde saha çizimleri gelecek
-        st.dataframe(df[['action', 'phase_hp', 'layer_hp', 'x_std', 'y_std']].head(20))
+        st.subheader("🏟️ Saper Vedere (Anatomik Gözlem)")
+        st.dataframe(df.head(15)) # İleride Da Vinci saha çizimi gelecek
 
     with col_side:
         st.subheader("💡 Chiaroscuro Analysis")
-        for c in claim['claims']:
+        for c in report['claims']:
             with st.expander(f"İddia: {c['text']}", expanded=True):
                 st.write(f"**Güven Skoru:** %{c['confidence']['score']*100}")
-                st.warning(f"**Yanlışlama Testi:** {c['falsification']['tests'][0]['name']}")
-                st.info(f"**Durum:** {c['status']}")
-
-st.sidebar.markdown("---")
-st.sidebar.write("HP Motor v1.0 | Karl Popper Epistemolojisi ile Çalışır.")
+                st.error(f"**Yanlışlama Testi:** {c['falsification']['tests'][0]['name']}")
