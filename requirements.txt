@@ -9,3 +9,4 @@ matplotlib
 kloppy
 openpyxl
 pydantic
+github-copilot-sdk
