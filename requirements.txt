@@ -4,3 +4,6 @@ numpy
 plotly
 jsonschema
 python-dotenv
+mplsoccer
+matplotlib
+kloppy
