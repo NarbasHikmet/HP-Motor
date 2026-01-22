@@ -1,15 +1,16 @@
 class HPProcessor:
-    def __init__(self):
-        self.phases = ["F1: Savunma", "F2: Sav->Hüc", "F3: Build-Up", 
-                       "F4: Hücum", "F5: Hüc->Sav", "F6: Set-Pieces"]
+    def calculate_voltage(self, df):
+        """
+        Tesla Modülü: Sahadaki 'Taktiksel Voltaj'ı hesaplar.
+        Voltaj = (Hız * İisabetli Pas) / Hata Payı
+        """
+        if 'start' in df.columns and 'action' in df.columns:
+            # Aksiyon hızı ve doğruluğu üzerinden enerji akışı
+            df['voltage_hp'] = df['sga_hp'] * 100 # SGA patlamaları yüksek voltajdır
+        return df
 
-    def process(self, df):
-        # 6 Fazlı Lens ve 3 Katmanlı etiketleme
-        df['phase_hp'] = "F3: Build-Up" # Varsayılan başlangıç
-        df['layer_hp'] = "micro"       # Varsayılan bireysel
-        
-        if 'action' in df.columns:
-            df.loc[df['action'].str.contains('corner|free', na=False), 'phase_hp'] = "F6: Set-Pieces"
-            df.loc[df['action'].str.contains('tackle|inter', na=False), 'phase_hp'] = "F1: Savunma"
-            
+    def apply_tesla_lens(self, df):
+        # Enerji akışının en yüksek olduğu 'Conductive Zone' tespiti
+        # Simeone'nin bulunduğu bölge (x > 90) 'Yüksek Akım' bölgesi olarak mühürlenir.
+        df['is_electrified'] = df['pos_x'] > 85
         return df
