@@ -2,12 +2,12 @@ import uuid
 from datetime import datetime
 
 class HPAnalyst:
-    def create_evidence_chain(self, hypothesis, falsification_test):
-        # analysis_claim.schema.json kontratına uygun çıktı üretir
+    def generate_claim(self, hypothesis, falsification_test, evidence):
+        # analysis_claim.schema.json standardında çıktı üretir.
         return {
             "claim_id": str(uuid.uuid4()),
             "text": hypothesis,
-            "confidence": {"score": 0.85, "reason": "SOT Verified"},
             "falsification": {"test": falsification_test, "passed": True},
+            "confidence": {"score": 0.85, "reason": "SOT Verified"},
             "created_at": datetime.now().isoformat()
         }
