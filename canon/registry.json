@@ -1,0 +1,26 @@
+{
+  "contract_id": "HP_METRIC_REGISTRY_V1",
+  "version": "1.0.0",
+  "metrics": {
+    "PPDA": {
+      "metric_id": "ppda",
+      "full_name": "Passes Per Defensive Action",
+      "status": "READY",
+      "phases": ["F1", "F5"],
+      "polarity": "lower_is_better",
+      "derivation": {
+        "requires_signals": ["events.action_type", "events.team_id", "events.opponent_passes"]
+      }
+    },
+    "XT_VALUE": {
+      "metric_id": "xt_value",
+      "full_name": "Expected Threat",
+      "status": "READY",
+      "phases": ["F3", "F4"],
+      "polarity": "higher_is_better",
+      "derivation": {
+        "requires_signals": ["events.start_x", "events.start_y", "events.end_x", "events.end_y"]
+      }
+    }
+  }
+}
