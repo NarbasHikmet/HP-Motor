@@ -1,0 +1,10 @@
+chart_id: pitch_threat_xt
+required_inputs: [event_data]
+metric_bundle: [xt_value, zone_progression]
+visual_engine: mplsoccer_tenebrism
+encoding:
+  x: start_x
+  y: start_y
+  color: xt_value
+  size: xt_value
+annotations: ["Uncertainty Band", "Top 3 Threat Sources"]
