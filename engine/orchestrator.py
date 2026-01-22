@@ -1,37 +1,34 @@
-from engine.validator import SOTValidator
-from engine.registry_manager import RegistryManager
-from engine.popper_core import PopperCore
+from src.engine.validator import SOTValidator
+from src.engine.processor import HPProcessor
+from src.engine.analyst import HPAnalyst
+from src.engine.reference_linker import HPReferenceLinker
 
-class HPMotorOrchestrator:
+class HPMasterBrain:
+    """
+    HP Motor - Master Orchestrator (Sovereign Intelligence)
+    Görevi: Veriyi alıp 'Hukuki, Teknik ve Akademik' bir rapora dönüştürmek.
+    """
     def __init__(self):
         self.validator = SOTValidator()
-        self.registry = RegistryManager()
-        self.popper = PopperCore()
+        self.processor = HPProcessor()
+        self.analyst = HPAnalyst()
+        self.linker = HPReferenceLinker()
 
-    def process_match_data(self, raw_df, provider="SportsBase"):
-        # 1. SOT Gate: Veri Temizliği (0.0 Koruma)
-        report, clean_data = self.validator.clean_and_normalize(raw_df)
+    def run_full_analysis(self, raw_df, match_name="Atletico Madrid vs Galatasaray"):
+        # 1. Veri Namusu (0.0 Koruma)
+        audit, df = self.validator.validate_and_normalize(raw_df)
         
-        # 2. Metrik Çözümleme
-        resolved_signals = []
-        for col in clean_data.columns:
-            family = self.registry.resolve_metric(col)
-            if family != "UNKNOWN_SIGNAL":
-                resolved_signals.append(family)
-
-        # 3. Analiz ve Hipotez Üretimi (Örnek: Atletico v GS Set Piece)
-        # Not: Buraya Atletico_Madrid_vs_Galatasaray_Pre_Match_Analysis.md'deki veriler girer.
-        claims = []
-        if "Set Piece Goals" in clean_data.columns or True:
-            claims.append(self.popper.generate_claim(
-                hypothesis="Atletico Madrid set-piece etkinliğiyle (F5/F6) fark yaratıyor.",
-                evidence_list=["Set Piece Goals: 4", "GS Conceded: 0"],
-                falsification_condition="Atletico Set-Piece xG < 0.1"
-            ))
-
-        return {
-            "audit": report,
-            "data": clean_data,
-            "claims": claims,
-            "signals_detected": resolved_signals
-        }
+        # 2. HP Lens & LEGO Logic (6 Faz + Formüller)
+        df = self.processor.apply_lens_and_logic(df)
+        
+        # 3. Popperian İddia Üretimi
+        # (Örnek: Bitiricilik kalitesini ölçen SGA hipotezi)
+        report = self.analyst.generate_report(
+            hypothesis=f"{match_name}: Bitiricilik (SGA) Verimliliği",
+            falsification="SGA < 0 ise oyuncu bitiriciliği gürültüdür (noise)."
+        )
+        
+        # 4. Akademik Mühür (Referans Linker)
+        report['claims'][0]['citations'].append(self.linker.link("build_up"))
+        
+        return {"audit": audit, "processed_data": df, "sovereign_report": report}
