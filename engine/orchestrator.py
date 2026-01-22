@@ -1,34 +1,33 @@
 from src.engine.validator import SOTValidator
 from src.engine.processor import HPProcessor
+from src.engine.behavioral_engine import BehavioralEngine
 from src.engine.analyst import HPAnalyst
-from src.engine.reference_linker import HPReferenceLinker
 
-class HPMasterBrain:
-    """
-    HP Motor - Master Orchestrator (Sovereign Intelligence)
-    Görevi: Veriyi alıp 'Hukuki, Teknik ve Akademik' bir rapora dönüştürmek.
-    """
+class HPMasterOrchestrator:
     def __init__(self):
         self.validator = SOTValidator()
         self.processor = HPProcessor()
+        self.behavioral = BehavioralEngine()
         self.analyst = HPAnalyst()
-        self.linker = HPReferenceLinker()
+        # UI Standardı mühürlendi; ileride bu protokol grafikleri çizecek.
+        self.aesthetic_protocol = "SOVEREIGN_TENEBRISM_V2"
 
-    def run_full_analysis(self, raw_df, match_name="Atletico Madrid vs Galatasaray"):
+    def process_match(self, raw_data):
         # 1. Veri Namusu (0.0 Koruma)
-        audit, df = self.validator.validate_and_normalize(raw_df)
+        audit, df = self.validator.validate_and_normalize(raw_data)
         
-        # 2. HP Lens & LEGO Logic (6 Faz + Formüller)
+        # 2. Taktiksel Lens (6 Faz)
         df = self.processor.apply_lens_and_logic(df)
         
-        # 3. Popperian İddia Üretimi
-        # (Örnek: Bitiricilik kalitesini ölçen SGA hipotezi)
+        # 3. Davranışsal Analiz (Sapolsky/Mate)
+        df = self.behavioral.analyze_trauma_loops(df)
+        df = self.behavioral.calculate_emotional_load(df)
+        
+        # 4. Popperian Kanıt Zinciri
+        # Örnek: SGA ve Stres yükü arasındaki korelasyon
         report = self.analyst.generate_report(
-            hypothesis=f"{match_name}: Bitiricilik (SGA) Verimliliği",
-            falsification="SGA < 0 ise oyuncu bitiriciliği gürültüdür (noise)."
+            "Yüksek Stres Altında Karar Mekanizması Çöküşü",
+            "stress_load > 0.6 iken SGA < 0 ise hipotez doğrulanır."
         )
         
-        # 4. Akademik Mühür (Referans Linker)
-        report['claims'][0]['citations'].append(self.linker.link("build_up"))
-        
-        return {"audit": audit, "processed_data": df, "sovereign_report": report}
+        return df, report
