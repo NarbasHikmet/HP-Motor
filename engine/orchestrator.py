@@ -4,23 +4,23 @@ class MasterOrchestrator:
     def __init__(self):
         self.validator = SOTValidator()
 
-    def run_pipeline(self, raw_df):
-        # ADIM 1: SOT Gate (Veri Denetimi)
-        report, validated_data = self.validator.validate(raw_df)
+    def run_analysis(self, raw_df):
+        # 1. Veri Doğrulama
+        report, data = self.validator.clean_and_normalize(raw_df)
         
-        if report['status'] == "BLOCKED":
-            return {"success": False, "report": report}
-
-        # ADIM 2: Analitik Çıktı (Şimdilik İskelet)
-        results = {
-            "engine": "HP-Motor v3.0",
-            "audit_note": "Veri anayasal süzgeçten geçti. 0.0 değerleri korundu.",
-            "verified_metrics": []
-        }
-
+        # 2. Analitik İddia (Claim) Oluşturma - Popperian Şablon
+        claims = [
+            {
+                "claim_id": "HP-001",
+                "hypothesis": "Takım dominant bir hücum fazı (F4) sergiliyor.",
+                "evidence_metrics": ["xG", "Field Tilt"],
+                "falsification_test": "xG < 0.5 ise hipotez reddedilir.",
+                "status": "CANDIDATE"
+            }
+        ]
+        
         return {
-            "success": True,
             "report": report,
-            "data": validated_data,
-            "results": results
+            "data": data,
+            "claims": claims
         }
