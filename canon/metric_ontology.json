@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "total_families": 47
+  },
+  "canonical_families": {
+    "expected_goals": {
+      "name_tr": "Beklenen Gol",
+      "aliases": ["xG", "ExpG", "goal_probability"],
+      "phases": ["F4"],
+      "layer": "micro"
+    },
+    "possession_value": {
+      "name_tr": "Top Tutma Değeri",
+      "aliases": ["xT", "OBV", "VAEP", "g+"],
+      "phases": ["F1", "F3", "F5"],
+      "layer": "mezzo"
+    },
+    "pressing_intensity": {
+      "name_tr": "Baskı Şiddeti",
+      "aliases": ["PPDA", "BDP", "pressing_index"],
+      "phases": ["F2", "F6"],
+      "layer": "macro"
+    }
+  }
+}
