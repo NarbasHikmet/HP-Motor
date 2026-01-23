@@ -1,0 +1,30 @@
+analysis:
+  analysis_id: player_dossier
+  name: "Player Dossier (Individual Scouting & Performance)"
+  version: "1.0"
+  description: >
+    Tek oyuncu için rol-uyum, yetenek kırılımı (capabilities), riskler, kanıt tablosu ve
+    Popper uyumlu varsayım/eksik veri tablosu üretir.
+
+deliverables:
+  required_metrics:
+    - xt_value
+    - turnover_danger_index
+    - progressive_carries_90
+    - line_break_passes_90
+
+  plots:
+    - role_radar
+    - risk_scatter
+
+  tables:
+    - dossier_summary_table
+    - capability_breakdown_table
+    - evidence_table
+    - missing_and_assumptions_table
+
+  lists:
+    - role_tasks_checklist
+    - strengths_list
+    - risks_list
+    - watchlist_prompts
