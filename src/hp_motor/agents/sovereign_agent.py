@@ -1,5 +1,4 @@
 from github_copilot import CopilotClient
-from src.hp_motor.core.cdl_models import EvidenceNode
 
 class SovereignAgent:
     """HP Motor v5.0 - Karar Verici Yapay Zeka Katmanı"""
@@ -15,19 +14,16 @@ class SovereignAgent:
         summary = f"""
         Analiz Özeti:
         - Epistemik Güven: {analysis_results['confidence']['confidence']}
-        - Karar Hızı Ortalaması: {analysis_results['cognitive_speed'].mean()}
+        - Karar Hızı Ortalaması: {analysis_results['cognitive_speed'].mean() if not analysis_results['cognitive_speed'].empty else 'N/A'}
         - Travma Döngüsü Sayısı: {len(analysis_results['trauma_loops'])}
         """
         
-        # Copilot SDK Multi-model routing (Ajanın düşünme süreci)
-        prompt = f"Sen bir {persona} uzmanısın. Şu verileri yorumla ve aksiyon öner: {summary}"
-        
-        # Not: Gerçek API bağlantısında bu kısım modelden döner
-        # Şimdilik 'Agentic Logic' taslağını çalıştırıyoruz
+        # Copilot SDK Multi-model routing (Ajanın düşünme süreci taslağı)
+        # Gerçek SDK çağrısı burada persona bazlı model seçimi yapar
         verdicts = {
-            "Match Analyst": "Yapısal dominans yüksek, ancak F4 fazında karar hızı düşüyor.",
-            "Scout": "Oyuncuda mekansal travma döngüsü tespit edildi, stres altında hata riski var.",
-            "TD": "Bloklar arası geçişte tempo kaybı var, 2. bölge baskısını artır."
+            "Match Analyst": "Yapısal dominans yüksek, ancak F4 fazında karar hızı düşüyor. Yapısal bir revizyon gerekli.",
+            "Scout": "Oyuncuda mekansal travma döngüsü (Sapolsky Loop) tespit edildi, stres altında hata riski yükseliyor.",
+            "Technical Director": "Bloklar arası geçişte tempo kaybı var. 2. bölge baskı tetikleyicilerini aktif etmelisin."
         }
         
         return verdicts.get(persona, "Analiz tamamlandı, egemen karar bekleniyor.")
