@@ -1,1 +1,1 @@
-# package
+# Auditor package for HP Motor (static registry/ontology checks)
