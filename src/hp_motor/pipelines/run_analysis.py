@@ -8,6 +8,8 @@ import pandas as pd
 
 from hp_motor.core.cdl_models import MetricValue
 from hp_motor.core.cognition import extract_cognitive_signals, extract_orientation_signals
+from hp_motor.core.archetypes import ArchetypeEngine
+from hp_motor.core.similarity_engine import SimilarityEngine
 from hp_motor.engine.hp_engine_v12 import HPEngineV12
 from hp_motor.viz.renderer import PlotRenderer, RenderContext
 from hp_motor.viz.table_factory import TableFactory
@@ -15,12 +17,6 @@ from hp_motor.viz.list_factory import ListFactory
 
 
 class SovereignOrchestrator:
-    """
-    v1.2:
-      - player_role_fit
-      - player_dossier
-    """
-
     def __init__(self):
         base_dir = os.path.dirname(os.path.abspath(__file__))
         self.ao_dir = os.path.join(base_dir, "analysis_objects")
@@ -28,11 +24,17 @@ class SovereignOrchestrator:
         hp_motor_dir = os.path.dirname(base_dir)
         self.map_dir = os.path.join(hp_motor_dir, "registries", "mappings")
         self.cap_path = os.path.join(hp_motor_dir, "registries", "capabilities.yaml")
+        self.master_path = os.path.join(hp_motor_dir, "registries", "master_registry.yaml")
 
         self.renderer = PlotRenderer()
         self.tf = TableFactory()
         self.lf = ListFactory()
+
         self.engine = HPEngineV12()
+        self.arche = ArchetypeEngine()
+        self.sim = SimilarityEngine(min_features=3)
+
+        self.master_registry = self._load_yaml_safe(self.master_path, default={})
 
     def execute(
         self,
@@ -45,7 +47,6 @@ class SovereignOrchestrator:
     ) -> Dict[str, Any]:
 
         ao = self._load_analysis_object(analysis_object_id)
-
         provider = provider_hint or self._choose_provider(raw_df)
         col_map = self._load_mapping(provider)
         canonical_df, mapping_report = self._apply_mapping(raw_df, provider, col_map)
@@ -53,7 +54,6 @@ class SovereignOrchestrator:
         if analysis_object_id == "player_dossier":
             return self._execute_player_dossier(ao, canonical_df, mapping_report, entity_id, role, phase, provider)
 
-        # default: player_role_fit
         return self._execute_player_role_fit(ao, canonical_df, mapping_report, entity_id, role, phase, provider)
 
     # -------------------------
@@ -75,7 +75,6 @@ class SovereignOrchestrator:
 
         metric_map = {m.metric_id: m.value for m in metric_values}
         sample_minutes = next((m.sample_size for m in metric_values if m.sample_size is not None), None)
-
         ctx = RenderContext(theme=self.renderer.theme, sample_minutes=sample_minutes, source=provider, uncertainty=None)
 
         figures: Dict[str, Any] = {}
@@ -128,30 +127,30 @@ class SovereignOrchestrator:
         provider: str,
     ) -> Dict[str, Any]:
 
-        # 1) compute same metric bundle
         metric_values, missing = self._compute_player_role_fit_metrics(df, entity_id=str(entity_id), role=role)
         evidence_graph = self._build_evidence_graph(metric_values, missing, ao)
         metric_map = {m.metric_id: m.value for m in metric_values}
 
-        # 2) compute regime (H-score) from events if possible; otherwise light default
+        # Regime (H-score) if event_type exists
         h_score = 0.50
         regime = "MIXED"
         if df is not None and not df.empty and "event_type" in df.columns:
-            # run engine on last 50 events (or all if less)
             tail = df.tail(50)
+            out_last = None
             for _, r in tail.iterrows():
-                out = self.engine.process_match_event(r.to_dict())
-            formatted = self.engine.format_output(out)
-            h_score = float(formatted.get("h_score", 0.50))
-            regime = str(formatted.get("regime", "MIXED"))
+                out_last = self.engine.process_match_event(r.to_dict())
+            if out_last is not None:
+                formatted = self.engine.format_output(out_last)
+                h_score = float(formatted.get("h_score", 0.50))
+                regime = str(formatted.get("regime", "MIXED"))
 
         confidence = evidence_graph.get("overall_confidence", "medium")
 
-        # 3) capability breakdown
-        caps = self._load_capabilities()
+        # capability breakdown
+        caps = self._load_yaml_safe(self.cap_path, default={"capabilities": {}})
         cap_rows = self._score_capabilities(caps, metric_map)
 
-        # 4) fit score (reuse role fit heuristic)
+        # role fit
         fit_df = self.tf.build_role_fit_table(role=role, metric_map=metric_map, confidence=confidence)
         fit_score = None
         if not fit_df.empty and "fit_score_v1" in fit_df.columns:
@@ -160,10 +159,28 @@ class SovereignOrchestrator:
             except Exception:
                 fit_score = None
 
-        # 5) headline (v1 deterministic)
         headline = self._headline(role, cap_rows, metric_map, regime)
 
-        # 6) render figures
+        # Archetypes (Atlas)
+        arche_matches = self.arche.evaluate_all(self.master_registry or {}, metric_map)
+        arche_out = [
+            {
+                "id": a.archetype_id,
+                "name": a.name,
+                "fit_pct": a.fit_pct,
+                "passed": a.passed,
+                "logic": a.logic,
+                "passed_rules": a.passed_rules[:6],
+                "failed_rules": a.failed_rules[:6],
+                "missing_metrics": a.missing_metrics,
+            }
+            for a in arche_matches
+        ]
+
+        # Similarity (Atlas): if df includes multiple players and has required metrics
+        similarity = self._similarity_if_possible(df, entity_id=str(entity_id))
+
+        # Render figures
         sample_minutes = next((m.sample_size for m in metric_values if m.sample_size is not None), None)
         ctx = RenderContext(theme=self.renderer.theme, sample_minutes=sample_minutes, source=provider, uncertainty=None)
 
@@ -174,7 +191,6 @@ class SovereignOrchestrator:
                 continue
             figures[pid] = self.renderer.render(spec, df, metric_map, ctx)
 
-        # 7) tables
         required = ao.get("deliverables", {}).get("required_metrics", []) or []
         tables = {
             "dossier_summary_table": self.tf.build_dossier_summary_table(
@@ -191,7 +207,6 @@ class SovereignOrchestrator:
             "missing_and_assumptions_table": self.tf.build_missing_assumptions_table(missing, required),
         }
 
-        # 8) lists
         lists = {
             "role_tasks_checklist": self.lf.mezzala_tasks_pass_fail(metric_map),
             "strengths_list": self.lf.strengths_list(metric_map),
@@ -213,16 +228,100 @@ class SovereignOrchestrator:
             "figure_objects": figures,
             "tables": {k: v.to_dict(orient="records") for k, v in tables.items()},
             "lists": lists,
+            "atlas": {
+                "archetypes": arche_out,
+                "similarity_top": similarity
+            },
             "dossier": {
                 "regime": regime,
                 "h_score": h_score,
-                "headline": headline,
-            },
+                "headline": headline
+            }
         }
 
     # -------------------------
-    # AO & mapping
+    # Similarity helper
     # -------------------------
+    def _similarity_if_possible(self, df: pd.DataFrame, entity_id: str) -> List[Dict[str, Any]]:
+        if df is None or df.empty or "player_id" not in df.columns:
+            return []
+
+        players = [str(x) for x in df["player_id"].dropna().unique().tolist()]
+        if len(players) < 2:
+            return []
+
+        # Build per-player vectors from canonical columns (means)
+        def mean_for(pid: str, col: str) -> Optional[float]:
+            if col not in df.columns:
+                return None
+            tmp = df[df["player_id"].astype(str) == str(pid)]
+            if tmp.empty:
+                return None
+            s = pd.to_numeric(tmp[col], errors="coerce")
+            if s.notna().sum() == 0:
+                return None
+            return float(s.mean())
+
+        # Feature set: keep small and meaningful for v1
+        features = [
+            "xt_value",
+            "progressive_carries_90",
+            "line_break_passes_90",
+            "turnover_danger_index",
+            "contextual_awareness_score"
+        ]
+
+        vectors: Dict[str, Dict[str, float]] = {}
+        bounds: Dict[str, Dict[str, float]] = {f: {"min": None, "max": None} for f in features}
+
+        for pid in players:
+            vec = {}
+            for f in features:
+                v = mean_for(pid, f)
+                if v is not None:
+                    vec[f] = v
+            vectors[pid] = vec
+
+        # bounds for scaling
+        for f in features:
+            vals = [vectors[pid].get(f, None) for pid in players]
+            vals = [float(v) for v in vals if v is not None]
+            if vals:
+                bounds[f] = {"min": min(vals), "max": max(vals)}
+
+        # Weights (v1)
+        weights = {
+            "xt_value": 0.30,
+            "progressive_carries_90": 0.20,
+            "line_break_passes_90": 0.20,
+            "turnover_danger_index": 0.20,
+            "contextual_awareness_score": 0.10
+        }
+
+        ranked = self.sim.rank_candidates(target_id=entity_id, vectors=vectors, weights=weights, top_k=8, bounds=bounds)
+        out = []
+        for r in ranked:
+            out.append({
+                "candidate_id": r.candidate_id,
+                "similarity": round(float(r.similarity), 4),
+                "distance": round(float(r.distance), 4),
+                "used_features": r.used_features,
+                "missing_features": r.missing_features
+            })
+        return out
+
+    # -------------------------
+    # IO helpers
+    # -------------------------
+    def _load_yaml_safe(self, path: str, default: Any):
+        try:
+            if not os.path.exists(path):
+                return default
+            with open(path, "r", encoding="utf-8") as f:
+                return yaml.safe_load(f) or default
+        except Exception:
+            return default
+
     def _load_analysis_object(self, analysis_object_id: str) -> Dict[str, Any]:
         path = os.path.join(self.ao_dir, f"{analysis_object_id}.yaml")
         if not os.path.exists(path):
@@ -299,7 +398,7 @@ class SovereignOrchestrator:
                 )
             )
 
-        # core (try common aliases)
+        # core (aliases)
         xt = self._safe_mean(df_e, "xt_value")
         if xt is None and "xT" in df_e.columns:
             xt = self._safe_mean(df_e, "xT")
@@ -315,6 +414,14 @@ class SovereignOrchestrator:
         if tdi is None and "turnover_danger_90" in df_e.columns:
             tdi = self._safe_mean(df_e, "turnover_danger_90")
 
+        # Atlas archetype metrics (if present)
+        pressured = self._safe_mean(df_e, "pressured_pass_completion_pct")
+        succ_drib = self._safe_mean(df_e, "successful_dribbles_per_90")
+        tov_90 = self._safe_mean(df_e, "turnovers_per_90")
+
+        prog_pass = self._safe_mean(df_e, "progressive_passes_per_90")
+        long_acc = self._safe_mean(df_e, "long_ball_accuracy_pct")
+
         add("xt_value", xt)
         add("ppda", ppda)
         add("turnover_danger_index", tdi)
@@ -322,7 +429,14 @@ class SovereignOrchestrator:
         add("line_break_passes_90", lbreak)
         add("half_space_receives", hs)
 
-        # cognitive / orientation (if extractors can infer)
+        add("pressured_pass_completion_pct", pressured, unit="pct")
+        add("successful_dribbles_per_90", succ_drib)
+        add("turnovers_per_90", tov_90)
+
+        add("progressive_passes_per_90", prog_pass)
+        add("long_ball_accuracy_pct", long_acc, unit="pct")
+
+        # cognitive / orientation
         cog = extract_cognitive_signals(df_e)
         add("decision_speed_mean_s", getattr(cog, "decision_speed_mean_s", None), unit="s")
         add("scan_freq_10s", getattr(cog, "scan_freq_10s", None), unit="per_s")
@@ -359,12 +473,6 @@ class SovereignOrchestrator:
     # -------------------------
     # Capabilities
     # -------------------------
-    def _load_capabilities(self) -> Dict[str, Any]:
-        if not os.path.exists(self.cap_path):
-            return {"capabilities": {}}
-        with open(self.cap_path, "r", encoding="utf-8") as f:
-            return yaml.safe_load(f) or {"capabilities": {}}
-
     def _score_capabilities(self, caps_doc: Dict[str, Any], metric_map: Dict[str, float]) -> List[Dict[str, Any]]:
         caps = (caps_doc or {}).get("capabilities", {}) or {}
         rows = []
@@ -382,7 +490,6 @@ class SovereignOrchestrator:
                 score += float(w) * float(val)
                 drivers.append(f"{mid}({w:+.2f})={float(val):.2f}")
 
-            # v1 banding (no norms)
             band = "Neutral"
             if score >= 0.75:
                 band = "Strong"
@@ -399,36 +506,8 @@ class SovereignOrchestrator:
                 }
             )
 
-        # sort by absolute magnitude
         rows.sort(key=lambda r: abs(r.get("score_v1", 0.0)), reverse=True)
         return rows
 
     def _headline(self, role: str, cap_rows: List[Dict[str, Any]], metric_map: Dict[str, float], regime: str) -> str:
-        # deterministic, terse
-        top = cap_rows[0]["label"] if cap_rows else "Profile"
-        risk = "yüksek" if float(metric_map.get("turnover_danger_index", 0.0) or 0.0) >= 1.0 else "kontrollü"
-        return f"{role} profili: {top} ön planda. Rejim={regime}. Turnover riski {risk}."
-
-    # -------------------------
-    # Minimal plot specs
-    # -------------------------
-    def _minimal_plot_spec(self, pid: str) -> Optional[Dict[str, Any]]:
-        if pid == "risk_scatter":
-            return {"plot_id": pid, "type": "scatter", "axes": {"x": "xt_value", "y": "turnover_danger_index"}}
-        if pid == "role_radar":
-            return {
-                "plot_id": pid,
-                "type": "radar",
-                "required_metrics": [
-                    "xt_value",
-                    "progressive_carries_90",
-                    "line_break_passes_90",
-                    "turnover_danger_index",
-                    "contextual_awareness_score",
-                ],
-            }
-        if pid == "half_space_touchmap":
-            return {"plot_id": pid, "type": "pitch_heatmap"}
-        if pid == "xt_zone_overlay":
-            return {"plot_id": pid, "type": "pitch_overlay"}
-        return None
+       
