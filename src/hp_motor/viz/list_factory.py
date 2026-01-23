@@ -6,60 +6,45 @@ import pandas as pd
 
 
 class ListFactory:
-    """
-    v1.0 lists are rule-based and opportunistic:
-    - if columns exist → produce list
-    - else → return empty with reason
-    """
+    def mezzala_tasks_pass_fail(self, metric_map: Dict[str, float]) -> List[Dict[str, Any]]:
+        """
+        v1: Mezzala görev checklisti (basit eşiklerle).
+        """
+        xt = float(metric_map.get("xt_value", 0.0) or 0.0)
+        prog = float(metric_map.get("progressive_carries_90", 0.0) or 0.0)
+        lb = float(metric_map.get("line_break_passes_90", 0.0) or 0.0)
+        risk = float(metric_map.get("turnover_danger_index", 0.0) or 0.0)
 
-    def top_sequences_by_xt_involvement(self, df: pd.DataFrame, top_n: int = 10) -> List[Dict[str, Any]]:
-        # Expect columns: sequence_id, xT_gain, player_involved (optional)
-        required = {"sequence_id", "xT_gain"}
-        if not required.issubset(df.columns):
-            return []
-
-        sdf = df.sort_values("xT_gain", ascending=False).head(top_n)
-        out = []
-        for _, r in sdf.iterrows():
-            out.append({
-                "sequence_id": r["sequence_id"],
-                "xT_gain": float(r["xT_gain"]),
-                "note": r.get("note", None),
-            })
-        return out
-
-    def top_turnovers_by_danger(self, df: pd.DataFrame, top_n: int = 10) -> List[Dict[str, Any]]:
-        # Expect columns: turnover_id, turnover_danger
-        required = {"turnover_id", "turnover_danger"}
-        if not required.issubset(df.columns):
-            return []
-
-        sdf = df.sort_values("turnover_danger", ascending=False).head(top_n)
-        out = []
-        for _, r in sdf.iterrows():
-            out.append({
-                "turnover_id": r["turnover_id"],
-                "turnover_danger": float(r["turnover_danger"]),
-                "x": float(r["x"]) if "x" in sdf.columns else None,
-                "y": float(r["y"]) if "y" in sdf.columns else None,
-            })
-        return out
-
-    def mezzala_tasks_pass_fail(self, metrics: Dict[str, float]) -> List[Dict[str, Any]]:
-        # v1.0 heuristic checklist
-        tasks = [
-            ("Half-space involvement", "half_space_receives", 5.0),
-            ("Progression carrying", "progressive_carries_90", 3.0),
-            ("Line-breaking passing", "line_break_passes_90", 3.0),
+        return [
+            {"task": "Değer üretimi (xT)", "pass": xt >= 0.4, "value": xt, "target": ">=0.4"},
+            {"task": "İlerletici taşıma", "pass": prog >= 3.5, "value": prog, "target": ">=3.5"},
+            {"task": "Hat kırıcı pas", "pass": lb >= 2.5, "value": lb, "target": ">=2.5"},
+            {"task": "Top güvenliği", "pass": risk <= 1.0, "value": risk, "target": "<=1.0"},
         ]
-        out = []
-        for name, mid, thr in tasks:
-            v = metrics.get(mid)
-            out.append({
-                "task": name,
-                "metric": mid,
-                "value": v,
-                "pass": (v is not None and v >= thr),
-                "threshold": thr,
-            })
-        return out
+
+    def top_sequences_by_xt_involvement(self, df) -> List[Dict[str, Any]]:
+        """
+        v1: Eğer df içinde xT varsa en yüksek xT satırlarını listeler.
+        """
+        if df is None or df.empty or "xT" not in df.columns:
+            return []
+        x = pd.to_numeric(df["xT"], errors="coerce")
+        tmp = df.copy()
+        tmp["_xT"] = x
+        tmp = tmp.dropna(subset=["_xT"]).sort_values("_xT", ascending=False).head(8)
+        rows = []
+        for _, r in tmp.iterrows():
+            rows.append({"xT": float(r["_xT"]), "x": r.get("x", None), "y": r.get("y", None)})
+        return rows
+
+    def top_turnovers_by_danger(self, df) -> List[Dict[str, Any]]:
+        if df is None or df.empty or "turnover_danger_90" not in df.columns:
+            return []
+        x = pd.to_numeric(df["turnover_danger_90"], errors="coerce")
+        tmp = df.copy()
+        tmp["_td"] = x
+        tmp = tmp.dropna(subset=["_td"]).sort_values("_td", ascending=False).head(8)
+        rows = []
+        for _, r in tmp.iterrows():
+            rows.append({"turnover_danger_90": float(r["_td"]), "x": r.get("x", None), "y": r.get("y", None)})
+        return rows
