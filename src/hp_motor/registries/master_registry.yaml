@@ -1,45 +1,32 @@
-version: "1.0"
-meta:
-  description: "HP Motor Master Registry: archetypes, benchmarks, toggles"
-  canonical_metric_namespace: "hp_cdl"
+version: "0.1.0"
 
 benchmarks:
   scanning_frequency:
-    elite: 0.8     # scans per second (proxy)
-    average: 0.4
-  decision_speed_seconds:
+    elite_scans_per_sec: 0.8
+    average_scans_per_sec: 0.4
+  decision_speed_sec:
     elite_max: 0.8
     average_max: 1.2
-
-toggles:
-  # Hipotez: progressive carry -> shot probability uplift
-  # Popper: Kural değil; opsiyonel katsayı. Default OFF.
-  progressive_carry_shot_uplift:
-    enabled: false
-    uplift_factor: 0.07
-    note: "Hipotez. Lig/rol bazlı kalibrasyon gerektirir."
 
 archetypes:
   - id: PRESS_RESISTANT_CM
     name: "Press-Resistant CM"
-    logic: "high_composure_under_load"
     required_metrics:
       pressured_pass_completion_pct: { min: 65 }
       successful_dribbles_per_90: { min: 0.55 }
       turnovers_per_90: { max: 1.2 }
-    recommended_metrics:
-      - contextual_awareness_score
-      - decision_speed_mean_s
-      - turnover_danger_index
 
   - id: BALL_PLAYING_CB
     name: "Ball-Playing CB"
-    logic: "deep_playmaking_structure"
     required_metrics:
       progressive_passes_per_90: { min: 4.5 }
       long_ball_accuracy_pct: { min: 60 }
-      line_break_passes_90: { min: 2.0 }
-    recommended_metrics:
-      - defender_side_on_score
-      - turnover_danger_index
-      - contextual_awareness_score
+      line_break_passes: { min: 2.0 }
+
+metrics:
+  ppda:
+    default: 12.0
+  xg:
+    default: 0.0
+  xt:
+    default: 0.0
