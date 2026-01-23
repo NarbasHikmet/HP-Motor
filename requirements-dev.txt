@@ -1,2 +1,4 @@
 pytest
+rich
 github-copilot-sdk
+pyyaml
