@@ -1,0 +1,26 @@
+{
+  "contract_id": "HP_METRIC_REGISTRY_V2",
+  "version": "0.1.0",
+  "metrics": [
+    {
+      "canonical_name": "PPDA",
+      "metric_family": "pressing",
+      "polarity": -1,
+      "unit": "ratio",
+      "data_requirements": {
+        "required_sources": ["event"],
+        "required_fields": ["event_type", "x", "y", "timestamp"]
+      }
+    },
+    {
+      "canonical_name": "FIELD_TILT",
+      "metric_family": "territory",
+      "polarity": 1,
+      "unit": "percent",
+      "data_requirements": {
+        "required_sources": ["event"],
+        "required_fields": ["x", "y"]
+      }
+    }
+  ]
+}
