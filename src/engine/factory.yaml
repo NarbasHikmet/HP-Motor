@@ -1,5 +1,0 @@
-metric_id: evidence_quality_score
-input_type: text_docx
-logic: nlp_entity_reference_check
-uncertainty_model: source_credibility_weights
-definition: "Raporun sayısal veri veya video klibe dayalı olma oranı."
