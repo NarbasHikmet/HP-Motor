@@ -88,20 +88,24 @@ def adapt_for_agent_verdict(out: dict, phase: str) -> dict:
 # ----------------------------
 # Robust file reading
 # ----------------------------
+SUPPORTED_EXTS = {".csv", ".xml", ".xlsx", ".xls", ".html", ".htm", ".txt", ".pdf", ".docx", ".mp4"}
+
 def _read_bytes(uploaded_file) -> bytes:
-    # Streamlit UploadedFile supports getvalue()
     return uploaded_file.getvalue()
 
 def read_uploaded_artifact(uploaded_file):
     """
     Returns:
       kind: 'dataframe' | 'text' | 'video' | 'blocked'
-      payload: pd.DataFrame or str or bytes
+      payload: pd.DataFrame or str or UploadedFile
       meta: dict
     """
     name = uploaded_file.name
     ext = os.path.splitext(name)[1].lower()
     meta = {"filename": name, "ext": ext}
+
+    if ext not in SUPPORTED_EXTS:
+        return "blocked", None, {**meta, "error": f"Unsupported extension: {ext}", "supported": sorted(SUPPORTED_EXTS)}
 
     try:
         if ext == ".mp4":
@@ -119,23 +123,21 @@ def read_uploaded_artifact(uploaded_file):
             df = pd.read_excel(BytesIO(b)).reset_index(drop=True)
             return "dataframe", df, meta
 
-        # XML (pandas.read_xml requires lxml in most cases)
+        # XML
         if ext == ".xml":
-            # Try read_xml → DataFrame
             try:
-                df = pd.read_xml(BytesIO(b))
+                df = pd.read_xml(BytesIO(b))  # needs lxml in many cases
                 return "dataframe", df, meta
             except Exception as e1:
-                # Fallback: treat as text if parsing fails
                 txt = b.decode("utf-8", errors="replace")
                 meta["warning"] = f"XML parsed as text (read_xml failed): {e1}"
                 return "text", txt, meta
 
-        # HTML: read first table; if none → text
+        # HTML
         if ext in [".html", ".htm"]:
             html = b.decode("utf-8", errors="replace")
             try:
-                tables = pd.read_html(StringIO(html))
+                tables = pd.read_html(StringIO(html))  # needs lxml in many cases
                 if tables:
                     return "dataframe", tables[0], meta
                 return "text", html, meta
@@ -143,12 +145,12 @@ def read_uploaded_artifact(uploaded_file):
                 meta["warning"] = f"HTML tables not parsed: {e2}"
                 return "text", html, meta
 
-        # TXT: plain text
+        # TXT
         if ext == ".txt":
             txt = b.decode("utf-8", errors="replace")
             return "text", txt, meta
 
-        # DOCX: extract text (requires python-docx)
+        # DOCX
         if ext == ".docx":
             try:
                 import docx  # python-docx
@@ -158,7 +160,7 @@ def read_uploaded_artifact(uploaded_file):
             except Exception as e3:
                 return "blocked", None, {**meta, "error": f"DOCX read failed: {e3}"}
 
-        # PDF: extract text (requires pypdf)
+        # PDF
         if ext == ".pdf":
             try:
                 from pypdf import PdfReader
@@ -168,22 +170,17 @@ def read_uploaded_artifact(uploaded_file):
                     pages.append(p.extract_text() or "")
                 txt = "\n\n".join(pages).strip()
                 if not txt:
-                    meta["warning"] = "PDF text extraction returned empty (scanned PDF olabilir)."
+                    meta["warning"] = "PDF text extraction empty (scanned PDF olabilir)."
                 return "text", txt, meta
             except Exception as e4:
                 return "blocked", None, {**meta, "error": f"PDF read failed: {e4}"}
 
-        # Unknown
-        return "blocked", None, {**meta, "error": f"Unsupported file extension: {ext}"}
+        return "blocked", None, {**meta, "error": f"Unhandled extension: {ext}"}
 
     except Exception as e:
         return "blocked", None, {**meta, "error": str(e)}
 
 def text_to_signal_df(text: str) -> pd.DataFrame:
-    """
-    v1: Text’i sistemin ingest pipeline’ına sokmak için minimal bir DF üretir.
-    İleride: NLP/LLM extractor ile event/metric extraction yapılır.
-    """
     return pd.DataFrame([{"raw_text": text}])
 
 # ----------------------------
@@ -194,8 +191,7 @@ st.sidebar.header("📥 Veri Girişi")
 uploaded_files = st.sidebar.file_uploader(
     "Sinyalleri Bırakın (CSV, XML, XLSX, HTML, TXT, PDF, DOCX, MP4)",
     accept_multiple_files=True,
-    # IMPORTANT: include all extensions you want to show
-    type=["csv", "xml", "xlsx", "xls", "html", "htm", "txt", "pdf", "docx", "mp4"],
+    # NOTE: type filter intentionally removed to prevent “hidden” formats on some platforms
 )
 
 persona = st.sidebar.selectbox("Analiz Personası", ["Match Analyst", "Scout", "Technical Director"])
@@ -219,25 +215,21 @@ for uploaded_file in uploaded_files:
 
         kind, payload, meta = read_uploaded_artifact(uploaded_file)
 
-        # Render video
         if kind == "video":
             st.video(payload)
             st.info(f"Faz: {phase} | Video sinyali alındı. (v1.0: video pipeline bağlı değil)")
             continue
 
-        # Blocked
         if kind == "blocked":
             st.error("Dosya tanınmadı / okunamadı.")
             st.write(meta)
             continue
 
-        # Dataframe or text
         if kind == "dataframe":
             df = payload
             df = canonicalize_xy_inplace(df)
             st.write("Veri Önizleme", df.head(10))
 
-            # entity picker (if available)
             entity_id = "entity"
             if "player_id" in df.columns:
                 candidates = [str(x) for x in df["player_id"].dropna().unique().tolist()]
@@ -259,7 +251,6 @@ for uploaded_file in uploaded_files:
                 st.warning(meta["warning"])
             st.write("Metin Önizleme", (txt[:1500] + " ...") if len(txt) > 1500 else txt)
 
-            # Minimal ingestion: convert to DF
             df = text_to_signal_df(txt)
 
             with st.spinner("Sovereign Intelligence işleniyor..."):
@@ -271,7 +262,6 @@ for uploaded_file in uploaded_files:
                     phase=phase,
                 )
 
-        # Handle output
         if out.get("status") != "OK":
             st.error("Analiz OK dönmedi.")
             st.write(out)
