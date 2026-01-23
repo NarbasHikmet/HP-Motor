@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+# Kesin yol: hp_motor
 from src.hp_motor.pipelines.run_analysis import SovereignOrchestrator
 from src.hp_motor.viz.table_factory import HPTableFactory
 from src.hp_motor.viz.plot_factory import HPPlotFactory
@@ -13,14 +14,12 @@ st.markdown("<style>.main { background-color: #000000; color: #FFD700; }</style>
 st.title("🛡️ HP MOTOR v5.0 | SOVEREIGN AGENT")
 st.caption("Felsefe: Saper Vedere | Güç: GitHub Copilot SDK")
 
-# --- INITIALIZATION ---
 orchestrator = SovereignOrchestrator()
 table_factory = HPTableFactory()
 plot_factory = HPPlotFactory()
 
-# --- SIDEBAR ---
 uploaded_file = st.sidebar.file_uploader("Sinyal (CSV) Yükle", type=['csv'])
-persona = st.sidebar.selectbox("Persona Karar Yüzeyi", ["Match Analyst", "Scout", "Technical Director"])
+persona = st.sidebar.selectbox("Persona", ["Match Analyst", "Scout", "Technical Director"])
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file, sep=';')
@@ -29,12 +28,9 @@ if uploaded_file:
         analysis = orchestrator.execute_full_analysis(df)
         verdict = get_agent_verdict(analysis, persona)
     
-    # --- DASHBOARD ---
     col1, col2 = st.columns([2, 1])
-    
     with col1:
         st.subheader("🏟️ Mekansal Analiz (Spatial Engine)")
-        # Travma Grafiğini Çizdir
         fig = plot_factory.plot_trauma_zones(analysis['trauma_loops'])
         st.pyplot(fig)
         
@@ -53,11 +49,6 @@ if uploaded_file:
     with col2:
         st.subheader("🤖 Agent Verdict")
         st.warning(f"**Hüküm:** {verdict}")
-        
         st.metric("Epistemik Güven", f"{analysis['confidence']['confidence']*100}%")
-        
-        if persona == "Scout":
-            st.subheader("⚠️ Risk Paneli")
-            st.table(table_factory.create_risk_table("Oyuncu_1", len(analysis['trauma_loops'])))
 else:
-    st.info("Sinyal bekleniyor... Lütfen bir veri dosyası yükleyin.")
+    st.info("Sinyal bekleniyor...")
