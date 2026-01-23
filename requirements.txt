@@ -10,4 +10,4 @@ lxml
 pypdf
 python-docx
 beautifulsoup4
-html5lib
+html5lib 
