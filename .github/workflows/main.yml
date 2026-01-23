@@ -1,32 +1,41 @@
 name: HP Motor CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas numpy pydantic matplotlib seaborn pyyaml mplsoccer
+          pip install -r requirements-dev.txt
+          # src-layout package install (critical)
+          pip install -e .
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${{ github.workspace }}/src" >> $GITHUB_ENV
 
       - name: Smoke Import Test
-        run: python -c "from hp_motor.pipelines.run_analysis import SovereignOrchestrator; print('IMPORT OK')"
+        run: |
+          python -c "from hp_motor.pipelines.run_analysis import SovereignOrchestrator; print('Import OK:', SovereignOrchestrator)"
 
       - name: Sanity check critical files exist
         run: |
+          test -f src/hp_motor/pipelines/run_analysis.py
           test -f src/hp_motor/registries/master_registry.yaml
-          test -f src/hp_motor/pipelines/analysis_objects/player_role_fit.yaml
-          echo "FILES OK"
+          test -f app.py
+          echo "Sanity OK"
