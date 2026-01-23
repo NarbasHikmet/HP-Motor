@@ -1,69 +1,73 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Dict, List
 
 import pandas as pd
 
-from hp_motor.core.cdl_models import MetricValue
-from hp_motor.core.evidence_models import EvidenceGraph
-
 
 class TableFactory:
-    def build_evidence_table(self, metrics: List[MetricValue]) -> pd.DataFrame:
-        rows: List[Dict[str, Any]] = []
-        for mv in metrics:
-            rows.append({
-                "metric": mv.metric_id,
-                "value": mv.value,
-                "percentile": None,  # v1.1 norms
-                "scope": mv.scope,
-                "sample": mv.sample_size,
-                "source": mv.source,
-                "uncertainty": mv.uncertainty,
-            })
+    def build_evidence_table(self, metric_values: List[dict], evidence_graph: Dict) -> pd.DataFrame:
+        # metric_values in run_analysis is list of dicts in return; here accept MetricValue dicts or objects
+        rows = []
+        for m in metric_values:
+            if isinstance(m, dict):
+                rows.append(
+                    {
+                        "metric_id": m.get("metric_id"),
+                        "value": m.get("value"),
+                        "sample_minutes": m.get("sample_size"),
+                        "source": m.get("source", "raw_df"),
+                    }
+                )
+            else:
+                rows.append(
+                    {
+                        "metric_id": getattr(m, "metric_id", None),
+                        "value": getattr(m, "value", None),
+                        "sample_minutes": getattr(m, "sample_size", None),
+                        "source": getattr(m, "source", "raw_df"),
+                    }
+                )
+        df = pd.DataFrame(rows)
+        df["confidence"] = (evidence_graph or {}).get("overall_confidence", "medium")
+        return df
+
+    def build_role_fit_table(self, role: str, metric_map: Dict[str, float], confidence: str) -> pd.DataFrame:
+        # v1 heuristic scoring (replace later with norms/percentiles)
+        xt = float(metric_map.get("xt_value", 0.0) or 0.0)
+        prog = float(metric_map.get("progressive_carries_90", 0.0) or 0.0)
+        lb = float(metric_map.get("line_break_passes_90", 0.0) or 0.0)
+        risk = float(metric_map.get("turnover_danger_index", 0.0) or 0.0)
+
+        # crude score: reward xt/prog/lb, penalize risk
+        score = (0.4 * xt) + (0.25 * prog) + (0.25 * lb) - (0.3 * risk)
+
+        strengths = []
+        risks = []
+        if xt >= 0.5:
+            strengths.append("xT üretimi yüksek")
+        if prog >= 4:
+            strengths.append("ilerletici taşıma hacmi iyi")
+        if lb >= 3:
+            strengths.append("hat kırıcı pas hacmi iyi")
+        if risk >= 1.0:
+            risks.append("turnover tehlikesi yüksek")
+
+        return pd.DataFrame(
+            [
+                {
+                    "role": role,
+                    "fit_score_v1": round(float(score), 3),
+                    "strengths": "; ".join(strengths) if strengths else "-",
+                    "risks": "; ".join(risks) if risks else "-",
+                    "confidence": confidence,
+                }
+            ]
+        )
+
+    def build_risk_uncertainty_table(self, missing_metrics: List[str], evidence_graph: Dict) -> pd.DataFrame:
+        conf = (evidence_graph or {}).get("overall_confidence", "medium")
+        rows = []
+        for m in (missing_metrics or []):
+            rows.append({"missing_metric_id": m, "impact": "reduces_confidence", "confidence": conf})
         return pd.DataFrame(rows)
-
-    def build_role_fit_table(
-        self,
-        role: str,
-        fit_score: Optional[float],
-        strengths: List[str],
-        risks: List[str],
-        confidence: str,
-    ) -> pd.DataFrame:
-        return pd.DataFrame([{
-            "role": role,
-            "fit_score": fit_score,
-            "strengths": ", ".join(strengths) if strengths else "",
-            "risks": ", ".join(risks) if risks else "",
-            "confidence": confidence,
-        }])
-
-    def build_risk_uncertainty_table(self, evidence_graph: EvidenceGraph, missing_metrics: List[str]) -> pd.DataFrame:
-        findings = []
-        if missing_metrics:
-            findings.append({
-                "finding": "Missing metrics reduce confidence",
-                "data_risk": "medium",
-                "model_risk": "low",
-                "why": f"Missing: {', '.join(missing_metrics[:8])}" + ("..." if len(missing_metrics) > 8 else ""),
-                "mitigation": "Provide event/tracking fields; or enable proxies with explicit uncertainty.",
-            })
-        # contradictions in v1.5; placeholder now
-        if evidence_graph.contradictions:
-            findings.append({
-                "finding": "Conflicting evidence detected",
-                "data_risk": "low",
-                "model_risk": "medium",
-                "why": f"{len(evidence_graph.contradictions)} contradictions present",
-                "mitigation": "Review alternative explanations (ACM∞) and increase axes for triangulation.",
-            })
-        if not findings:
-            findings.append({
-                "finding": "No major risks flagged (v1.0)",
-                "data_risk": "low",
-                "model_risk": "low",
-                "why": "Sufficient metrics present for minimal triangulation",
-                "mitigation": "Add benchmarks (norms) for stronger claims.",
-            })
-        return pd.DataFrame(findings)
