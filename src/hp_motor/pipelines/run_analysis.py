@@ -15,6 +15,7 @@ from hp_motor.viz.table_factory import TableFactory
 from hp_motor.viz.list_factory import ListFactory
 
 
+# ---- FIXED: REG_PATH DEFINED
 REG_PATH = Path(__file__).resolve().parents[1] / "registries" / "master_registry.yaml"
 ANALYSIS_DIR = Path(__file__).resolve().parent / "analysis_objects"
 
@@ -37,8 +38,8 @@ class SovereignOrchestrator:
         raw_df: pd.DataFrame,
         entity_id: str,
         role: str = "Mezzala",
-        phase: str = "ACTION_GENERIC",
     ) -> Dict[str, Any]:
+
         ao = self._load_analysis_object(analysis_object_id)
 
         prov = RunProvenance(
@@ -46,29 +47,33 @@ class SovereignOrchestrator:
             registry_version=self.registry.get("version", "unknown"),
         )
 
+        # ---- METRICS
         metric_values: List[MetricValue] = []
         missing: List[str] = []
 
-        metric_bundle = ao.get("metric_bundle", [])
-        for mid in metric_bundle:
+        for mid in ao.get("metric_bundle", []):
             mv = self._compute_metric(mid, raw_df, entity_id)
             if mv is None:
                 missing.append(mid)
             else:
                 metric_values.append(mv)
 
-        if ao.get("evidence_policy", {}).get("fail_closed", True) and len(metric_values) < 2:
+        if len(metric_values) < 2:
             return {
                 "status": "UNKNOWN",
-                "reason": "Insufficient metrics to satisfy minimal evidence policy.",
+                "reason": "Insufficient metrics",
                 "missing_metrics": missing,
-                "analysis_object": ao,
             }
 
+        # ---- EVIDENCE
         eg = self._build_evidence_graph(metric_values, role)
 
+        # ---- RENDER
         metric_map = {m.metric_id: m.value for m in metric_values}
-        sample_minutes = next((m.sample_size for m in metric_values if m.sample_size is not None), None)
+        sample_minutes = next(
+            (m.sample_size for m in metric_values if m.sample_size is not None),
+            None,
+        )
 
         renderer = PlotRenderer()
         ctx = RenderContext(
@@ -81,12 +86,21 @@ class SovereignOrchestrator:
         figures: Dict[str, Any] = {}
         for pid in ao.get("deliverables", {}).get("plots", []):
             if pid == "risk_scatter":
-                spec = {"plot_id": pid, "type": "scatter", "axes": {"x": "xt_value", "y": "turnover_danger_index"}}
+                spec = {
+                    "plot_id": pid,
+                    "type": "scatter",
+                    "axes": {"x": "xt_value", "y": "turnover_danger_index"},
+                }
             elif pid == "role_radar":
                 spec = {
                     "plot_id": pid,
                     "type": "radar",
-                    "required_metrics": ["xt_value", "progressive_carries_90", "line_break_passes_90", "turnover_danger_index"],
+                    "required_metrics": [
+                        "xt_value",
+                        "progressive_carries_90",
+                        "line_break_passes_90",
+                        "turnover_danger_index",
+                    ],
                 }
             elif pid == "half_space_touchmap":
                 spec = {"plot_id": pid, "type": "pitch_heatmap"}
@@ -97,6 +111,7 @@ class SovereignOrchestrator:
 
             figures[pid] = renderer.render(spec, raw_df, metric_map, ctx)
 
+        # ---- TABLES
         tf = TableFactory()
         tables = {
             "evidence_table": tf.build_evidence_table(metric_values),
@@ -110,6 +125,7 @@ class SovereignOrchestrator:
             "risk_uncertainty_table": tf.build_risk_uncertainty_table(eg, missing),
         }
 
+        # ---- LISTS
         lf = ListFactory()
         lists = {
             "role_tasks_checklist": lf.mezzala_tasks_pass_fail(metric_map),
@@ -119,19 +135,18 @@ class SovereignOrchestrator:
 
         return {
             "status": "OK",
-            "analysis_object": ao,
             "metrics": [m.model_dump() for m in metric_values],
-            "missing_metrics": missing,
             "evidence_graph": eg.model_dump(),
-            "deliverables": ao.get("deliverables", {}),
-            "provenance": prov.__dict__,
             "figure_objects": figures,
-            "figures": list(figures.keys()),
             "tables": {k: v.to_dict(orient="records") for k, v in tables.items()},
             "lists": lists,
+            "provenance": prov.__dict__,
         }
 
-    def _compute_metric(self, metric_id: str, df: pd.DataFrame, entity_id: str) -> Optional[MetricValue]:
+    def _compute_metric(
+        self, metric_id: str, df: pd.DataFrame, entity_id: str
+    ) -> Optional[MetricValue]:
+
         col_map = {
             "ppda": "ppda",
             "xt_value": "xT",
@@ -139,62 +154,47 @@ class SovereignOrchestrator:
             "line_break_passes_90": "line_break_passes_90",
             "half_space_receives": "half_space_receives_90",
             "turnover_danger_index": "turnover_danger_90",
-            "role_benchmark_percentiles": None,
         }
 
-        col = col_map.get(metric_id, None)
-        if col is None:
-            return None
+        col = col_map.get(metric_id)
         if col not in df.columns:
             return None
 
-        if "player_id" in df.columns:
-            sdf = df[df["player_id"] == entity_id]
-        else:
-            sdf = df
-
+        sdf = df[df["player_id"] == entity_id] if "player_id" in df.columns else df
         if sdf.empty:
             return None
-
-        value = float(sdf[col].mean())
-        sample_minutes = float(sdf["minutes"].sum()) if "minutes" in sdf.columns else None
 
         return MetricValue(
             metric_id=metric_id,
             entity_type="player",
             entity_id=entity_id,
-            value=value,
-            unit=None,
-            scope="open_play",
-            sample_size=sample_minutes,
+            value=float(sdf[col].mean()),
+            sample_size=float(sdf["minutes"].sum()) if "minutes" in sdf.columns else None,
             source="raw_df",
-            uncertainty=None,
         )
 
-    def _build_evidence_graph(self, metrics: List[MetricValue], role: str) -> EvidenceGraph:
-        h1 = Hypothesis(
-            hypothesis_id="H1_role_fit",
-            claim=f"{role} rol uyumu yüksek.",
-            falsifiers=[
-                "xt_value low",
-                "turnover_danger_index high",
-            ],
+    def _build_evidence_graph(
+        self, metrics: List[MetricValue], role: str
+    ) -> EvidenceGraph:
+
+        h = Hypothesis(
+            hypothesis_id="H1",
+            claim=f"{role} rol uyumu yüksek",
+            falsifiers=["xt_value low", "turnover_danger_index high"],
         )
 
-        nodes: List[EvidenceNode] = []
-        for i, mv in enumerate(metrics):
-            nodes.append(
-                EvidenceNode(
-                    node_id=f"N{i+1}",
-                    axis="metrics",
-                    ref={"metric_id": mv.metric_id, "value": mv.value},
-                    strength=0.6,
-                    note=None,
-                )
+        nodes = [
+            EvidenceNode(
+                node_id=f"N{i}",
+                axis="metrics",
+                ref={"metric_id": m.metric_id, "value": m.value},
+                strength=0.6,
             )
+            for i, m in enumerate(metrics, 1)
+        ]
 
         return EvidenceGraph(
-            hypotheses=[h1],
+            hypotheses=[h],
             nodes=nodes,
             contradictions=[],
             overall_confidence="medium",
