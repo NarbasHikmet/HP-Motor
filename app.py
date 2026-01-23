@@ -3,6 +3,18 @@ import pandas as pd
 import sys
 import os
 
+# 1. ADIM: Sistemin mevcut klasörü tanımasını sağlıyoruz (En üstte olmalı)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+
+# 2. ADIM: Importlar (Bu satır artık hata vermeyecek)
+from hp_motor.pipelines.run_analysis import SovereignOrchestrator
+from hp_motor.agents.sovereign_agent import get_agent_verdict
+
+st.set_page_config(page_title="HP MOTOR v5.0", layout="wide")
+st.title("🛡️ HP MOTOR v5.0")
+
 # Sistemin hp_motor klasörünü tanımasını garantiye alıyoruz
 sys.path.append(os.path.join(os.getcwd()))
 
