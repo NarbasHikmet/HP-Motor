@@ -1,28 +1,133 @@
-version: "1.0.0"
-metadata:
-  contract: HP_MASTER_REGISTRY_V1
+registry:
+  id: HP_MASTER_REGISTRY
+  version: 0.1.0
+  ssot: true
 
-# 1. ONTOLOGY (Metrik Aileleri ve Fazlar)
-ontology:
-  phases: ["F1", "F2", "F3", "F4", "F5", "F6"]
-  dimensions: ["tactical", "technical", "physical", "neuro"]
+  canonical:
+    pitch_m: { length: 105, width: 68 }
+    rules:
+      dropna_forbidden: true
+      zeros_are_valid: true
 
-# 2. METRICS (Registry v2 & Definitions birleşimi)
-metrics:
-  - id: "PPDA"
-    family: "pressing"
-    polarity: -1
-    full_logic: "calc_ppda_full_v1"
-    fallback: 12.4
-    viz:
-      chart: "sparkline"
-      caption: "PPDA {value} — press yoğunluğu {interpretation}."
+  sources:
+    - source_id: opta_like
+      type: event
+      reliability: medium
+    - source_id: statsbomb_like
+      type: event
+      reliability: high
+    - source_id: internal_docs
+      type: text
+      reliability: variable
 
-# 3. MAPPINGS (Provider Aliases)
-mappings:
-  SportsBase:
-    x_scale: 100
-    y_scale: 100
-    columns:
-      event_type: "action"
-      x: "pos_x"
+  # 1) Ontology (canon_metric_ontology.json seed’inden genişletilecek)
+  ontology:
+    metric_families:
+      pressing_intensity:
+        name_tr: "Baskı Şiddeti"
+        layer: macro
+        phases: [F2, F6]
+        aliases: [PPDA, BDP, pressing_index]
+      possession_value:
+        name_tr: "Top Tutma Değeri"
+        layer: mezzo
+        phases: [F1, F3, F5]
+        aliases: [xT, OBV, VAEP, gplus]
+      expected_goals:
+        name_tr: "Beklenen Gol"
+        layer: micro
+        phases: [F4]
+        aliases: [xG, ExpG, goal_probability]
+
+  # 2) Provider mappings (canon_platform_mappings.json seed’inden genişletilecek)
+  provider_mappings:
+    xG:
+      FBref: npxG
+      Opta: "Expected Goals"
+      SportsBase: xG
+      Wyscout: xG
+    PPDA:
+      All: PPDA
+      Manual: defensive_intensity_index
+    Progressive_Passes:
+      FBref: PrgP
+      Opta: Prog_Pass
+      Wyscout: progressive_pass
+
+  # 3) Metric definitions (canon_registry.json + hp_registry.json birleşimi)
+  metrics:
+    - metric_id: ppda
+      canonical_name: PPDA
+      family: pressing_intensity
+      status: READY
+      polarity: lower_is_better
+      unit: ratio
+      phases: [F1, F5]
+      requirements:
+        sources: [event]
+        fields: [event_type, team_id]
+      derivation:
+        requires_signals:
+          - events.action_type
+          - events.team_id
+          - events.opponent_passes
+      uncertainty_policy: source_sensitive
+
+    - metric_id: xt_value
+      canonical_name: XT_VALUE
+      family: possession_value
+      status: READY
+      polarity: higher_is_better
+      unit: xT
+      phases: [F3, F4]
+      requirements:
+        sources: [event]
+        fields: [start_x, start_y, end_x, end_y]
+      derivation:
+        requires_signals:
+          - events.start_x
+          - events.start_y
+          - events.end_x
+          - events.end_y
+      uncertainty_policy: model
+
+    - metric_id: field_tilt
+      canonical_name: FIELD_TILT
+      family: territory
+      status: DRAFT
+      polarity: higher_is_better
+      unit: percent
+      phases: [F1, F4]
+      requirements:
+        sources: [event]
+        fields: [x, y]
+      uncertainty_policy: sample_size
+
+  # 4) PlotSpec/TableSpec (legacy_visual_registry.yaml seed’inden genişletilecek)
+  visual:
+    theme: caravaggio_tesla
+    plots:
+      - plot_id: pitch_threat_xt
+        engine: mplsoccer
+        required_inputs: [event_data]
+        metric_bundle: [xt_value]
+        encoding:
+          x: start_x
+          y: start_y
+          color: xt_value
+          size: xt_value
+        legend:
+          always: [sample_minutes, source, uncertainty]
+        annotations: ["Top 3 Threat Sources"]
+
+    tables:
+      - table_id: evidence_table
+        columns: [metric, value, percentile, scope, sample, source, uncertainty]
+
+  personas:
+    - persona_id: analyst
+      style: popper_strict
+    - persona_id: coach
+      style: solution_compact
+    - persona_id: scout
+      style: profile_risk
