@@ -204,4 +204,4 @@ if uploaded_files:
                 st.error(f"Dosya analiz edilemedi: {e}")
 
 else:
-    st.info("Sinyal bekleniyor... Saper Vedere.")
+    st.info("Sinyal bekleniyor... Saper Vedere.") 
