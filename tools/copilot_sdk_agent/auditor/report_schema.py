@@ -58,4 +58,4 @@ def derive_status(findings: List[Finding]) -> str:
         return "FAIL"
     if any((f.severity or "").upper() == "WARN" for f in findings):
         return "WARN"
-    return "OK"
+    return "OK" 
