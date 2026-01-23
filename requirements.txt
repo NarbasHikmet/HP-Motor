@@ -7,11 +7,8 @@ mplsoccer
 seaborn
 openpyxl
 pyyaml
-
 lxml
 pypdf
 python-docx
 beautifulsoup4
 html5lib
-
-github-copilot-sdk
