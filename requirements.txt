@@ -5,6 +5,8 @@ pydantic
 matplotlib
 mplsoccer
 seaborn
-github-copilot-sdk
 openpyxl
 pyyaml
+lxml
+python-docx
+pypdf
