@@ -5,7 +5,7 @@ from src.hp_motor.engine.compute.temporal import TemporalEngine
 from src.hp_motor.engine.compute.behavioral import BehavioralEngine
 
 class SovereignOrchestrator:
-    """HP Motor'un tüm modüllerini yöneten Ana Karar Merkezi."""
+    """HP Motor v5.0'ın tüm analitik modüllerini yöneten ana merkez."""
     
     def __init__(self):
         self.uncertainty = UncertaintyEngine()
@@ -14,7 +14,7 @@ class SovereignOrchestrator:
         self.behavioral = BehavioralEngine()
 
     def execute_full_analysis(self, raw_data):
-        # 1. Güven Denetimi
+        # 1. Epistemik Güven Denetimi
         audit = self.uncertainty.calculate_confidence(raw_data)
         
         # 2. Analitik Hesaplamalar
