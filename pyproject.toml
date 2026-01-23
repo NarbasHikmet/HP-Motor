@@ -31,3 +31,5 @@ package-dir = {"" = "src"}
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["hp_motor*"]
+[project.optional-dependencies]
+dev = ["pytest"]
