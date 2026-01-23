@@ -1,6 +1,2 @@
-# Dev / Agent dependencies (DO NOT put these in requirements.txt for Streamlit runtime)
-
-github-copilot-sdk
-pyyaml
 pytest
-rich
+github-copilot-sdk
