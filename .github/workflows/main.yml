@@ -28,4 +28,4 @@ jobs:
           python - <<EOF
           from hp_motor.pipelines.run_analysis import SovereignOrchestrator
           print("IMPORT OK")
-          EOF
+          EOF 
