@@ -1,35 +1,27 @@
 def get_agent_verdict(analysis, persona):
-    """
-    HP-Engine DNA'sını kullanarak dosyaya ve role göre 
-    dinamik 'Sovereign Verdict' üretir.
-    """
-    # 1. Dosyadan gelen fazı ve güven oranını yakala
+    # 1. Gerçek verileri analizden çekiyoruz
+    metrics = analysis.get('metrics', {})
+    ppda = metrics.get('PPDA', 0)
+    xg = metrics.get('xG', 0)
     phase = analysis.get('metadata', {}).get('detected_phase', 'ACTION_GENERIC')
-    confidence = analysis.get('confidence', {}).get('confidence', 0.85)
     
-    # 2. Teknik Direktör (Technical Director) Mantığı
+    # 2. TEKNİK DİREKTÖR (Dinamik Yorum)
     if persona == "Technical Director":
-        if "OFFENSIVE" in phase:
-            return "Hücum yerleşiminde genişlik iyi ancak final paslarında 'Scanning' (tarama) eksik. 3. bölgeye geçişte hızı artır."
-        elif "DEFENSIVE" in phase:
-            return "Bloklar arası mesafe açılıyor. Kompakt yapıyı koru, PPDA değerini düşürmek için ön alan baskısını yoğunlaştır."
-        elif "TRANSITION" in phase:
-            return "Geçiş oyununda tempo kaybı var. Re-press (şok baskı) süresini 6 saniyenin altına çek, savunma emniyetini (rest defense) bırakma."
+        if ppda > 12: # Eğer baskı zayıfsa
+            return f"Ön alan baskımız (PPDA: {ppda:.1f}) çok yumuşak. Blokları daraltmazsak geçiş savunmasında (rest defense) patlarız."
+        elif xg < 1.0: # Eğer üretim azsa
+            return "Yapısal dominans var ama 3. bölgede verimsiziz. F4 fazında hızı artırıp şut zincirini (xG Chain) zorlamalıyız."
         else:
-            return "Genel yapı stabil, ancak geçiş fazlarında blokları daraltmamız gerekiyor."
+            return "Genel yapı stabil. Geçiş fazlarında tempoyu koru, blok mesafesini bozma."
 
-    # 3. Scout Mantığı
+    # 3. SCOUT (Dinamik Yorum)
     elif persona == "Scout":
         if "OFFENSIVE" in phase:
-            return "Oyuncu bitiricilik (xG Chain) zincirinde dominant, ancak progresif pas alma kalitesinde dalgalanma var."
+            return "Hücumda mekansal tarama (scanning) kapasitesi yüksek bir profil. xG katkısı dominans vaat ediyor."
         else:
-            return "Defansif ikili mücadelelerde (Duels) fiziksel üstünlük sağlıyor, elit seviye PPDA katkısı var."
+            return f"Defansif aksiyonlarda (Duels) fiziksel sadakat yüksek. PPDA katkısı ({ppda:.1f}) elit seviyede."
 
-    # 4. Maç Analisti (Match Analyst) Mantığı
+    # 4. MAÇ ANALİSTİ (Dinamik Yorum)
     else:
-        if "OFFENSIVE" in phase:
-            return f"Yapısal dominans %{int(confidence*100)} seviyesinde. F4 fazında hız düşük, Field Tilt verileri hücumu destekliyor."
-        else:
-            return "Savunma hattı derinde (Low Block). Rakip geçişlerine karşı alan daraltma başarılı."
-
-    return "Veri okundu, stratejik hüküm bekleniyor..."
+        status = "Kritik" if ppda > 15 else "Optimal"
+        return f"Savunma hattı {status}. Rakip geçişlerine karşı alan daraltma hızı {xg:.2f} xG üretimiyle sınırlı kalıyor."
