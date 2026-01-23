@@ -7,6 +7,13 @@ mplsoccer
 seaborn
 openpyxl
 pyyaml
+
+# robust ingestion
 lxml
-python-docx
 pypdf
+python-docx
+beautifulsoup4
+html5lib
+
+# opsiyonel (Copilot SDK kullanıyorsan)
+github-copilot-sdk
