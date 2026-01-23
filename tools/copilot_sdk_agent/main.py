@@ -1,0 +1,117 @@
+from __future__ import annotations
+
+import argparse
+import json
+from typing import Any, Dict
+
+from tools.copilot_sdk_agent.hp_tools import validate_required_files, read_text, contract_hint
+from tools.copilot_sdk_agent.prompts import PROMPTS
+
+
+def _sdk_available() -> bool:
+    try:
+        import github_copilot_sdk  # noqa: F401
+        return True
+    except Exception:
+        return False
+
+
+def _run_with_sdk(task_prompt: str) -> Dict[str, Any]:
+    """
+    Minimal placeholder runner.
+
+    Copilot SDK integration details can vary by version.
+    This function is intentionally conservative:
+    - If SDK is available, we import it and run a very simple session.
+    - If the SDK API changes, we fall back to printing instructions instead of breaking.
+    """
+    try:
+        # NOTE: Replace this block with your exact SDK usage once confirmed in your environment.
+        # The key is: keep tokens out of code; use env variables; return structured output.
+        import github_copilot_sdk  # noqa: F401
+
+        return {
+            "status": "SDK_AVAILABLE",
+            "note": (
+                "Copilot SDK is installed, but the repository runner uses a placeholder integration.\n"
+                "Next step: wire the exact SDK session API for your version."
+            ),
+            "task_prompt": task_prompt[:800],
+        }
+    except Exception as e:
+        return {
+            "status": "SDK_ERROR",
+            "error": str(e),
+            "next_step": "Check Copilot SDK installation and API compatibility.",
+        }
+
+
+def cmd_validate() -> Dict[str, Any]:
+    checks = validate_required_files()
+    return {
+        "status": "OK" if all(c.ok for c in checks) else "FAIL",
+        "checks": [c.__dict__ for c in checks],
+        "contract_hint": contract_hint(),
+    }
+
+
+def cmd_audit() -> Dict[str, Any]:
+    """
+    Lightweight audit that does NOT require Copilot SDK.
+    If SDK exists, we additionally run the agent prompt.
+    """
+    base = {
+        "required_files": cmd_validate(),
+        "samples": {
+            "copilot_instructions": read_text(".github/copilot-instructions.md", 2000),
+            "requirements_txt": read_text("requirements.txt", 2000),
+            "master_registry_head": read_text("src/hp_motor/registries/master_registry.yaml", 2000),
+        },
+    }
+
+    if not _sdk_available():
+        base["copilot_sdk"] = {
+            "status": "MISSING",
+            "note": (
+                "Copilot SDK not installed in this environment.\n"
+                "Install: pip install -r requirements-dev.txt\n"
+                "Then rerun: python tools/copilot_sdk_agent/main.py audit"
+            ),
+        }
+        return base
+
+    # If SDK exists, run the audit prompt (placeholder integration)
+    base["copilot_sdk"] = _run_with_sdk(PROMPTS.system + "\n\n" + PROMPTS.task_audit)
+    return base
+
+
+def cmd_show_prompts() -> Dict[str, Any]:
+    return {
+        "system": PROMPTS.system,
+        "task_audit": PROMPTS.task_audit,
+        "task_validate": PROMPTS.task_validate,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(prog="hp-copilot-agent", description="HP Motor Copilot SDK Agent Runner")
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    sub.add_parser("audit", help="Audit repository structure & readiness")
+    sub.add_parser("validate", help="Validate required files exist")
+    sub.add_parser("show-prompts", help="Print prompt bundles")
+
+    args = parser.parse_args()
+
+    if args.cmd == "audit":
+        out = cmd_audit()
+    elif args.cmd == "validate":
+        out = cmd_validate()
+    else:
+        out = cmd_show_prompts()
+
+    print(json.dumps(out, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()
