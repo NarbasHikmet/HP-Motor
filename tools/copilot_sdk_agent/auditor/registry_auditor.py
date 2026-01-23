@@ -272,4 +272,115 @@ class RegistryAuditor:
                     title="Analysis Objects reference unknown metric_ids",
                     detail=(
                         f"{len(ao_missing_metric_refs)} AO file(s) reference missing metrics. "
-                        f"Example: {first_key} -> {', '.join(sample)}" + (" ..." if len(ao_missing_metric_refs[first_key]) > 15 else
+                        f"Example: {first_key} -> {', '.join(sample)}" + (" ..." if len(ao_missing_metric_refs[first_key]) > 15 else "")
+                    ),
+                    file=self.analysis_objects_dir.as_posix(),
+                    hint="Either add these metric_ids to master_registry.yaml or correct AO required_metrics to canonical ids.",
+                )
+            )
+
+        # 5) Mappings / specs presence (soft)
+        mapping_files = _list_yaml_files(self.mappings_dir) if self.mappings_dir.exists() else []
+        if not mapping_files:
+            findings.append(
+                Finding(
+                    code="MAP_NONE",
+                    severity="INFO",
+                    title="No provider mapping files detected",
+                    detail=f"No YAML files found under {self.mappings_dir.as_posix()}",
+                    file=self.mappings_dir.as_posix(),
+                    hint="Add provider_generic_csv.yaml and provider mappings for platforms (FBref/StatsBomb/etc.) when ready.",
+                )
+            )
+
+        # 6) Summarize
+        status = derive_status(findings)
+        metric_count = len(metric_ids)
+        summary = (
+            f"Registry audit complete. metrics={metric_count}, analysis_objects={len(ao_files)}, "
+            f"required_metric_refs={ao_required_total}, plots_in_aos={ao_plot_ids_total}. status={status}."
+        )
+
+        risks: List[str] = []
+        next_actions: List[str] = []
+
+        if status in ("FAIL", "WARN"):
+            risks.append("Registry/AO inconsistencies will cause missing_metrics, weak evidence graphs, and unstable narratives.")
+            risks.append("Provider mapping gaps will limit CSV/XML portability across data sources.")
+        if any(f.code == "AO_REF_UNKNOWN_METRIC" for f in findings):
+            next_actions.append("Normalize metric_id vocabulary: fix AO required_metrics to match master_registry.yaml (canonical ids).")
+        if any(f.code == "REG_NO_METRICS" for f in findings):
+            next_actions.append("Populate master_registry.yaml with at least the core v1.0 metric set used by player_role_fit.")
+        if any(f.code == "MAP_NONE" for f in findings):
+            next_actions.append("Add provider mapping YAMLs for CSV/XML ingestion (platform → canonical column map).")
+
+        report = AuditReport(
+            report_id=rid,
+            status=status,
+            summary=summary,
+            stats={
+                "metrics_count": metric_count,
+                "analysis_object_count": len(ao_files),
+                "ao_required_metric_refs_total": ao_required_total,
+                "ao_plot_ids_total": ao_plot_ids_total,
+                "mapping_file_count": len(mapping_files),
+                "master_registry_location_guess": metrics_loc,
+            },
+            findings=findings,
+            risks=risks,
+            next_actions=next_actions,
+        )
+        return report
+
+    def render_markdown(self, report: AuditReport) -> str:
+        lines: List[str] = []
+        lines.append(f"# HP Motor Registry Audit تقرير")
+        lines.append("")
+        lines.append(f"- **report_id:** `{report.report_id}`")
+        lines.append(f"- **status:** `{report.status}`")
+        lines.append(f"- **summary:** {report.summary}")
+        lines.append("")
+        lines.append("## Stats")
+        for k, v in (report.stats or {}).items():
+            lines.append(f"- **{k}:** {v}")
+        lines.append("")
+        lines.append("## Findings")
+        if not report.findings:
+            lines.append("- (none)")
+        else:
+            for f in report.findings:
+                loc = f" ({f.file})" if f.file else ""
+                lines.append(f"- **[{f.severity}] {f.code}** — {f.title}{loc}")
+                lines.append(f"  - {f.detail}")
+                if f.hint:
+                    lines.append(f"  - _hint:_ {f.hint}")
+        lines.append("")
+        lines.append("## Risks")
+        if not report.risks:
+            lines.append("- (none)")
+        else:
+            for r in report.risks:
+                lines.append(f"- {r}")
+        lines.append("")
+        lines.append("## Next actions (ordered)")
+        if not report.next_actions:
+            lines.append("- (none)")
+        else:
+            for a in report.next_actions:
+                lines.append(f"- {a}")
+        lines.append("")
+        return "\n".join(lines)
+
+    def write_artifacts(self, report: AuditReport) -> AuditReport:
+        reports_dir = self.repo_root / "reports"
+        reports_dir.mkdir(parents=True, exist_ok=True)
+
+        json_path = reports_dir / f"{report.report_id}.json"
+        md_path = reports_dir / f"{report.report_id}.md"
+
+        json_path.write_text(json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
+        md_path.write_text(self.render_markdown(report), encoding="utf-8")
+
+        report.artifacts["json"] = json_path.as_posix()
+        report.artifacts["md"] = md_path.as_posix()
+        return report
