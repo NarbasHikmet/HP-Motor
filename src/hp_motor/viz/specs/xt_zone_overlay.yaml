@@ -1,0 +1,7 @@
+plot:
+  plot_id: xt_zone_overlay
+  type: pitch_overlay
+  required_inputs: [actions]
+  required_metrics: [xt_value]
+  legend:
+    always: [sample_minutes, source, uncertainty]
