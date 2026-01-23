@@ -6,10 +6,15 @@ import pandas as pd
 
 class TableFactory:
     """
-    v1.1 API (tek ve sabit):
+    Tek API:
       - build_evidence_table(metric_values, evidence_graph)
       - build_role_fit_table(role, metric_map, confidence)
       - build_risk_uncertainty_table(missing_metrics, evidence_graph)
+
+    Dossier tabloları:
+      - build_dossier_summary_table(...)
+      - build_capability_breakdown_table(...)
+      - build_missing_assumptions_table(...)
     """
 
     def build_evidence_table(self, metric_values: List[Any], evidence_graph: Dict) -> pd.DataFrame:
@@ -47,13 +52,12 @@ class TableFactory:
         return df
 
     def build_role_fit_table(self, role: str, metric_map: Dict[str, float], confidence: str) -> pd.DataFrame:
-        # v1 heuristic scoring (replace later with norms/percentiles)
         xt = float(metric_map.get("xt_value", 0.0) or 0.0)
         prog = float(metric_map.get("progressive_carries_90", 0.0) or 0.0)
         lb = float(metric_map.get("line_break_passes_90", 0.0) or 0.0)
         risk = float(metric_map.get("turnover_danger_index", 0.0) or 0.0)
 
-        # simple score: reward xt/prog/lb, penalize risk
+        # v1 heuristic score
         score = (0.4 * xt) + (0.25 * prog) + (0.25 * lb) - (0.3 * risk)
 
         strengths = []
@@ -85,4 +89,49 @@ class TableFactory:
         rows = []
         for m in (missing_metrics or []):
             rows.append({"missing_metric_id": m, "impact": "reduces_confidence", "confidence": conf})
+        return pd.DataFrame(rows)
+
+    # -------------------------
+    # Dossier tables
+    # -------------------------
+    def build_dossier_summary_table(
+        self,
+        entity_id: str,
+        role: str,
+        regime: str,
+        h_score: float,
+        confidence: str,
+        fit_score: Optional[float],
+        headline: str,
+    ) -> pd.DataFrame:
+        return pd.DataFrame(
+            [
+                {
+                    "entity_id": entity_id,
+                    "role": role,
+                    "regime": regime,
+                    "h_score": round(float(h_score), 3),
+                    "confidence": confidence,
+                    "fit_score_v1": None if fit_score is None else round(float(fit_score), 3),
+                    "headline": headline,
+                }
+            ]
+        )
+
+    def build_capability_breakdown_table(self, capability_rows: List[Dict[str, Any]]) -> pd.DataFrame:
+        # Expect list of dicts: {capability_id,label,score,band,drivers}
+        return pd.DataFrame(capability_rows)
+
+    def build_missing_assumptions_table(self, missing: List[str], required: List[str]) -> pd.DataFrame:
+        rows = []
+        miss_required = [m for m in (missing or []) if m in (required or [])]
+        for m in (missing or []):
+            rows.append(
+                {
+                    "missing_metric_id": m,
+                    "is_required": bool(m in miss_required),
+                    "assumption": "neutral_baseline_or_not_inferred",
+                    "popper_note": "Eksik veri -> iddia zayıflatıldı (falsifiability korunuyor).",
+                }
+            )
         return pd.DataFrame(rows)
