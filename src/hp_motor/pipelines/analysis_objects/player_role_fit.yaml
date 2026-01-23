@@ -1,0 +1,38 @@
+analysis:
+  analysis_id: player_role_fit_v1
+  analysis_type: player_role_fit
+
+  question: "Bu oyuncu Mezzala rolünü lig seviyesinde sürdürülebilir oynuyor mu?"
+
+  entities:
+    entity_type: player
+    entity_id: required
+    team_id: optional
+    season: optional
+
+  scope:
+    min_minutes: 900
+    open_play_only: true
+    score_state: all
+
+  metric_bundle:
+    - xt_value
+    - ppda
+    - turnover_danger_index
+    - progressive_carries_90
+    - line_break_passes_90
+    - half_space_receives
+    - role_benchmark_percentiles
+
+  evidence_policy:
+    triangular_validation:
+      min_axes: 2
+      axes: [metrics, benchmark, document]
+    fail_closed: true
+
+  deliverables:
+    plots: [role_radar, half_space_touchmap, xt_zone_overlay, risk_scatter]
+    tables: [evidence_table, role_fit_table, risk_uncertainty_table]
+    lists: [top_sequences, top_turnovers, role_tasks_checklist]
+
+  persona_outputs: [analyst, coach, scout]
