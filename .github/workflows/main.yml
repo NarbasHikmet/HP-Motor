@@ -24,3 +24,9 @@ jobs:
 
       - name: Smoke Import Test
         run: python -c "from hp_motor.pipelines.run_analysis import SovereignOrchestrator; print('IMPORT OK')"
+
+      - name: Sanity check critical files exist
+        run: |
+          test -f src/hp_motor/registries/master_registry.yaml
+          test -f src/hp_motor/pipelines/analysis_objects/player_role_fit.yaml
+          echo "FILES OK"
