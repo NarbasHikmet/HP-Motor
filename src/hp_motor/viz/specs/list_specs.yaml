@@ -1,0 +1,7 @@
+lists:
+  - list_id: top_sequences
+    rule: top_10_sequences_by_xt_involvement
+  - list_id: top_turnovers
+    rule: top_10_turnovers_by_danger
+  - list_id: role_tasks_checklist
+    rule: mezzala_tasks_pass_fail
