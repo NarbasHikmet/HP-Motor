@@ -1,0 +1,3 @@
+table:
+  table_id: evidence_table
+  columns: [metric, value, percentile, scope, sample, source, uncertainty]
