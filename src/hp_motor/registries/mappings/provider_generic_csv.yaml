@@ -1,22 +1,45 @@
+version: 1
 provider: generic_csv
-version: 0.1.0
 
-# Bu mapping: CSV sütunlarını HP canonical alanlarına map eder.
-# Orchestrator/ingest katmanı bu sözlüğü kullanır.
-
+# Source column -> canonical column
 columns:
-  player_id: [player_id, player, pid]
-  minutes: [minutes, mins, played_minutes]
+  player_id: player_id
+  minutes: minutes
 
-  xT: [xT, xt, xthreat, expected_threat]
-  ppda: [ppda, PPDA]
+  xT: xt_value
+  xt: xt_value
+  xt_value: xt_value
 
-  prog_carries_90: [prog_carries_90, progressive_carries_90, progressive_carries_p90]
-  line_break_passes_90: [line_break_passes_90, lb_passes_90, linebreaking_passes_90]
+  PPDA: ppda
+  ppda: ppda
 
-  half_space_receives_90: [half_space_receives_90, half_space_receives, halfspace_receives_90]
-  turnover_danger_90: [turnover_danger_90, turnover_danger, loss_danger_90]
+  prog_carries_90: progressive_carries_90
+  progressive_carries_90: progressive_carries_90
 
-  # spatial
-  x: [x, X, pos_x]
-  y: [y, Y, pos_y]
+  line_break_passes_90: line_break_passes_90
+  linebreak_passes_90: line_break_passes_90
+
+  half_space_receives: half_space_receives
+  half_space_receives_90: half_space_receives
+
+  turnover_danger_index: turnover_danger_index
+  turnover_danger_90: turnover_danger_index
+
+  # Cognitive
+  t1: t1
+  t2: t2
+  scan_count_10s: scan_count_10s
+  scan_count: scan_count
+  scan_window_s: scan_window_s
+
+  # Biomechanics / orientation
+  defender_body_angle_deg: defender_body_angle_deg
+  body_angle_deg: defender_body_angle_deg
+  body_angle: defender_body_angle_deg
+
+  # Spatial
+  x: x
+  y: y
+
+  # Optional channeling label
+  channel_target: channel_target
