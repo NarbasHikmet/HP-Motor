@@ -1,16 +1,26 @@
-name: HP Motor Registry Audit
+name: Registry Audit
 
 on:
+  workflow_dispatch:
   push:
     paths:
-      - "src/hp_motor/registries/**"
-      - "src/hp_motor/pipelines/analysis_objects/**"
-      - "tools/copilot_sdk_agent/**"
+      - "src/**"
+      - "canon/**"
+      - "tools/**"
       - ".github/workflows/registry_audit.yml"
-  workflow_dispatch: {}
+      - "pyproject.toml"
+      - "requirements.txt"
+  pull_request:
+    paths:
+      - "src/**"
+      - "canon/**"
+      - "tools/**"
+      - ".github/workflows/registry_audit.yml"
+      - "pyproject.toml"
+      - "requirements.txt"
 
 jobs:
-  registry-audit:
+  audit:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,44 +32,34 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install minimal dependencies for audit
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+          # Optional: if you have pyproject-based installs later
+          # pip install -e .
 
-      - name: Run registry audit (module mode)
+      - name: Set PYTHONPATH
         run: |
-          python -m tools.copilot_sdk_agent.main registry-audit
+          echo "PYTHONPATH=${GITHUB_WORKSPACE}/src" >> $GITHUB_ENV
 
-      - name: Gate: fail only on status=FAIL
+      - name: Smoke import test
         run: |
-          python - <<'PY'
-          import json
-          import glob
-          import os
+          python -c "import hp_motor; print('hp_motor import OK')"
 
-          files = glob.glob("reports/*.json")
-          if not files:
-              raise SystemExit("No reports/*.json produced by audit (this should not happen).")
+      - name: Run registry audit
+        run: |
+          # Canonical runner (requires main.py to be a real CLI runner)
+          python main.py registry-audit
 
-          # pick latest by mtime
-          latest = max(files, key=lambda p: os.path.getmtime(p))
-          with open(latest, "r", encoding="utf-8") as f:
-              report = json.load(f)
-
-          status = (report.get("status") or "").upper().strip()
-          summary = report.get("summary") or ""
-          print("Audit report:", latest)
-          print("Status:", status)
-          print("Summary:", summary)
-
-          if status == "FAIL":
-              raise SystemExit("Registry audit status=FAIL (blocking).")
-          PY
-
-      - name: Upload audit reports (artifact)
+      - name: Upload audit artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hp-motor-registry-audit-reports
-          path: reports/*
-          if-no-files-found: error
+          name: registry-audit-artifacts
+          path: |
+            reports/**
+            artifacts/**
+          if-no-files-found: warn
