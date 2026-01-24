@@ -30,11 +30,11 @@ def _load_json(path: Path) -> Dict[str, Any]:
 
 def load_canon_metrics() -> Dict[str, Any]:
     """
-    Loads HP-Engine style metric specs into memory.
+    Loads canon metrics into memory.
 
-    Supported layouts (kayıpsız / antifragile):
+    Supported layouts (antifragile):
       A) Package-local: src/hp_motor/canon/canon_data/**/*.metric_spec.json
-      B) Repo-root: canon/registry.json (fallback, current repo layout)
+      B) Repo-root: canon/registry.json (fallback; current repo has this)
     """
     metrics: Dict[str, Any] = {}
 
