@@ -150,8 +150,6 @@ selected_player = st.selectbox("Oyuncu Seç (player_id)", player_ids)
 st.subheader("Rol Uyumsuzluğu Checklist Girdileri (EVET/HAYIR)")
 st.caption("Bilinmiyorsa boş bırak: sistem konservatif (yarım risk) puanlar.")
 
-# 14 soru için checkbox (UI minimal; telefon dostu)
-# Not: checkbox true => EVET, false => HAYIR; boş bırakma için “BILINMIYOR” selectbox kullanıyoruz.
 def _ans(label: str, key: str) -> str:
     return st.selectbox(label, ["BILINMIYOR", "EVET", "HAYIR"], index=0, key=key)
 
@@ -190,6 +188,7 @@ try:
         role_id=role,
         alarm_answers=alarm_answers,  # type: ignore
         alarm_live_triggers=alarm_live,
+        context={},  # v22 şablon alanları için opsiyonel meta
     )
 except Exception as e:
     st.error(f"Bireysel analiz çalıştırılamadı: {e}")
@@ -198,7 +197,10 @@ except Exception as e:
 st.subheader("Bireysel Özet")
 st.json(profile.summary)
 
-with st.expander("Scouting Card (Auto / Conservative)", expanded=False):
+with st.expander("Bireysel Oyuncu Analizi v22 (Template)", expanded=False):
+    st.markdown(profile.player_analysis_markdown)
+
+with st.expander("Scouting Card v22 (Template)", expanded=False):
     st.markdown(profile.scouting_card_markdown)
 
 with st.expander("Rol Uyumsuzluğu Alarm Checklist (Markdown)", expanded=True):
