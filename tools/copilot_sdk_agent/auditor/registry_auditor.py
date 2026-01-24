@@ -35,18 +35,62 @@ def _list_yaml_files(dir_path: Path) -> List[Path]:
 
 
 def _guess_registry_metrics(reg: Dict[str, Any]) -> Tuple[List[Dict[str, Any]], str]:
+    """
+    Supports multiple master registry styles:
+
+    A) metrics as LIST of objects:
+       metrics:
+         - metric_id: xg
+           label: xG
+           ...
+
+    B) metrics as DICT keyed by metric_id (current HP Motor):
+       metrics:
+         xg: { default: 0.0, ... }
+         ppda: { default: 12.0, ... }
+
+    C) nested registry.metrics:
+       registry:
+         metrics: ...
+    """
     if reg is None:
         return [], "missing"
 
+    # root(list) is supported for flexibility
     if isinstance(reg, list):
         return [x for x in reg if isinstance(x, dict)], "root(list)"
 
-    if isinstance(reg.get("metrics"), list):
-        return [x for x in reg["metrics"] if isinstance(x, dict)], "metrics"
+    # Style A: metrics: [ ... ]
+    m = reg.get("metrics")
+    if isinstance(m, list):
+        return [x for x in m if isinstance(x, dict)], "metrics(list)"
 
+    # Style B: metrics: { id: {...}, ... }
+    if isinstance(m, dict):
+        out: List[Dict[str, Any]] = []
+        for k, v in m.items():
+            if not isinstance(k, str) or not k.strip():
+                continue
+            if isinstance(v, dict):
+                out.append({"metric_id": k.strip(), **v})
+            else:
+                # allow scalar default-only definitions: xg: 0.0
+                out.append({"metric_id": k.strip(), "value": v})
+        return out, "metrics(dict)"
+
+    # nested registry
     r = reg.get("registry")
-    if isinstance(r, dict) and isinstance(r.get("metrics"), list):
-        return [x for x in r["metrics"] if isinstance(x, dict)], "registry.metrics"
+    if isinstance(r, dict):
+        rm = r.get("metrics")
+        if isinstance(rm, list):
+            return [x for x in rm if isinstance(x, dict)], "registry.metrics(list)"
+        if isinstance(rm, dict):
+            out = []
+            for k, v in rm.items():
+                if not isinstance(k, str) or not k.strip():
+                    continue
+                out.append({"metric_id": k.strip(), **(v if isinstance(v, dict) else {"value": v})})
+            return out, "registry.metrics(dict)"
 
     return [], "unknown"
 
@@ -61,12 +105,13 @@ def _metric_id(m: Dict[str, Any]) -> Optional[str]:
 
 def _extract_metric_refs_from_ao(ao: Dict[str, Any]) -> List[str]:
     """
-    Supports both:
+    Supports:
       - ao.metric_bundle: [metric_id...]
       - ao.deliverables.required_metrics: [metric_id...]
+      - ao.required_metrics: [metric_id...]   (common shortcut)
+      - ao.metrics: [metric_id...]            (common shortcut)
     """
     refs: List[str] = []
-
     if not isinstance(ao, dict):
         return refs
 
@@ -79,6 +124,14 @@ def _extract_metric_refs_from_ao(ao: Dict[str, Any]) -> List[str]:
         rm = deliver.get("required_metrics")
         if isinstance(rm, list):
             refs.extend([str(x).strip() for x in rm if str(x).strip()])
+
+    rm2 = ao.get("required_metrics")
+    if isinstance(rm2, list):
+        refs.extend([str(x).strip() for x in rm2 if str(x).strip()])
+
+    m2 = ao.get("metrics")
+    if isinstance(m2, list):
+        refs.extend([str(x).strip() for x in m2 if str(x).strip()])
 
     # uniq preserve order
     seen = set()
@@ -113,6 +166,7 @@ class RegistryAuditor:
         rid = f"registry_audit_{int(time.time())}"
         findings: List[Finding] = []
 
+        # ---- Existence checks
         if not self.master_registry_path.exists():
             findings.append(
                 Finding(
@@ -135,6 +189,7 @@ class RegistryAuditor:
                 )
             )
 
+        # ---- Load registry
         reg = _load_yaml(self.master_registry_path) if self.master_registry_path.exists() else None
         if isinstance(reg, dict) and "__parse_error__" in reg:
             findings.append(
@@ -155,14 +210,16 @@ class RegistryAuditor:
                     code="REG_NO_METRICS",
                     severity="ERROR",
                     title="No metrics found in master registry",
-                    detail=f"Could not find metrics list. Location guess: {metrics_loc}",
+                    detail=f"Could not find metrics list/dict. Location guess: {metrics_loc}",
                     file=self.master_registry_path.as_posix(),
+                    hint="Define metrics under `metrics:` as either a list of objects or a dict keyed by metric_id.",
                 )
             )
 
+        # ---- Validate metrics
         metric_ids: List[str] = []
         missing_id_count = 0
-        field_gaps = 0
+        default_only_count = 0
 
         for m in metrics:
             mid = _metric_id(m)
@@ -171,10 +228,21 @@ class RegistryAuditor:
                 continue
             metric_ids.append(mid)
 
-            if not m.get("label") and not m.get("name"):
-                field_gaps += 1
-            if not m.get("description"):
-                field_gaps += 1
+            # Detect "default-only" placeholder metrics
+            keys = set(m.keys())
+            if keys.issubset({"metric_id", "default", "value"}):
+                default_only_count += 1
+
+        if metrics_loc.endswith("(dict)"):
+            findings.append(
+                Finding(
+                    code="REG_METRICS_DICT_STYLE",
+                    severity="INFO",
+                    title="Registry metrics use dict style",
+                    detail="metrics are defined as a dict keyed by metric_id (supported).",
+                    file=self.master_registry_path.as_posix(),
+                )
+            )
 
         dupes = sorted({x for x in metric_ids if metric_ids.count(x) > 1})
         if dupes:
@@ -199,19 +267,24 @@ class RegistryAuditor:
                 )
             )
 
-        if field_gaps > 0:
+        if default_only_count == len(metric_ids) and len(metric_ids) > 0:
             findings.append(
                 Finding(
-                    code="REG_METRIC_FIELDS_GAPS",
-                    severity="INFO",
-                    title="Some metrics lack label/description",
-                    detail=f"Detected {field_gaps} missing label/name/description fields across metrics (soft schema).",
+                    code="REG_METRICS_DEFAULT_ONLY",
+                    severity="WARN",
+                    title="All metrics appear to be default-only placeholders",
+                    detail=(
+                        f"Detected {default_only_count}/{len(metric_ids)} metrics with only default/value fields. "
+                        "This usually means the engine will 'talk with defaults' instead of computing."
+                    ),
                     file=self.master_registry_path.as_posix(),
+                    hint="Add compute metadata (inputs, required columns, calc refs) or enforce ABSTAIN when only defaults exist.",
                 )
             )
 
         metric_id_set = set(metric_ids)
 
+        # ---- Analysis Objects
         ao_files = _list_yaml_files(self.analysis_objects_dir) if self.analysis_objects_dir.exists() else []
         if not ao_files:
             findings.append(
@@ -221,6 +294,7 @@ class RegistryAuditor:
                     title="No analysis objects found",
                     detail=f"No YAML files in {self.analysis_objects_dir.as_posix()}",
                     file=self.analysis_objects_dir.as_posix(),
+                    hint="Create analysis_objects YAMLs to declare deliverables, required metrics, and plots.",
                 )
             )
 
@@ -266,9 +340,11 @@ class RegistryAuditor:
                         + (" ..." if len(ao_missing_metric_refs[first_key]) > 15 else "")
                     ),
                     file=self.analysis_objects_dir.as_posix(),
+                    hint="Either add the missing metrics to master_registry.yaml or fix AO references.",
                 )
             )
 
+        # ---- Provider mappings
         mapping_files = _list_yaml_files(self.mappings_dir) if self.mappings_dir.exists() else []
         if not mapping_files:
             findings.append(
@@ -278,6 +354,7 @@ class RegistryAuditor:
                     title="No provider mapping files detected",
                     detail=f"No YAML files found under {self.mappings_dir.as_posix()}",
                     file=self.mappings_dir.as_posix(),
+                    hint="Add mappings to standardize incoming columns (CSV/XML/XLSX providers).",
                 )
             )
 
@@ -286,6 +363,14 @@ class RegistryAuditor:
             f"Registry audit complete. metrics={len(metric_ids)}, analysis_objects={len(ao_files)}, "
             f"ao_metric_refs={ao_metric_refs_total}, plots_in_aos={ao_plot_ids_total}. status={status}."
         )
+
+        next_actions: List[str] = []
+        if any(f.code == "REG_METRICS_DEFAULT_ONLY" for f in findings):
+            next_actions.append("Enforce ABSTAIN when only default metrics exist (no compute evidence).")
+        if any(f.code == "MAP_NONE" for f in findings):
+            next_actions.append("Add provider mappings under src/hp_motor/registries/mappings to normalize columns.")
+        if len(ao_files) == 0:
+            next_actions.append("Create at least 1 analysis_object YAML to declare tables/plots deliverables.")
 
         report = AuditReport(
             report_id=rid,
@@ -298,10 +383,11 @@ class RegistryAuditor:
                 "ao_plot_ids_total": ao_plot_ids_total,
                 "mapping_file_count": len(mapping_files),
                 "master_registry_location_guess": metrics_loc,
+                "default_only_metrics_count": default_only_count,
             },
             findings=findings,
             risks=[],
-            next_actions=[],
+            next_actions=next_actions,
         )
         return report
 
@@ -325,7 +411,14 @@ class RegistryAuditor:
                 loc = f" ({f.file})" if f.file else ""
                 lines.append(f"- **[{f.severity}] {f.code}** — {f.title}{loc}")
                 lines.append(f"  - {f.detail}")
+                if f.hint:
+                    lines.append(f"  - _hint:_ {f.hint}")
         lines.append("")
+        if report.next_actions:
+            lines.append("## Next actions")
+            for a in report.next_actions:
+                lines.append(f"- {a}")
+            lines.append("")
         return "\n".join(lines)
 
     def write_artifacts(self, report: AuditReport) -> AuditReport:
