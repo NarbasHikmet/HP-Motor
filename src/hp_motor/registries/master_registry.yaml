@@ -24,9 +24,36 @@ archetypes:
       line_break_passes: { min: 2.0 }
 
 metrics:
+  # --- existing placeholders (kept)
   ppda:
     default: 12.0
   xg:
     default: 0.0
   xt:
     default: 0.0
+
+  # --- referenced by analysis_objects (added to remove unknown-metric FAIL)
+  xt_value:
+    default: 0.0
+    note: "Placeholder. Expected to be computed from xT model and event locations."
+    aliases: ["xt"]
+
+  turnover_danger_index:
+    default: 0.0
+    note: "Placeholder. Expected to quantify turnover cost weighted by zone & transition danger."
+
+  progressive_carries_90:
+    default: 0.0
+    note: "Placeholder. Expected: progressive carries per 90 (provider mapping required)."
+
+  line_break_passes_90:
+    default: 0.0
+    note: "Placeholder. Expected: line-breaking passes per 90."
+
+  half_space_receives:
+    default: 0.0
+    note: "Placeholder. Expected: receptions in half-space (zone mapping required)."
+
+  role_benchmark_percentiles:
+    default: 0.0
+    note: "Placeholder. Expected: role percentile pack (derived vs league distribution)."
