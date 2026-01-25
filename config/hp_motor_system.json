@@ -1,0 +1,48 @@
+{
+  "system_id": "HP_MOTOR",
+  "active_version": "v2026.1",
+  "legacy_aliases": ["HP_ENGINE"],
+
+  "governance": {
+    "raw_first": true,
+    "no_single_metric": true,
+    "triangulation": ["outcome", "behaviour", "context"],
+    "popper_gate": "every_claim_must_define_falsifier",
+    "abstain_if_low_evidence": true,
+    "status_gates": {
+      "uncertainty_le_1": "confirmed",
+      "uncertainty_gt_1": "candidate"
+    }
+  },
+
+  "ontology": {
+    "phases_6": [
+      "build_up",
+      "consolidation",
+      "incision",
+      "finishing",
+      "def_transition_5s",
+      "off_transition_10s"
+    ],
+    "micro_phases": [
+      "set_piece_attack",
+      "set_piece_defense",
+      "throw_in",
+      "goalkeeping"
+    ]
+  },
+
+  "modules": [
+    "HM1_PreMatch_ScenarioLab",
+    "HM2_PostMatch_Audit",
+    "HM3_Individual_NAS",
+    "HM4_Team_DFI",
+    "HM5_Transfer_Decision",
+    "HM6_Squad_Engineering",
+    "HM7_Seasonal_Risk",
+    "HM8_VideoBody_Evidence"
+  ],
+
+  "ssot": "config/master_registry.yaml",
+  "canonical_pitch": "105x68"
+}
