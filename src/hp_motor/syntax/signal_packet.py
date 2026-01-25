@@ -1,83 +1,79 @@
-from __future__ import annotations
+# src/hp_motor/signal/signal_packet.py
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, Literal, Optional, Tuple, Union, List
+from typing import Optional, Dict, Any, Literal
 import uuid
 
-
 SignalType = Literal["event", "fitness", "track", "doc", "constraint"]
+SignalStatus = Literal["OK", "DEGRADED", "BLOCKED"]
 LogicGate = Literal["Popper_Verified", "Unverified_Hypothesis"]
-Status = Literal["OK", "DEGRADED", "BLOCKED"]
 
 
-@dataclass(frozen=True)
+@dataclass
 class SpatialAnchor:
     x: float
     y: float
     z: Optional[float] = None
-    space_id: Optional[str] = None  # e.g., "pitch_zone_14"
+    space_id: Optional[str] = None
 
 
-@dataclass(frozen=True)
+@dataclass
 class TemporalAnchor:
-    start_s: Optional[float] = None
-    end_s: Optional[float] = None
+    start_s: float
+    end_s: float
     frame_id: Optional[int] = None
-
-
-@dataclass(frozen=True)
-class Provenance:
-    filename: str
-    line_number: Optional[int] = None
-    timestamp_raw: Optional[str] = None
-
-
-@dataclass(frozen=True)
-class Payload:
-    entity: str  # player_id / team_id / match_id
-    metric: str  # e.g., "HSR", "Pass_Acc", "PPDA", "Scanning_Rate"
-    value: Union[float, int, str]
-    unit: Optional[str] = None  # "m/s", "count", "%", "m", "s", ...
 
 
 @dataclass
 class SignalPacket:
     """
-    HP Motor Universal Syntax: every modality -> SignalPacket
-
-    Rule:
-      - spatial_anchor and temporal_anchor can be None if not provided by source.
-      - status governs whether downstream analysis can consume the packet.
+    HP Motor Universal Analytic Signal
+    Her veri kaynağı bu forma çevrilmeden analiz yapılamaz.
     """
+
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
+
     signal_type: SignalType = "event"
-    provenance: Provenance = field(default_factory=lambda: Provenance(filename="unknown"))
-    payload: Payload = field(default_factory=lambda: Payload(entity="unknown", metric="unknown", value=float("nan"), unit=None))
+
+    provenance: Dict[str, Any] = field(default_factory=dict)
+    # örn: {"filename": "...", "line": 42, "timestamp_raw": "00:34:21"}
+
+    payload: Dict[str, Any] = field(default_factory=dict)
+    # örn:
+    # {
+    #   "entity": "player_10",
+    #   "metric": "HSR",
+    #   "value": 7.8,
+    #   "unit": "m/s"
+    # }
+
     spatial_anchor: Optional[SpatialAnchor] = None
     temporal_anchor: Optional[TemporalAnchor] = None
-    meta: Dict[str, Any] = field(default_factory=dict)
 
-    def set_meta_defaults(self) -> None:
-        self.meta.setdefault("confidence", 0.5)
-        self.meta.setdefault("logic_gate", "Unverified_Hypothesis")
-        self.meta.setdefault("status", "OK")
-        self.meta.setdefault("notes", [])
+    meta: Dict[str, Any] = field(default_factory=lambda: {
+        "confidence": 0.5,
+        "logic_gate": "Unverified_Hypothesis",
+        "status": "DEGRADED"
+    })
 
-    @property
-    def status(self) -> Status:
-        self.set_meta_defaults()
-        return self.meta.get("status", "OK")
+    def validate(self) -> None:
+        """
+        Temel emniyet denetimi.
+        Eksik bağlam varsa sinyal BLOCKED olur.
+        """
+        if not self.payload:
+            self.meta["status"] = "BLOCKED"
 
-    @property
-    def confidence(self) -> float:
-        self.set_meta_defaults()
-        return float(self.meta.get("confidence", 0.5))
+        if self.signal_type in ["event", "track"] and self.temporal_anchor is None:
+            self.meta["status"] = "BLOCKED"
 
-    def mark(self, status: Status, logic_gate: Optional[LogicGate] = None, note: Optional[str] = None) -> "SignalPacket":
-        self.set_meta_defaults()
-        self.meta["status"] = status
-        if logic_gate is not None:
-            self.meta["logic_gate"] = logic_gate
-        if note:
-            self.meta.setdefault("notes", []).append(note)
-        return self
+        if self.signal_type == "track" and self.spatial_anchor is None:
+            self.meta["status"] = "BLOCKED"
+
+    def promote(self) -> None:
+        """
+        Popper Gate sonrası çağrılır.
+        """
+        self.meta["logic_gate"] = "Popper_Verified"
+        self.meta["status"] = "OK"
+        self.meta["confidence"] = min(1.0, self.meta.get("confidence", 0.5) + 0.2)
