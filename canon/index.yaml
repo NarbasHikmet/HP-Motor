@@ -1,0 +1,9 @@
+ontology:
+  football: canon/ontology/football_ontology.json
+  metric: canon/ontology/metric_ontology.json
+
+mappings:
+  platforms: canon/mappings/platform_mappings.json
+
+registry:
+  core: canon/registry/registry.json
