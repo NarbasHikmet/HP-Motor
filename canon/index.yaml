@@ -6,4 +6,4 @@ mappings:
   platforms: canon/mappings/platform_mappings.json
 
 registry:
-  core: canon/registry/registry.json
+  core: canon/registry/registry.json 
