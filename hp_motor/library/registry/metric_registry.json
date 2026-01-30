@@ -17,7 +17,10 @@
         "OK": "event_type mevcut",
         "DEGRADED": "event_type proxy ile türetilmiş",
         "UNKNOWN": "event_type yok"
-      }
+      },
+      "definition_tr": "Toplam pas sayısı. (Seçilen segment/sekans/faz içinde atılan pasların adedi.)",
+      "definition_source": "manual_hp",
+      "definition_confidence": 0.95
     },
     {
       "id": "M_PROG_PASS_COUNT",
@@ -37,7 +40,10 @@
         "OK": "start_x ve end_x mevcut",
         "DEGRADED": "sadece yön bilgisi var",
         "UNKNOWN": "konumsal veri yok"
-      }
+      },
+      "definition_tr": "Progressive (ilerletici) pas sayısı. Topu rakip kaleye doğru anlamlı ölçüde taşıyan pasların adedi. Eşik/hesap yöntemi proje standardına göre tanımlıdır.",
+      "definition_source": "manual_hp",
+      "definition_confidence": 0.95
     },
     {
       "id": "M_SHOT_COUNT",
@@ -54,7 +60,10 @@
       "status_policy": {
         "OK": "event_type mevcut",
         "UNKNOWN": "event_type yok"
-      }
+      },
+      "definition_tr": "Toplam şut sayısı. (Seçilen segment/sekans/faz içinde çekilen şutların adedi.)",
+      "definition_source": "manual_hp",
+      "definition_confidence": 0.95
     },
     {
       "id": "M_TURNOVER_COUNT",
@@ -72,7 +81,10 @@
         "OK": "outcome mevcut",
         "DEGRADED": "sadece event_type var",
         "UNKNOWN": "her ikisi de yok"
-      }
+      },
+      "definition_tr": "Top kaybı (turnover) sayısı. Topa sahipken topun rakibe geçtiği kayıpların adedi (pas hatası, dripling kaybı, kontrol hatası vb. dahil).",
+      "definition_source": "manual_hp",
+      "definition_confidence": 0.95
     },
     {
       "id": "M_SEQUENCE_LENGTH",
@@ -88,7 +100,10 @@
       "status_policy": {
         "OK": "sequence segmentation mevcut",
         "UNKNOWN": "sequence yok"
-      }
+      },
+      "definition_tr": "Sekans uzunluğu. Bir sekansın içindeki olay/aksiyon sayısı (event-count). Sekans tanımı segmentation modülünün kural setine göre yapılır.",
+      "definition_source": "manual_hp",
+      "definition_confidence": 0.95
     },
     {
       "id": "SB_ACTIONS_IN_OPPONENT_BOX_SUCCESSFUL",
@@ -349,7 +364,9 @@
       "sources": [
         "https://dataglossary.wyscout.com/counterpressing_recovery/",
         " https://dataglossary.wyscout.com/recovery/"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_BALL_RECOVERIES_AFTER_LOSSES_WITHIN_5_SECONDS_IN_THE_OPPONENT_S_",
@@ -812,7 +829,9 @@
       },
       "sources": [
         "https://support.hudl.com/s/article/event-data-glossary-team-metrics"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_CORNER_ATTACKS_WITH_SHOTS",
@@ -1188,7 +1207,9 @@
       },
       "sources": [
         "https://www.fifatrainingcentre.com/en/game/tournaments/fifa-womens-world-cup/2023/efi-metrics/final-third-entries.php"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_FINAL_THIRD_ENTRIES_THROUGH_CARRY",
@@ -2260,7 +2281,9 @@
       },
       "sources": [
         "https://dataglossary.wyscout.com/key_pass/"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_KEY_PASSES_ACCURATE_2",
@@ -2317,7 +2340,9 @@
       "sources": [
         "https://dataglossary.wyscout.com/key_pass/",
         " https://stats-portal.statsbomb.com/glossary"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_KONTRA_ATAKLAR",
@@ -2345,7 +2370,9 @@
       },
       "sources": [
         "https://support.hudl.com/s/article/live-data-glossary"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_KORNER_HUCUMLARI",
@@ -3302,7 +3329,9 @@
       "sources": [
         "https://support.hudl.com/s/article/passes-defensive-action",
         " https://dataglossary.wyscout.com/metrics/"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_PROGRESSIVE_OPEN_PASSES",
@@ -3331,7 +3360,9 @@
       "sources": [
         "https://sportsbase.world/",
         " https://dataglossary.wyscout.com/progressive_pass/"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_PROGRESSIVE_PASSES",
@@ -3360,7 +3391,9 @@
       "sources": [
         "https://dataglossary.wyscout.com/progressive_pass/",
         " https://theanalyst.com/articles/opta-football-stats-definitions"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_PROGRESSIVE_PASSES_ACCURATE",
@@ -3504,7 +3537,9 @@
       },
       "sources": [
         "https://support.hudl.com/s/article/football-glossary-faqs"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_RAKIP_SAHAYA_GIRISLER",
@@ -4576,7 +4611,9 @@
       },
       "sources": [
         "https://github.com/statsbomb/open-data"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_SUTLA_BITEN_HUCUMLAR_DURAN_TOPLAR",
@@ -4662,7 +4699,9 @@
       },
       "sources": [
         "https://support.hudl.com/s/article/live-data-glossary"
-      ]
+      ],
+      "definition_source": "sportsbase_vendor",
+      "definition_confidence": 0.85
     },
     {
       "id": "SB_SUTLA_BITEN_SAG_KANAT_HUCUMLARI",
