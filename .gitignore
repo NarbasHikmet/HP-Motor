@@ -27,3 +27,5 @@ ENV/
 hp_motor/library/registry/inputs/
 *.bak_*.json
 hp_motor/library/registry/*.bak_*.json
+hp_motor/library/inputs/
+data/
