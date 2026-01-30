@@ -11,6 +11,7 @@ from hp_motor.segmentation.phase_tagger import tag_phases
 from hp_motor.segmentation.possessions import segment_possessions
 from hp_motor.segmentation.sequences import segment_sequences
 from hp_motor.metrics.factory import compute_raw_metrics
+from hp_motor.metrics.validator import validate_metrics
 from hp_motor.context.engine import apply_context
 from hp_motor.report.generator import generate_report
 from hp_motor.report.schema import validate_report
@@ -67,19 +68,33 @@ def run_pipeline(events_path: Path, vendor: str = "generic") -> Dict[str, Any]:
     possessions = segment_possessions(events)
     sequences = segment_sequences(events, possessions)
 
+    # RAW metrics
     metrics_raw = compute_raw_metrics(events)
     metrics_raw.setdefault("meta", {})
     metrics_raw["meta"].update(
         {
-            "library_health": lib_h.__dict__,
             "segmentation": {
                 "n_possessions": len(possessions),
                 "n_sequences": len(sequences),
-            },
+            }
         }
     )
 
-    metrics_adj, ctx_flags = apply_context(metrics_raw)
+    # VALIDATION
+    validated_raw, validation_flags = validate_metrics(
+        metrics_raw=metrics_raw,
+        events_meta={"columns_present": metrics_raw["meta"].get("columns_present", [])},
+    )
+
+    # CONTEXT (identity v0)
+    metrics_adj, ctx_flags = apply_context(validated_raw)
+
+    context_flags = (
+        ["library:" + lib_h.status]
+        + lib_h.flags
+        + validation_flags
+        + ctx_flags
+    )
 
     report = generate_report(
         popper_status=pop["status"],
@@ -90,9 +105,9 @@ def run_pipeline(events_path: Path, vendor: str = "generic") -> Dict[str, Any]:
             "n_possessions": len(possessions),
             "n_sequences": len(sequences),
         },
-        metrics_raw=metrics_raw,
+        metrics_raw=validated_raw,
         metrics_adjusted=metrics_adj,
-        context_flags=["library:" + lib_h.status] + lib_h.flags + ctx_flags,
+        context_flags=context_flags,
     )
     validate_report(report)
     return report
