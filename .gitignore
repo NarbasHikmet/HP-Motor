@@ -14,3 +14,14 @@ tools/_scratch/
 
 # OS
 .DS_Store
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# venv
+.venv/
+venv/
+ENV/
+hp_motor/library/registry/inputs/
