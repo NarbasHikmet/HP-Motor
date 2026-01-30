@@ -99,7 +99,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Actions in opponent box successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -114,7 +114,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ACTIONS_IN_OPPONENT_BOX_SUCCESSFUL_2",
@@ -125,7 +128,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Actions in opponent box successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -140,7 +143,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ACTIONS_SUCCESSFUL",
@@ -151,7 +157,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Actions successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -166,7 +172,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ACTIONS_SUCCESSFUL_2",
@@ -177,7 +186,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Actions successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -192,7 +201,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ATTACKS_THROUGH_THE_CENTER_WITH_SHOTS",
@@ -203,7 +215,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Attacks through the center with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -218,7 +230,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BALL_RECOVERIES",
@@ -229,7 +244,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Ball recoveries metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -244,7 +259,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BALL_RECOVERIES_AFTER_LOSSES_WITHIN_10_SECONDS",
@@ -255,7 +273,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Ball recoveries after losses within 10 seconds metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -270,7 +288,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BALL_RECOVERIES_AFTER_LOSSES_WITHIN_10_SECONDS_IN_THE_OPPONENT_S",
@@ -281,7 +302,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Ball recoveries after losses within 10 seconds in the opponent's half of the field metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -296,7 +317,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BALL_RECOVERIES_AFTER_LOSSES_WITHIN_5_SECONDS",
@@ -336,7 +360,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Ball recoveries after losses within 5 seconds in the opponent's half of the field metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -351,7 +375,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_DRIPLINGLER",
@@ -362,7 +389,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Başarılı driplingler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -377,7 +404,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_DRIPLINGLERI",
@@ -388,7 +418,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Başarılı driplingleri, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -403,7 +433,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_HAVA_TOPU_MUCADELELERI",
@@ -414,7 +447,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Başarılı hava topu mücadeleleri metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -429,7 +462,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_HAVA_TOPU_MUCADELESI",
@@ -440,7 +476,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Başarılı hava topu mücadelesi, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -455,7 +491,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_IKILI_MUCADELE",
@@ -466,7 +505,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Başarılı ikili mücadele % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -481,7 +520,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_TAKIM_PRESI",
@@ -492,7 +534,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Başarılı takım presi metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -507,7 +549,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_TOP_KAPMA",
@@ -518,7 +563,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Başarılı Top Kapma metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -533,7 +578,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BASARILI_TOP_KAPMA_2",
@@ -544,7 +592,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Başarılı Top Kapma metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -559,7 +607,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BIREYSEL_TOP_KAYIPLARI",
@@ -570,7 +621,7 @@
         "risk"
       ],
       "role_guess": "risk",
-      "definition_tr": "",
+      "definition_tr": "Bireysel top kayıpları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -585,7 +636,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_BUILD_UP",
@@ -596,7 +650,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Build up metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -611,7 +665,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_CEZA_SAHASINA_I_SABETLI",
@@ -622,7 +679,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Ceza sahasına / İsabetli metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -637,7 +694,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_CEZA_SAHASINA_ORTA",
@@ -648,7 +708,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Ceza sahasına orta metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -663,7 +723,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_CHALLENGES_UNSUCCESSFUL",
@@ -674,7 +737,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Challenges unsuccessful metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -689,7 +752,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_CHALLENGES_WON",
@@ -700,7 +766,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Challenges won metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -715,7 +781,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_CHANCES_SUCCESSFUL",
@@ -754,7 +823,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Corner attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -769,7 +838,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_COUNTER_ATTACKS_WITH_SHOTS",
@@ -780,7 +852,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Counter-attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "2_Hucum_Gecisi"
@@ -795,7 +867,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_CROSSES_ACCURATE",
@@ -806,7 +881,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Crosses accurate metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -821,7 +896,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DIREKTEN_DONEN_SUTLAR",
@@ -832,7 +910,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Direkten dönen şutlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -847,7 +925,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DRIBBLES_UNSUCCESSFUL",
@@ -858,7 +939,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Dribbles unsuccessful metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -873,7 +954,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DRIBBLING_IN_THE_FINAL_THIRD",
@@ -884,7 +968,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Dribbling in the final third metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -899,7 +983,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DRIBBLING_IN_THE_FINAL_THIRD_SUCCESSFUL",
@@ -910,7 +997,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Dribbling in the final third successful metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -925,7 +1012,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DRIBBLING_IN_THE_FINAL_THIRD_SUCCESSFUL_2",
@@ -936,7 +1026,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Dribbling in the final third successful metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -951,7 +1041,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DRIPLINGLER",
@@ -962,7 +1055,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Driplingler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -977,7 +1070,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_DURAN_TOP_HUCUMLARI",
@@ -988,7 +1084,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Duran Top Hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1003,7 +1099,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ENGELLENEN_SUTLAR",
@@ -1014,7 +1113,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Engellenen Şutlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1029,7 +1128,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FAUL",
@@ -1040,7 +1142,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Faul metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -1055,7 +1157,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FINAL_THIRD_ENTRIES",
@@ -1094,7 +1199,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Final third entries through carry metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1109,7 +1214,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FINAL_THIRD_ENTRIES_THROUGH_CARRY_OF_TOTAL",
@@ -1120,7 +1228,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Final third entries through carry, % of total metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1135,7 +1243,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FINAL_THIRD_ENTRIES_THROUGH_PASS",
@@ -1146,7 +1257,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Final third entries through pass metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1161,7 +1272,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FINAL_THIRD_ENTRIES_THROUGH_PASS_OF_TOTAL",
@@ -1172,7 +1286,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Final third entries through pass, % of total metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1187,7 +1301,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FREE_KICK_ATTACKS_WITH_SHOTS",
@@ -1198,7 +1315,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Free-kick attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1213,7 +1330,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_FREE_KICK_OPPONENT_S_GOALS",
@@ -1224,7 +1344,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Free-kick opponent's goals, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1239,7 +1359,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GERI_KAZANILAN_TOPLARDA_KALEYE_ORTALAMA_MESAFE",
@@ -1250,7 +1373,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Geri kazanılan toplarda kaleye ortalama mesafe metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1265,7 +1388,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS",
@@ -1276,7 +1402,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1291,7 +1417,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_ACCURATE",
@@ -1302,7 +1431,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1317,7 +1446,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_ACCURATE_2",
@@ -1328,7 +1460,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1343,7 +1475,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_LONG_40_M",
@@ -1354,7 +1489,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks long (40+ m.) metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1369,7 +1504,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_LONG_40_M_ACCURATE",
@@ -1380,7 +1518,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks long (40+ m.) accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1395,7 +1533,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_LONG_40_M_ACCURATE_2",
@@ -1406,7 +1547,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks long (40+ m.) accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1421,7 +1562,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_MEDIUM_15_40_M",
@@ -1432,7 +1576,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks medium (15-40 m.) metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1447,7 +1591,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_MEDIUM_15_40_M_ACCURATE",
@@ -1458,7 +1605,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks medium (15-40 m.) accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1473,7 +1620,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_MEDIUM_15_40_M_ACCURATE_2",
@@ -1484,7 +1634,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks medium (15-40 m.) accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1499,7 +1649,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_SHORT_15_M",
@@ -1510,7 +1663,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks short (<15 m.) metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1525,7 +1678,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_SHORT_15_M_ACCURATE",
@@ -1536,7 +1692,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks short (<15 m.) accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1551,7 +1707,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOAL_KICKS_SHORT_15_M_ACCURATE_2",
@@ -1562,7 +1721,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Goal kicks short (<15 m.) accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1577,7 +1736,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOL",
@@ -1588,7 +1750,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Gol metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1603,7 +1765,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOL_BASINA_XG",
@@ -1614,7 +1779,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Gol başına xG metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1629,7 +1794,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOL_POZISYONLARI_BASARILI",
@@ -1640,7 +1808,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Gol pozisyonları, başarılı metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1655,7 +1823,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_GOLLER_SERBEST_VURUS_HUCUMU",
@@ -1666,7 +1837,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Goller - Serbest vuruş hücumu metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -1681,7 +1852,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HAVADA_HAMLELER",
@@ -1692,7 +1866,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Havada Hamleler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1707,7 +1881,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HIGH_PRESSING",
@@ -1718,7 +1895,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "High pressing metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -1733,7 +1910,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HIGH_PRESSING_SUCCESSFUL",
@@ -1744,7 +1924,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "High pressing successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -1759,7 +1939,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HIGH_PRESSING_SUCCESSFUL_2",
@@ -1770,7 +1953,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "High pressing successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -1785,7 +1968,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HUCUMDA_BASARILI_IKILI_MUCADELE",
@@ -1796,7 +1982,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Hücumda başarılı ikili mücadele, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1811,7 +1997,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HUCUMDA_IKILI_MUCADELE_BASARILI",
@@ -1822,7 +2011,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Hücumda ikili mücadele / Başarılı metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1837,7 +2026,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_HUCUMDA_IKILI_MUCADELELER",
@@ -1848,7 +2040,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Hücumda ikili mücadeleler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1863,7 +2055,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_INDEX",
@@ -1874,7 +2069,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Index metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1889,7 +2084,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_I_KILI_MUCADELELER",
@@ -1900,7 +2098,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "İkili mücadeleler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1915,7 +2113,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_I_LERIYE_PAS",
@@ -1926,7 +2127,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "İleriye pas metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1941,7 +2142,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_I_SABETLI_ORTALAR",
@@ -1952,7 +2156,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "İsabetli ortalar, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1967,7 +2171,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_I_SABETLI_SUT",
@@ -1978,7 +2185,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "İsabetli Şut metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -1993,7 +2200,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_I_SABETSIZ_SUTLAR",
@@ -2004,7 +2214,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "İsabetsiz Şutlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2019,7 +2229,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_KEY_PASSES_ACCURATE",
@@ -2058,7 +2271,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Key pass’in (kilit pas) isabetli olanları: sonraki dokunuş takım arkadaşı tarafından gerçekleşen kilit pas.",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2073,7 +2286,9 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_source": "hp_motor/library/registry/inputs/sportsbase_metrics_hp_v1.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_KILIT_PAS",
@@ -2141,7 +2356,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Korner Hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -2156,7 +2371,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_KORNERLER",
@@ -2167,7 +2385,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Kornerler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -2182,7 +2400,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_KOTU_TOP_KONTROLU",
@@ -2193,7 +2414,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Kötü top kontrolü metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2208,7 +2429,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_KIRMIZI_KARTLAR",
@@ -2219,7 +2443,7 @@
         "risk"
       ],
       "role_guess": "risk",
-      "definition_tr": "",
+      "definition_tr": "Kırmızı Kartlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -2234,7 +2458,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_LEFT_FLANK_ATTACKS_WITH_SHOTS",
@@ -2245,7 +2472,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Left flank attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2260,7 +2487,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_LOST_BALLS_AFTER_PASSES",
@@ -2271,7 +2501,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Lost balls after passes metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2286,7 +2516,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_LOW_PRESSING",
@@ -2297,7 +2530,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Low pressing metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -2312,7 +2545,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_LOW_PRESSING_SUCCESSFUL",
@@ -2323,7 +2559,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Low pressing successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -2338,7 +2574,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_LOW_PRESSING_SUCCESSFUL_2",
@@ -2349,7 +2588,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Low pressing successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -2364,7 +2603,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_MERKEZDEN_HUCUMLAR",
@@ -2375,7 +2617,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Merkezden hücumlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2390,7 +2632,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_NO_PRESSING",
@@ -2401,7 +2646,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "No pressing metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -2416,7 +2661,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_NXG",
@@ -2427,7 +2675,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "NxG metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2442,7 +2690,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_OFSAYTLAR",
@@ -2453,7 +2704,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Ofsaytlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2468,7 +2719,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ORTA",
@@ -2479,7 +2733,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Orta metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2494,7 +2748,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_ORTALAMA_TOPLA_OYNAMA_SURESI",
@@ -2505,7 +2762,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Ortalama topla oynama süresi metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2520,7 +2777,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_OWN_GOALS",
@@ -2531,7 +2791,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Own goals metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2546,7 +2806,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_OXG",
@@ -2557,7 +2820,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "OxG metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2572,7 +2835,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_OXGPG",
@@ -2583,7 +2849,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "OxGPG metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2598,7 +2864,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_OXGPS",
@@ -2609,7 +2878,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "OxGPS metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2624,7 +2893,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PAS_ARASI",
@@ -2635,7 +2907,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Pas Arası metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2650,7 +2922,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASLAR",
@@ -2661,7 +2936,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Paslar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2676,7 +2951,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASLAR_ADRESI_BULANLAR",
@@ -2687,7 +2965,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Paslar adresi bulanlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2702,7 +2980,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASLAR_ADRESI_BULANLAR_2",
@@ -2713,7 +2994,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Paslar adresi bulanlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2728,7 +3009,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASSES_FORWARD_ACCURATE",
@@ -2739,7 +3023,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Passes forward accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2754,7 +3038,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASSES_FORWARD_ACCURATE_2",
@@ -2765,7 +3052,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Passes forward accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2780,7 +3067,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASSES_FROM_THROW_INS",
@@ -2791,7 +3081,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Passes from throw-ins metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -2806,7 +3096,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PASSES_INTO_THE_PENALTY_BOX_ACCURATE",
@@ -2817,7 +3110,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Passes into the penalty box accurate, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2832,7 +3125,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PENALTI",
@@ -2843,7 +3139,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Penaltı metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2858,7 +3154,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PENALTI_GOLLERI",
@@ -2869,7 +3168,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Penaltı golleri, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2884,7 +3183,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PENALTI_GOLLERI_2",
@@ -2895,7 +3197,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "Penaltı golleri, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2910,7 +3212,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_POSITIONAL_ATTACKS_WITH_SHOTS",
@@ -2921,7 +3226,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Positional attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2936,7 +3241,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_POZISYONLAR",
@@ -2947,7 +3255,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Pozisyonlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -2962,7 +3270,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PPDA",
@@ -3060,7 +3371,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Progressive passes accurate metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3075,7 +3386,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_PROGRESSIVE_PASSES_ACCURATE_2",
@@ -3086,7 +3400,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Progressive passes accurate metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3101,7 +3415,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_RAKIP_CEZA_SAHASINA_GIRISLER",
@@ -3112,7 +3429,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Rakip ceza sahasına girişler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3127,7 +3444,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_RAKIP_CEZA_SAHASINDA_HAREKETLER",
@@ -3138,7 +3458,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Rakip ceza sahasında hareketler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3153,7 +3473,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_RAKIP_SAHADA_GERI_KAZANILAN_TOPLAR",
@@ -3192,7 +3515,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Rakip sahaya girişler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3207,7 +3530,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_RIGHT_FLANK_ATTACKS_WITH_SHOTS",
@@ -3218,7 +3544,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Right flank attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3233,7 +3559,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SAHIPSIZ_TOP_KAPMA",
@@ -3244,7 +3573,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Sahipsiz top kapma metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3259,7 +3588,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SARI_KARTLAR",
@@ -3270,7 +3602,7 @@
         "risk"
       ],
       "role_guess": "risk",
-      "definition_tr": "",
+      "definition_tr": "Sarı Kartlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -3285,7 +3617,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SAVUNMADA_BASARILI_IKILI_MUCADELELER",
@@ -3296,7 +3631,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Savunmada başarılı ikili mücadeleler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3311,7 +3646,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SAVUNMADA_IKILI_MUCADELELER",
@@ -3322,7 +3660,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Savunmada ikili mücadeleler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3337,7 +3675,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SAVUNMADA_KAZANILAN_IKILI_MUCADELE",
@@ -3348,7 +3689,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Savunmada kazanılan ikili mücadele, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3363,7 +3704,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SAG_KANAT_HUCUMLARI",
@@ -3374,7 +3718,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Sağ kanat hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3389,7 +3733,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SERBEST_VURUS_HUCUMLARI",
@@ -3400,7 +3747,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Serbest Vuruş hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -3415,7 +3762,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SERBEST_VURUS_SUTLARI",
@@ -3426,7 +3776,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Serbest Vuruş Şutları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -3441,7 +3791,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SET_HUCUMLARI",
@@ -3452,7 +3805,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Set Hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -3467,7 +3820,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SET_PIECE_ATTACKS_WITH_SHOTS",
@@ -3478,7 +3834,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Set-piece attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -3493,7 +3849,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SHOTS_ON_TARGET",
@@ -3504,7 +3863,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Shots on target, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3519,7 +3878,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SOL_KANAT_HUCUMLARININ_TAMAMI",
@@ -3530,7 +3892,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Sol kanat hücumlarının tamamı metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3545,7 +3907,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUPER_LONG_PASSES",
@@ -3556,7 +3921,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Super long passes metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3571,7 +3936,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUPER_LONG_PASSES_ACCURATE",
@@ -3582,7 +3950,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Super long passes accurate metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3597,7 +3965,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUPER_LONG_PASSES_ACCURATE_2",
@@ -3608,7 +3979,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Super long passes accurate metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3623,7 +3994,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TAKIM_PRESI",
@@ -3634,7 +4008,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Takım presi metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3649,7 +4023,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TAC_ATISLARI",
@@ -3660,7 +4037,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Taç atışları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -3675,7 +4052,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TEAM_PRESSING_SUCCESSFUL",
@@ -3686,7 +4066,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Team pressing successful, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "4_Organize_Savunma"
@@ -3701,7 +4081,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_THROW_IN_ATTACKS_WITH_SHOTS",
@@ -3712,7 +4095,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Throw-in attacks with shots, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -3727,7 +4110,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOP_KAPMA",
@@ -3738,7 +4124,7 @@
         "deger"
       ],
       "role_guess": "success",
-      "definition_tr": "",
+      "definition_tr": "Top Kapma metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3753,7 +4139,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOP_KAYIPLARI",
@@ -3764,7 +4153,7 @@
         "risk"
       ],
       "role_guess": "risk",
-      "definition_tr": "",
+      "definition_tr": "Top kayıpları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -3779,7 +4168,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOP_KAYIPLARI_KENDI_YARI_SAHASINDA",
@@ -3790,7 +4182,7 @@
         "risk"
       ],
       "role_guess": "risk",
-      "definition_tr": "",
+      "definition_tr": "Top kayıpları / kendi yarı sahasında metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -3805,7 +4197,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOP_KAYIPLARINDA_KALEYE_ORTALAMA_MESAFE",
@@ -3816,7 +4211,7 @@
         "risk"
       ],
       "role_guess": "risk",
-      "definition_tr": "",
+      "definition_tr": "Top kayıplarında kaleye ortalama mesafe metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "5_Savunma_Gecisi"
@@ -3831,7 +4226,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOPLA_OYNAMA",
@@ -3842,7 +4240,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Topla oynama, % metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3857,7 +4255,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOPLA_OYNAMA_DAKIKA",
@@ -3868,7 +4269,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Topla oynama, dakika metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3883,7 +4284,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TOPLA_OYNAMA_SAYI",
@@ -3894,7 +4298,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Topla oynama, sayı metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3909,7 +4313,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_TUM_HAREKETLER",
@@ -3920,7 +4327,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Tüm Hareketler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3935,7 +4342,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_UZUN_PASLAR",
@@ -3946,7 +4356,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Uzun paslar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3961,7 +4371,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_UZUN_PASLAR_ISABETLI",
@@ -3972,7 +4385,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Uzun paslar - isabetli metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -3987,7 +4400,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_UZUN_PASLAR_ISABETLI_2",
@@ -3998,7 +4414,7 @@
         "kontrol"
       ],
       "role_guess": "skill",
-      "definition_tr": "",
+      "definition_tr": "Uzun paslar - isabetli metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4013,7 +4429,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_XG",
@@ -4024,7 +4443,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "xG metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4039,7 +4458,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_XG_DONUSTURME",
@@ -4050,7 +4472,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "xG dönüştürme metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4065,7 +4487,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_XPOINTS",
@@ -4076,7 +4501,7 @@
         "deger"
       ],
       "role_guess": "reward",
-      "definition_tr": "",
+      "definition_tr": "xPoints metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4091,7 +4516,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUT",
@@ -4102,7 +4530,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şut metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4117,7 +4545,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUT_BASINA_XG",
@@ -4156,7 +4587,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla biten hücumlar - duran toplar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4171,7 +4602,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITEN_HUCUMLAR_MERKEZ",
@@ -4182,7 +4616,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla biten hücumlar - merkez metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4197,7 +4631,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITEN_KONTRA_ATAKLAR",
@@ -4236,7 +4673,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla biten sağ kanat hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4251,7 +4688,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITEN_SERBEST_VURUSLAR",
@@ -4262,7 +4702,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla biten serbest vuruşlar metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -4277,7 +4717,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITEN_SET_HUCUMLARI",
@@ -4288,7 +4731,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla biten set hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -4303,7 +4746,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITEN_SOL_KANAT_HUCUMLARI",
@@ -4314,7 +4760,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla biten sol kanat hücumları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "1_Organize_Hucum"
@@ -4329,7 +4775,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITIRILEN_KORNERLER",
@@ -4340,7 +4789,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla bitirilen kornerler metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -4355,7 +4804,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     },
     {
       "id": "SB_SUTLA_BITIRILEN_TAC_ATISLARI",
@@ -4366,7 +4818,7 @@
         "kontrol"
       ],
       "role_guess": "intent",
-      "definition_tr": "",
+      "definition_tr": "Şutla bitirilen taç atışları metriği",
       "unit_or_type": "Maç başına ortalama",
       "phase_coverage": [
         "3_DuranTop_Hucum"
@@ -4381,7 +4833,10 @@
         "DEGRADED": "definition_or_sources_missing_or_proxy",
         "UNKNOWN": "requires_event_or_tracking_mapping_not_defined_yet"
       },
-      "sources": []
+      "sources": [],
+      "definition_en": null,
+      "definition_source": "hp_motor/library/registry/inputs/canonical/hp_metric_encyclopedia_v2.json",
+      "definition_confidence": 0.9
     }
   ],
   "phases": [

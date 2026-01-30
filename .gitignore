@@ -25,3 +25,5 @@ __pycache__/
 venv/
 ENV/
 hp_motor/library/registry/inputs/
+*.bak_*.json
+hp_motor/library/registry/*.bak_*.json
