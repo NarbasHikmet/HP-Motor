@@ -1,0 +1,180 @@
+{
+  "hp_motor_version": "1.0",
+  "project": "Galatasaray analytical engine",
+  "entities": {
+    "match": {
+      "keys": [
+        "match_id",
+        "date",
+        "competition"
+      ],
+      "grain": "one row per match"
+    },
+    "team_match": {
+      "keys": [
+        "match_id",
+        "team_id"
+      ],
+      "grain": "team x match"
+    },
+    "player_match": {
+      "keys": [
+        "match_id",
+        "team_id",
+        "player_id"
+      ],
+      "grain": "player x match"
+    },
+    "event": {
+      "keys": [
+        "match_id",
+        "event_id"
+      ],
+      "grain": "event log row"
+    }
+  },
+  "ingest": {
+    "sources": [
+      {
+        "path": "30.01.2026 - Galatasaray - Match statistics.xlsx",
+        "type": "xlsx",
+        "grain_hint": "team_match",
+        "sheets": "*"
+      },
+      {
+        "path": "30.01.2026 - Galatasaray - Oyuncu İstatistikleri.xlsx",
+        "type": "xlsx",
+        "grain_hint": "player_match",
+        "sheets": "*"
+      },
+      {
+        "path": "30.01.2026 - Galatasaray - Comparison.xlsx",
+        "type": "xlsx",
+        "grain_hint": "comparison",
+        "sheets": [
+          "Comparison"
+        ]
+      },
+      {
+        "path": "Manchester City 2-0 Galatasaray 28.01.2026, Maçın Tamamı.csv",
+        "type": "csv",
+        "sep": ";",
+        "grain_hint": "event"
+      },
+      {
+        "path": "Manchester City 2-0 Galatasaray 28.01.2026, Maçın Tamamı.xml",
+        "type": "xml",
+        "grain_hint": "event_enriched"
+      }
+    ],
+    "normalization": {
+      "trim_strings": true,
+      "decimal_comma_to_dot": true,
+      "percent_to_float": true,
+      "minutes_field_candidates": [
+        "Minutes",
+        "Dakika",
+        "Oynadığı süre"
+      ],
+      "id_extraction_patterns": {
+        "player_from_code": "\\((\\d+)\\)",
+        "jersey_from_code": "^(\\d+)\\."
+      }
+    }
+  },
+  "feature_engineering": {
+    "core_transforms": [
+      "per90",
+      "share_team",
+      "diff_vs_opp",
+      "rolling5",
+      "zscore_comp",
+      "winsorize"
+    ],
+    "event_features": {
+      "sequence_windows_seconds": [
+        5,
+        10,
+        15
+      ],
+      "spatial_bins": {
+        "x_bins": 6,
+        "y_bins": 4
+      },
+      "derive": [
+        "progressive_pass_flag",
+        "final_third_entry",
+        "box_entry",
+        "shot_assist_proxy"
+      ],
+      "tempo_metrics": [
+        "events_per_min",
+        "ball_progression_speed"
+      ]
+    }
+  },
+  "correlation_engine": {
+    "methods": [
+      "spearman",
+      "pearson",
+      "kendall"
+    ],
+    "default_method": "spearman",
+    "min_samples": 12,
+    "missing_policy": "pairwise_complete",
+    "multiple_testing": {
+      "method": "benjamini_hochberg",
+      "alpha": 0.1
+    },
+    "robustness_checks": [
+      "winsorize_p5_p95",
+      "bootstrap_ci_1000"
+    ],
+    "advanced": [
+      "partial_corr_controls",
+      "lag_corr_matches"
+    ]
+  },
+  "model_layer": {
+    "targets": [
+      "goals",
+      "xG",
+      "shots",
+      "conceded_xG"
+    ],
+    "baseline_models": [
+      "ridge_regression",
+      "elastic_net"
+    ],
+    "nonlinear_models": [
+      "xgboost_optional"
+    ],
+    "interpretability": [
+      "shap_optional",
+      "partial_dependence"
+    ]
+  },
+  "reporting": {
+    "kpi_pack": [
+      "chance_creation",
+      "territory",
+      "pressing",
+      "defensive_stability",
+      "set_piece"
+    ],
+    "narrative_rules": {
+      "effect_size_threshold_r": 0.25,
+      "p_value_threshold": 0.1,
+      "avoid_spurious": [
+        "control_possession",
+        "control_game_state"
+      ]
+    },
+    "outputs": [
+      "correlation_matrix",
+      "top_drivers_table",
+      "risk_map",
+      "talking_points"
+    ]
+  }
+}
