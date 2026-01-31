@@ -60,6 +60,33 @@ echo "[OK] copied -> ~/storage/downloads/$(basename "$LATEST_ZIP")"
 echo "[OK] contents:"
 zipinfo -1 "$LATEST_ZIP" | sed -n '1,200p'
 
+echo "[5/5] verify zip contents"
+REQUIRED=(
+  "$TS/standings__normalized.csv"
+  "$TS/goal_timing__normalized.csv"
+  "$TS/passes_players_split__normalized.csv"
+  "$TS/goal_timing_team_profile.csv"
+  "$TS/passes_players_top_attempted.csv"
+  "$TS/passes_players_top_pct_min50.csv"
+  "$TS/passes_team_summary.csv"
+  "$TS/manifest.json"
+)
+
+missing=0
+for req in "${REQUIRED[@]}"; do
+  if ! zipinfo -1 "$LATEST_ZIP" | grep -qx "$req"; then
+    echo "[ERR] missing in zip: $req"
+    missing=1
+  fi
+done
+
+if [ "$missing" -ne 0 ]; then
+  echo "[ERR] zip verification failed"
+  exit 9
+fi
+echo "[OK] zip verification passed"
+
+
 echo "[5/5] verify"
 need_in_zip=(
   "standings__normalized.csv"
