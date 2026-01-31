@@ -47,3 +47,6 @@ artifacts/reports/normalized/
 # generated
 out/
 artifacts/reports/normalized/
+
+# local junk
+h
