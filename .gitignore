@@ -1,53 +1,34 @@
+# -------------------------
+# HP-MOTOR .gitignore
+# Goal: keep repo lean; avoid committing generated/heavy artifacts.
+# -------------------------
+
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
 
-# Virtualenv
-.venv/
-venv/
-
-# Local artifacts / outputs / datasets
-artifacts/
-tools/_scratch/
-
-# OS
-.DS_Store
-# python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# venv
+# Virtual environments
 .venv/
 venv/
 ENV/
-hp_motor/library/registry/inputs/
-*.bak_*.json
-hp_motor/library/registry/*.bak_*.json
-hp_motor/library/inputs/
-data/
-data/
-library/raw/
 
-# reports: keep manifests/index, avoid committing heavy pdfs
+# Pytest
+.pytest_cache/
+
+# OS/editor
+.DS_Store
+*.swp
+*.swo
+
+# Reports: keep manifests/index, avoid committing heavy PDFs
 data/reports/tournament_reports/**/*.pdf
 data/reports/_incoming/**/*.pdf
 
-# generated
+# Generated outputs
 out/
 artifacts/
 
-# generated
-out/
-artifacts/reports/normalized/
-
-# generated
-out/
-artifacts/reports/normalized/
-
-# local junk
-h
+# Local quarantine (must never be committed)
 hp_motor/library/_quarantine/
