@@ -43,3 +43,7 @@ artifacts/
 # generated
 out/
 artifacts/reports/normalized/
+
+# generated
+out/
+artifacts/reports/normalized/
