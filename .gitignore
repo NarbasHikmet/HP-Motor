@@ -54,3 +54,6 @@ __pycache__/
 out/
 *.pyc
 .pytest_cache/
+
+# local single-file data
+data.json
