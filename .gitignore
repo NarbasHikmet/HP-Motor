@@ -31,3 +31,11 @@ hp_motor/library/inputs/
 data/
 data/
 library/raw/
+
+# reports: keep manifests/index, avoid committing heavy pdfs
+data/reports/tournament_reports/**/*.pdf
+data/reports/_incoming/**/*.pdf
+
+# generated
+out/
+artifacts/
