@@ -59,3 +59,39 @@ echo "[OK] zip -> $LATEST_ZIP"
 echo "[OK] copied -> ~/storage/downloads/$(basename "$LATEST_ZIP")"
 echo "[OK] contents:"
 zipinfo -1 "$LATEST_ZIP" | sed -n '1,200p'
+
+echo "[5/5] verify"
+need_in_zip=(
+  "standings__normalized.csv"
+  "goal_timing__normalized.csv"
+  "passes_players_split__normalized.csv"
+  "goal_timing_team_profile.csv"
+  "passes_players_top_attempted.csv"
+  "passes_players_top_pct_min50.csv"
+  "passes_team_summary.csv"
+  "manifest.json"
+)
+
+missing=0
+for f in "${need_in_zip[@]}"; do
+  if ! zipinfo -1 "$LATEST_ZIP" | grep -qE "/${f}$"; then
+    echo "[ERR] missing in zip: $f"
+    missing=1
+  fi
+done
+
+# manifest sanity: schema_version + commit alanları
+if unzip -p "$LATEST_ZIP" "*/manifest.json" 2>/dev/null | grep -q '"schema_version"'    && unzip -p "$LATEST_ZIP" "*/manifest.json" 2>/dev/null | grep -q '"commit"'; then
+  echo "[OK] manifest sanity"
+else
+  echo "[ERR] manifest sanity failed"
+  missing=1
+fi
+
+if [ "$missing" -ne 0 ]; then
+  echo "[FAIL] verify failed"
+  exit 10
+fi
+
+echo "[OK] verify passed"
+
