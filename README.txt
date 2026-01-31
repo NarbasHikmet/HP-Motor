@@ -46,3 +46,31 @@ Koş:
   MATCH_PACK/out/
 
 ÖNEMLİ: Bu paket hiç bir şey silmez. rm -rf gibi komutlar içermez.
+
+========================
+REPORTS RELEASE CHECKLIST
+========================
+
+One-command release (recommended):
+  ./tools/release_reports.sh
+
+What it produces:
+  out/exports/<timestamp>.zip
+  and copies latest zip to:
+  ~/storage/downloads/
+
+Zip must include:
+  standings__normalized.csv
+  goal_timing__normalized.csv
+  passes_players_split__normalized.csv
+  goal_timing_team_profile.csv
+  passes_players_top_attempted.csv
+  passes_players_top_pct_min50.csv
+  passes_team_summary.csv
+  manifest.json
+  (optional) passes_aggregate__normalized.csv
+  (optional) passes_clean__normalized.csv
+  (optional) tables_catalog.txt
+
+Manifest:
+  out/summaries/manifest.json
