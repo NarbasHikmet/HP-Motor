@@ -32,3 +32,13 @@ artifacts/
 
 # Local quarantine (must never be committed)
 hp_motor/library/_quarantine/
+
+# -------------------------
+# Local/heavy inputs (do not commit)
+# -------------------------
+data/
+hp_motor/library/inputs/
+hp_motor/library/registry/inputs/
+tools/_scratch/
+*.bak_*.json
+hp_motor/library/registry/*.bak_*.json

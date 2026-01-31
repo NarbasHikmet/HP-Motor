@@ -1,0 +1,2896 @@
+version: 2.0.0
+metrics_count: 164
+metrics:
+  SB_0001:
+    name: Index
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Index metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Index
+  SB_0002:
+    name: Gol
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Gol metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Gol
+  SB_0003:
+    name: Pozisyonlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Pozisyonlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Pozisyonlar
+  SB_0004:
+    name: Chances successful, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Yaratılan gol pozisyonlarının gole dönüşme oranı (tanım sağlayıcıya
+      göre “big chance”/“chance” ayrımı olabilir).
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Chances_successful,_%
+  SB_0005:
+    name: Faul
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: intent
+    definition: Faul metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Faul
+  SB_0006:
+    name: Sarı Kartlar
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: risk
+    definition: Sarı Kartlar metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Sarı_Kartlar
+  SB_0007:
+    name: Kırmızı Kartlar
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: risk
+    definition: Kırmızı Kartlar metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Kırmızı_Kartlar
+  SB_0008:
+    name: Kornerler
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Kornerler metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Kornerler
+  SB_0009:
+    name: Şut
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Şut metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Şut
+  SB_0010:
+    name: İsabetli Şut
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: İsabetli Şut metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/İsabetli_Şut
+  SB_0011:
+    name: Rakip sahaya girişler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Rakip sahaya girişler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Rakip_sahaya_girişler
+  SB_0012:
+    name: Top kayıpları
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: risk
+    definition: Top kayıpları metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Top_kayıpları
+  SB_0013:
+    name: Top kayıpları / kendi yarı sahasında
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: risk
+    definition: Top kayıpları / kendi yarı sahasında metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Top_kayıpları_/_kendi_yarı_sahasında
+  SB_0014:
+    name: Goal kicks
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Goal kicks metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks
+  SB_0015:
+    name: Goal kicks accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_accurate
+  SB_0016:
+    name: Goal kicks accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_accurate,_%
+  SB_0017:
+    name: Paslar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Paslar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Paslar
+  SB_0018:
+    name: Paslar adresi bulanlar, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Paslar adresi bulanlar, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Paslar_adresi_bulanlar,_%
+  SB_0019:
+    name: Kilit Pas
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Şuta/çok net fırsata giden son pas (key pass). Sağlayıcı tanımına
+      göre “şuta direkt giden pas” veya “bariz gol fırsatı yaratan pas”.
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Kilit_Pas
+  SB_0020:
+    name: Key passes accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: 'Key pass’in (kilit pas) isabetli olanları: sonraki dokunuş takım
+      arkadaşı tarafından gerçekleşen kilit pas.'
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Key_passes_accurate
+  SB_0021:
+    name: Key passes accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Key passes accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Key_passes_accurate,_%
+  SB_0022:
+    name: Orta
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Orta metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Orta
+  SB_0023:
+    name: İsabetli ortalar, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: İsabetli ortalar, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/İsabetli_ortalar,_%
+  SB_0024:
+    name: Progressive passes
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Rakip kaleye anlamlı biçimde yaklaşmayı hedefleyen ileri/ilerletici
+      pas sayısı (kriter sağlayan pas).
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Progressive_passes
+  SB_0025:
+    name: Progressive passes accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Progressive passes accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Progressive_passes_accurate,_%
+  SB_0026:
+    name: Progressive open passes
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Set-piece hariç (open play) oynanan progresif paslar. Progressive
+      pass kriteri + open play filtresi.
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Progressive_open_passes
+  SB_0027:
+    name: Uzun paslar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Uzun paslar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Uzun_paslar
+  SB_0028:
+    name: Uzun paslar, isabetli, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Uzun paslar, isabetli, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Uzun_paslar,_isabetli,_%
+  SB_0029:
+    name: Super long passes
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Super long passes metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Super_long_passes
+  SB_0030:
+    name: Super long passes accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Super long passes accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Super_long_passes_accurate,_%
+  SB_0031:
+    name: Ceza sahasına orta
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Ceza sahasına orta metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Ceza_sahasına_orta
+  SB_0032:
+    name: Passes into the penalty box accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Passes into the penalty box accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Passes_into_the_penalty_box_accurate,_%
+  SB_0033:
+    name: İkili mücadeleler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: İkili mücadeleler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/İkili_mücadeleler
+  SB_0034:
+    name: Başarılı ikili mücadele %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Başarılı ikili mücadele % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_ikili_mücadele_%
+  SB_0035:
+    name: Savunmada ikili mücadeleler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Savunmada ikili mücadeleler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Savunmada_ikili_mücadeleler
+  SB_0036:
+    name: Savunmada kazanılan ikili mücadele, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Savunmada kazanılan ikili mücadele, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Savunmada_kazanılan_ikili_mücadele,_%
+  SB_0037:
+    name: Hücumda ikili mücadeleler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Hücumda ikili mücadeleler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Hücumda_ikili_mücadeleler
+  SB_0038:
+    name: Hücumda başarılı ikili mücadele, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Hücumda başarılı ikili mücadele, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Hücumda_başarılı_ikili_mücadele,_%
+  SB_0039:
+    name: Havada Hamleler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Havada Hamleler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Havada_Hamleler
+  SB_0040:
+    name: Başarılı hava topu mücadelesi, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Başarılı hava topu mücadelesi, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_hava_topu_mücadelesi,_%
+  SB_0041:
+    name: Driplingler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Driplingler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Driplingler
+  SB_0042:
+    name: Başarılı driplingleri, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Başarılı driplingleri, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_driplingleri,_%
+  SB_0043:
+    name: Dribbling in the final third
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Dribbling in the final third metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Dribbling_in_the_final_third
+  SB_0044:
+    name: Dribbling in the final third successful, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Dribbling in the final third successful, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Dribbling_in_the_final_third_successful,_%
+  SB_0045:
+    name: Top Kapma
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: success
+    definition: Top Kapma metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Top_Kapma
+  SB_0046:
+    name: Başarılı Top Kapma, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Başarılı Top Kapma, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_Top_Kapma,_%
+  SB_0047:
+    name: Takım presi
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Takım presi metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Takım_presi
+  SB_0048:
+    name: Team pressing successful, %
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: skill
+    definition: Team pressing successful, % metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Team_pressing_successful,_%
+  SB_0049:
+    name: Topla oynama, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Topla oynama, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Topla_oynama,_%
+  SB_0050:
+    name: Own goals
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Own goals metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Own_goals
+  SB_0051:
+    name: Gol pozisyonları, başarılı
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Gol pozisyonları, başarılı metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Gol_pozisyonları,_başarılı
+  SB_0052:
+    name: Shots on target, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Shots on target, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Shots_on_target,_%
+  SB_0053:
+    name: İsabetsiz Şutlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: İsabetsiz Şutlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/İsabetsiz_Şutlar
+  SB_0054:
+    name: Engellenen Şutlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Engellenen Şutlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Engellenen_Şutlar
+  SB_0055:
+    name: Direkten dönen şutlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Direkten dönen şutlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Direkten_dönen_şutlar
+  SB_0056:
+    name: Tüm Hareketler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Tüm Hareketler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Tüm_Hareketler
+  SB_0057:
+    name: Actions successful
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Actions successful metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Actions_successful
+  SB_0058:
+    name: Actions successful, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Actions successful, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Actions_successful,_%
+  SB_0059:
+    name: Rakip ceza sahasında hareketler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Rakip ceza sahasında hareketler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Rakip_ceza_sahasında_hareketler
+  SB_0060:
+    name: Actions in opponent box successful
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Actions in opponent box successful metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Actions_in_opponent_box_successful
+  SB_0061:
+    name: Actions in opponent box successful, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Actions in opponent box successful, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Actions_in_opponent_box_successful,_%
+  SB_0062:
+    name: Final third entries
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Hücumun rakip kaleye yaklaşırken son üçlü bölgeye hangi koridorlardan
+      giriş yaptığını gösteren giriş sayısı (pas/taşıma dahil olabilir, sağlayıcıya
+      göre değişir).
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Final_third_entries
+  SB_0063:
+    name: Final third entries through pass
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Final third entries through pass metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Final_third_entries_through_pass
+  SB_0064:
+    name: Final third entries through pass, % of total
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Final third entries through pass, % of total metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Final_third_entries_through_pass,_%_of_total
+  SB_0065:
+    name: Final third entries through carry
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Final third entries through carry metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Final_third_entries_through_carry
+  SB_0066:
+    name: Final third entries through carry, % of total
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Final third entries through carry, % of total metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Final_third_entries_through_carry,_%_of_total
+  SB_0067:
+    name: Lost balls after passes
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Lost balls after passes metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Lost_balls_after_passes
+  SB_0068:
+    name: Bireysel top kayıpları
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: risk
+    definition: Bireysel top kayıpları metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Bireysel_top_kayıpları
+  SB_0069:
+    name: Challenges unsuccessful
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Challenges unsuccessful metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Challenges_unsuccessful
+  SB_0070:
+    name: Dribbles unsuccessful
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Dribbles unsuccessful metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Dribbles_unsuccessful
+  SB_0071:
+    name: Rakip ceza sahasına girişler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Rakip ceza sahasına girişler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Rakip_ceza_sahasına_girişler
+  SB_0072:
+    name: Kötü top kontrolü
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Kötü top kontrolü metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Kötü_top_kontrolü
+  SB_0073:
+    name: Ofsaytlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Ofsaytlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Ofsaytlar
+  SB_0074:
+    name: Ball recoveries
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: success
+    definition: Ball recoveries metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Ball_recoveries
+  SB_0075:
+    name: Rakip sahada geri kazanılan toplar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: success
+    definition: Topun rakip yarı sahasında geri kazanıldığı (yüksek kazanım) aksiyon
+      sayısı; presin ‘ödül’ kısmı.
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Rakip_sahada_geri_kazanılan_toplar
+  SB_0076:
+    name: Ball recoveries after losses within 10 seconds
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: success
+    definition: Ball recoveries after losses within 10 seconds metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Ball_recoveries_after_losses_within_10_seconds
+  SB_0077:
+    name: Ball recoveries after losses within 10 seconds in the opponent's half of
+      the field
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: success
+    definition: Ball recoveries after losses within 10 seconds in the opponent's half
+      of the field metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Ball_recoveries_after_losses_within_10_seconds_in_the_opponent's_half_of_the_field
+  SB_0078:
+    name: Ball recoveries after losses within 5 seconds
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: success
+    definition: Top kaybından sonra 5 saniye içinde topu geri kazanma (counterpressing
+      recovery mantığı).
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Ball_recoveries_after_losses_within_5_seconds
+  SB_0079:
+    name: Ball recoveries after losses within 5 seconds in the opponent's half of
+      the field
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: success
+    definition: Ball recoveries after losses within 5 seconds in the opponent's half
+      of the field metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Ball_recoveries_after_losses_within_5_seconds_in_the_opponent's_half_of_the_field
+  SB_0080:
+    name: Geri kazanılan toplarda kaleye ortalama mesafe
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: success
+    definition: Geri kazanılan toplarda kaleye ortalama mesafe metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Geri_kazanılan_toplarda_kaleye_ortalama_mesafe
+  SB_0081:
+    name: Top kayıplarında kaleye ortalama mesafe
+    unit: Maç başına ortalama
+    phase: 5_Savunma_Gecisi
+    role: risk
+    definition: Top kayıplarında kaleye ortalama mesafe metriği
+    ontology:
+      modules:
+      - counterpressing
+      - recovery_runs
+      - transition_defense
+      charts:
+      - recovery_timeline
+      - counterpress_success
+      - loss_location
+    api: /api/v1/metrics/Top_kayıplarında_kaleye_ortalama_mesafe
+  SB_0082:
+    name: Paslar adresi bulanlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Paslar adresi bulanlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Paslar_adresi_bulanlar
+  SB_0083:
+    name: Crosses accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Crosses accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Crosses_accurate
+  SB_0084:
+    name: Progressive passes accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Progressive passes accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Progressive_passes_accurate
+  SB_0085:
+    name: Uzun paslar - isabetli
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Uzun paslar - isabetli metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Uzun_paslar_-_isabetli
+  SB_0086:
+    name: Super long passes accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Super long passes accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Super_long_passes_accurate
+  SB_0087:
+    name: İleriye pas
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: İleriye pas metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/İleriye_pas
+  SB_0088:
+    name: Passes forward accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Passes forward accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Passes_forward_accurate
+  SB_0089:
+    name: Passes forward accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Passes forward accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Passes_forward_accurate,_%
+  SB_0090:
+    name: Ceza sahasına / İsabetli
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Ceza sahasına / İsabetli metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Ceza_sahasına_/_İsabetli
+  SB_0091:
+    name: Passes from throw-ins
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Passes from throw-ins metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Passes_from_throw-ins
+  SB_0092:
+    name: Challenges won
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Challenges won metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Challenges_won
+  SB_0093:
+    name: Savunmada başarılı ikili mücadeleler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Savunmada başarılı ikili mücadeleler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Savunmada_başarılı_ikili_mücadeleler
+  SB_0094:
+    name: Hücumda ikili mücadele / Başarılı
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Hücumda ikili mücadele / Başarılı metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Hücumda_ikili_mücadele_/_Başarılı
+  SB_0095:
+    name: Başarılı hava topu mücadeleleri
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Başarılı hava topu mücadeleleri metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_hava_topu_mücadeleleri
+  SB_0096:
+    name: Başarılı driplingler
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Başarılı driplingler metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_driplingler
+  SB_0097:
+    name: Dribbling in the final third successful
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Dribbling in the final third successful metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Dribbling_in_the_final_third_successful
+  SB_0098:
+    name: Başarılı Top Kapma
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: success
+    definition: Başarılı Top Kapma metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_Top_Kapma
+  SB_0099:
+    name: Pas Arası
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Pas Arası metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Pas_Arası
+  SB_0100:
+    name: Sahipsiz top kapma
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: success
+    definition: Sahipsiz top kapma metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Sahipsiz_top_kapma
+  SB_0101:
+    name: xG
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: xG metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/xG
+  SB_0102:
+    name: OxG
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: OxG metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/OxG
+  SB_0103:
+    name: NxG
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: NxG metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/NxG
+  SB_0104:
+    name: xPoints
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: xPoints metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/xPoints
+  SB_0105:
+    name: xG dönüştürme
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: xG dönüştürme metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/xG_dönüştürme
+  SB_0106:
+    name: Şut başına xG
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: 'Şut başına üretilen beklenen gol: şut kalitesinin pratik göstergesi
+      (xG / Shot).'
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Şut_başına_xG
+  SB_0107:
+    name: OxGPS
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: OxGPS metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/OxGPS
+  SB_0108:
+    name: Gol başına xG
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Gol başına xG metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Gol_başına_xG
+  SB_0109:
+    name: OxGPG
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: OxGPG metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/OxGPG
+  SB_0110:
+    name: Başarılı takım presi
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Başarılı takım presi metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Başarılı_takım_presi
+  SB_0111:
+    name: PPDA
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: success
+    definition: Rakibe (genelde rakibin final 60%’ında) kaç pas yaptırdığını, bir
+      savunma aksiyonu (tackle/interception/foul vb.) başına ölçer. Düşük PPDA = daha
+      yoğun pres.
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/PPDA
+  SB_0112:
+    name: Build up
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Build up metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Build_up
+  SB_0113:
+    name: No pressing
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: success
+    definition: No pressing metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/No_pressing
+  SB_0114:
+    name: High pressing
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: success
+    definition: High pressing metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/High_pressing
+  SB_0115:
+    name: High pressing successful
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: success
+    definition: High pressing successful metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/High_pressing_successful
+  SB_0116:
+    name: High pressing successful, %
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: skill
+    definition: High pressing successful, % metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/High_pressing_successful,_%
+  SB_0117:
+    name: Low pressing
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: success
+    definition: Low pressing metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Low_pressing
+  SB_0118:
+    name: Low pressing successful
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: success
+    definition: Low pressing successful metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Low_pressing_successful
+  SB_0119:
+    name: Low pressing successful, %
+    unit: Maç başına ortalama
+    phase: 4_Organize_Savunma
+    role: skill
+    definition: Low pressing successful, % metriği
+    ontology:
+      modules:
+      - defensive_block
+      - pressing_triggers
+      - compactness
+      charts:
+      - defensive_line
+      - press_map
+      - block_stability
+    api: /api/v1/metrics/Low_pressing_successful,_%
+  SB_0120:
+    name: Topla oynama, dakika
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Topla oynama, dakika metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Topla_oynama,_dakika
+  SB_0121:
+    name: Topla oynama, sayı
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Topla oynama, sayı metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Topla_oynama,_sayı
+  SB_0122:
+    name: Ortalama topla oynama süresi
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Ortalama topla oynama süresi metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Ortalama_topla_oynama_süresi
+  SB_0123:
+    name: Sol kanat hücumlarının tamamı
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Sol kanat hücumlarının tamamı metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Sol_kanat_hücumlarının_tamamı
+  SB_0124:
+    name: Şutla biten sol kanat hücumları
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Şutla biten sol kanat hücumları metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Şutla_biten_sol_kanat_hücumları
+  SB_0125:
+    name: Left flank attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Left flank attacks with shots, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Left_flank_attacks_with_shots,_%
+  SB_0126:
+    name: Merkezden hücumlar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Merkezden hücumlar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Merkezden_hücumlar
+  SB_0127:
+    name: Şutla biten hücumlar - merkez
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Şutla biten hücumlar - merkez metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Şutla_biten_hücumlar_-_merkez
+  SB_0128:
+    name: Attacks through the center with shots, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Attacks through the center with shots, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Attacks_through_the_center_with_shots,_%
+  SB_0129:
+    name: Sağ kanat hücumları
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Sağ kanat hücumları metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Sağ_kanat_hücumları
+  SB_0130:
+    name: Şutla biten sağ kanat hücumları
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Şutla biten sağ kanat hücumları metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Şutla_biten_sağ_kanat_hücumları
+  SB_0131:
+    name: Right flank attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Right flank attacks with shots, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Right_flank_attacks_with_shots,_%
+  SB_0132:
+    name: Set Hücumları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Set Hücumları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Set_Hücumları
+  SB_0133:
+    name: Şutla biten set hücumları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Şutla biten set hücumları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Şutla_biten_set_hücumları
+  SB_0134:
+    name: Positional attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Positional attacks with shots, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Positional_attacks_with_shots,_%
+  SB_0135:
+    name: Kontra Ataklar
+    unit: Maç başına ortalama
+    phase: 2_Hucum_Gecisi
+    role: intent
+    definition: Top kazanımından sonra hızlı hücum girişimleri (tanım sağlayıcıya
+      göre süre/şart içerir).
+    ontology:
+      modules:
+      - transition_speed
+      - counter_attack
+      - recovery_positioning
+      charts:
+      - transition_timeline
+      - counter_paths
+      - speed_heatmap
+    api: /api/v1/metrics/Kontra_Ataklar
+  SB_0136:
+    name: Şutla biten kontra ataklar
+    unit: Maç başına ortalama
+    phase: 2_Hucum_Gecisi
+    role: intent
+    definition: Kontra atakların şutla sonuçlanan kısmı.
+    ontology:
+      modules:
+      - transition_speed
+      - counter_attack
+      - recovery_positioning
+      charts:
+      - transition_timeline
+      - counter_paths
+      - speed_heatmap
+    api: /api/v1/metrics/Şutla_biten_kontra_ataklar
+  SB_0137:
+    name: Counter-attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 2_Hucum_Gecisi
+    role: skill
+    definition: Counter-attacks with shots, % metriği
+    ontology:
+      modules:
+      - transition_speed
+      - counter_attack
+      - recovery_positioning
+      charts:
+      - transition_timeline
+      - counter_paths
+      - speed_heatmap
+    api: /api/v1/metrics/Counter-attacks_with_shots,_%
+  SB_0138:
+    name: Duran Top Hücumları
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Duran Top Hücumları metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Duran_Top_Hücumları
+  SB_0139:
+    name: Şutla biten hücumlar - duran toplar
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Şutla biten hücumlar - duran toplar metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Şutla_biten_hücumlar_-_duran_toplar
+  SB_0140:
+    name: Set-piece attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: skill
+    definition: Set-piece attacks with shots, % metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Set-piece_attacks_with_shots,_%
+  SB_0141:
+    name: Serbest Vuruş hücumları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Serbest Vuruş hücumları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Serbest_Vuruş_hücumları
+  SB_0142:
+    name: Şutla biten serbest vuruşlar
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Şutla biten serbest vuruşlar metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Şutla_biten_serbest_vuruşlar
+  SB_0143:
+    name: Free-kick attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Free-kick attacks with shots, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Free-kick_attacks_with_shots,_%
+  SB_0144:
+    name: Korner Hücumları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Korner Hücumları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Korner_Hücumları
+  SB_0145:
+    name: Şutla bitirilen kornerler
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Şutla bitirilen kornerler metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Şutla_bitirilen_kornerler
+  SB_0146:
+    name: Corner attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: skill
+    definition: Corner attacks with shots, % metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Corner_attacks_with_shots,_%
+  SB_0147:
+    name: Taç atışları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Taç atışları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Taç_atışları
+  SB_0148:
+    name: Şutla bitirilen taç atışları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Şutla bitirilen taç atışları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Şutla_bitirilen_taç_atışları
+  SB_0149:
+    name: Throw-in attacks with shots, %
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: skill
+    definition: Throw-in attacks with shots, % metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Throw-in_attacks_with_shots,_%
+  SB_0150:
+    name: Serbest Vuruş Şutları
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: intent
+    definition: Serbest Vuruş Şutları metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Serbest_Vuruş_Şutları
+  SB_0151:
+    name: Goller - Serbest vuruş hücumu
+    unit: Maç başına ortalama
+    phase: 3_DuranTop_Hucum
+    role: reward
+    definition: Goller - Serbest vuruş hücumu metriği
+    ontology:
+      modules:
+      - set_piece_delivery
+      - aerial_dominance
+      - routine_execution
+      charts:
+      - corner_zones
+      - free_kick_map
+      - delivery_angles
+    api: /api/v1/metrics/Goller_-_Serbest_vuruş_hücumu
+  SB_0152:
+    name: Free-kick opponent's goals, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Free-kick opponent's goals, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Free-kick_opponent's_goals,_%
+  SB_0153:
+    name: Penaltı
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Penaltı metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Penaltı
+  SB_0154:
+    name: Penaltı golleri
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Penaltı golleri metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Penaltı_golleri
+  SB_0155:
+    name: Penaltı golleri, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: reward
+    definition: Penaltı golleri, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Penaltı_golleri,_%
+  SB_0156:
+    name: Goal kicks short (<15 m.)
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Goal kicks short (<15 m.) metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_short_(<15_m.)
+  SB_0157:
+    name: Goal kicks short (<15 m.) accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks short (<15 m.) accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_short_(<15_m.)_accurate
+  SB_0158:
+    name: Goal kicks short (<15 m.) accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks short (<15 m.) accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_short_(<15_m.)_accurate,_%
+  SB_0159:
+    name: Goal kicks medium (15-40 m.)
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Goal kicks medium (15-40 m.) metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_medium_(15-40_m.)
+  SB_0160:
+    name: Goal kicks medium (15-40 m.) accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks medium (15-40 m.) accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_medium_(15-40_m.)_accurate
+  SB_0161:
+    name: Goal kicks medium (15-40 m.) accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks medium (15-40 m.) accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_medium_(15-40_m.)_accurate,_%
+  SB_0162:
+    name: Goal kicks long (40+ m.)
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: intent
+    definition: Goal kicks long (40+ m.) metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_long_(40+_m.)
+  SB_0163:
+    name: Goal kicks long (40+ m.) accurate
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks long (40+ m.) accurate metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_long_(40+_m.)_accurate
+  SB_0164:
+    name: Goal kicks long (40+ m.) accurate, %
+    unit: Maç başına ortalama
+    phase: 1_Organize_Hucum
+    role: skill
+    definition: Goal kicks long (40+ m.) accurate, % metriği
+    ontology:
+      modules:
+      - build_up
+      - progression
+      - chance_creation
+      - finishing
+      charts:
+      - pass_network
+      - progressive_actions
+      - shot_map
+      - xG_flow
+    api: /api/v1/metrics/Goal_kicks_long_(40+_m.)_accurate,_%

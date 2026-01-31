@@ -1,0 +1,3083 @@
+metadata:
+  generated_from: hp_metric_encyclopedia_v2.0.0
+  generated_on: '2026-01-30'
+  total_metrics: 164
+  notes: 'HP Motor Metric Registry (config-friendly). Alanlar: faz/rol/registry modules/trigger
+    AUs/önerilen grafikler.'
+metrics:
+- id: SB_0001
+  name: Index
+  name_tr: Index
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 0
+  - 1
+  - 2
+  - 4
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Index
+- id: SB_0002
+  name: Gol
+  name_tr: Gol
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 3
+  - 5
+  - 8
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Gol
+- id: SB_0003
+  name: Pozisyonlar
+  name_tr: Pozisyonlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 2
+  - 3
+  - 5
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Pozisyonlar
+- id: SB_0004
+  name: Chances successful, %
+  name_tr: Chances successful, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Chances_successful,_%
+- id: SB_0005
+  name: Faul
+  name_tr: Faul
+  phase_id: 4_Organize_Savunma
+  role: intent
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Faul
+- id: SB_0006
+  name: Sarı Kartlar
+  name_tr: Sarı Kartlar
+  phase_id: 4_Organize_Savunma
+  role: risk
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Sarı_Kartlar
+- id: SB_0007
+  name: Kırmızı Kartlar
+  name_tr: Kırmızı Kartlar
+  phase_id: 4_Organize_Savunma
+  role: risk
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Kırmızı_Kartlar
+- id: SB_0008
+  name: Kornerler
+  name_tr: Kornerler
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Kornerler
+- id: SB_0009
+  name: Şut
+  name_tr: Şut
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şut
+- id: SB_0010
+  name: İsabetli Şut
+  name_tr: İsabetli Şut
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/İsabetli_Şut
+- id: SB_0011
+  name: Rakip sahaya girişler
+  name_tr: Rakip sahaya girişler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Rakip_sahaya_girişler
+- id: SB_0012
+  name: Top kayıpları
+  name_tr: Top kayıpları
+  phase_id: 5_Savunma_Gecisi
+  role: risk
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Top_kayıpları
+- id: SB_0013
+  name: Top kayıpları / kendi yarı sahasında
+  name_tr: Top kayıpları / kendi yarı sahasında
+  phase_id: 5_Savunma_Gecisi
+  role: risk
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Top_kayıpları_/_kendi_yarı_sahasında
+- id: SB_0014
+  name: Goal kicks
+  name_tr: Goal kicks
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks
+- id: SB_0015
+  name: Goal kicks accurate
+  name_tr: Goal kicks accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_accurate
+- id: SB_0016
+  name: Goal kicks accurate, %
+  name_tr: Goal kicks accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_accurate,_%
+- id: SB_0017
+  name: Paslar
+  name_tr: Paslar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Paslar
+- id: SB_0018
+  name: Paslar adresi bulanlar, %
+  name_tr: Paslar adresi bulanlar, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 1
+  - 4
+  - 10
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Paslar_adresi_bulanlar,_%
+- id: SB_0019
+  name: Kilit Pas
+  name_tr: Kilit Pas
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 2
+  - 3
+  - 6
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Kilit_Pas
+- id: SB_0020
+  name: Key passes accurate
+  name_tr: Key passes accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Key_passes_accurate
+- id: SB_0021
+  name: Key passes accurate, %
+  name_tr: Key passes accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Key_passes_accurate,_%
+- id: SB_0022
+  name: Orta
+  name_tr: Orta
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Orta
+- id: SB_0023
+  name: İsabetli ortalar, %
+  name_tr: İsabetli ortalar, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/İsabetli_ortalar,_%
+- id: SB_0024
+  name: Progressive passes
+  name_tr: Progressive passes
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 1
+  - 2
+  - 7
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Progressive_passes
+- id: SB_0025
+  name: Progressive passes accurate, %
+  name_tr: Progressive passes accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Progressive_passes_accurate,_%
+- id: SB_0026
+  name: Progressive open passes
+  name_tr: Progressive open passes
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Progressive_open_passes
+- id: SB_0027
+  name: Uzun paslar
+  name_tr: Uzun paslar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Uzun_paslar
+- id: SB_0028
+  name: Uzun paslar, isabetli, %
+  name_tr: Uzun paslar, isabetli, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Uzun_paslar,_isabetli,_%
+- id: SB_0029
+  name: Super long passes
+  name_tr: Super long passes
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Super_long_passes
+- id: SB_0030
+  name: Super long passes accurate, %
+  name_tr: Super long passes accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Super_long_passes_accurate,_%
+- id: SB_0031
+  name: Ceza sahasına orta
+  name_tr: Ceza sahasına orta
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ceza_sahasına_orta
+- id: SB_0032
+  name: Passes into the penalty box accurate, %
+  name_tr: Passes into the penalty box accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Passes_into_the_penalty_box_accurate,_%
+- id: SB_0033
+  name: İkili mücadeleler
+  name_tr: İkili mücadeleler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 4
+  - 9
+  - 11
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/İkili_mücadeleler
+- id: SB_0034
+  name: Başarılı ikili mücadele %
+  name_tr: Başarılı ikili mücadele %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_ikili_mücadele_%
+- id: SB_0035
+  name: Savunmada ikili mücadeleler
+  name_tr: Savunmada ikili mücadeleler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Savunmada_ikili_mücadeleler
+- id: SB_0036
+  name: Savunmada kazanılan ikili mücadele, %
+  name_tr: Savunmada kazanılan ikili mücadele, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Savunmada_kazanılan_ikili_mücadele,_%
+- id: SB_0037
+  name: Hücumda ikili mücadeleler
+  name_tr: Hücumda ikili mücadeleler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Hücumda_ikili_mücadeleler
+- id: SB_0038
+  name: Hücumda başarılı ikili mücadele, %
+  name_tr: Hücumda başarılı ikili mücadele, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Hücumda_başarılı_ikili_mücadele,_%
+- id: SB_0039
+  name: Havada Hamleler
+  name_tr: Havada Hamleler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Havada_Hamleler
+- id: SB_0040
+  name: Başarılı hava topu mücadelesi, %
+  name_tr: Başarılı hava topu mücadelesi, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_hava_topu_mücadelesi,_%
+- id: SB_0041
+  name: Driplingler
+  name_tr: Driplingler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Driplingler
+- id: SB_0042
+  name: Başarılı driplingleri, %
+  name_tr: Başarılı driplingleri, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_driplingleri,_%
+- id: SB_0043
+  name: Dribbling in the final third
+  name_tr: Dribbling in the final third
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Dribbling_in_the_final_third
+- id: SB_0044
+  name: Dribbling in the final third successful, %
+  name_tr: Dribbling in the final third successful, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Dribbling_in_the_final_third_successful,_%
+- id: SB_0045
+  name: Top Kapma
+  name_tr: Top Kapma
+  phase_id: 1_Organize_Hucum
+  role: success
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Top_Kapma
+- id: SB_0046
+  name: Başarılı Top Kapma, %
+  name_tr: Başarılı Top Kapma, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_Top_Kapma,_%
+- id: SB_0047
+  name: Takım presi
+  name_tr: Takım presi
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Takım_presi
+- id: SB_0048
+  name: Team pressing successful, %
+  name_tr: Team pressing successful, %
+  phase_id: 4_Organize_Savunma
+  role: skill
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Team_pressing_successful,_%
+- id: SB_0049
+  name: Topla oynama, %
+  name_tr: Topla oynama, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 0
+  - 1
+  - 4
+  - 8
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Topla_oynama,_%
+- id: SB_0050
+  name: Own goals
+  name_tr: Own goals
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Own_goals
+- id: SB_0051
+  name: Gol pozisyonları, başarılı
+  name_tr: Gol pozisyonları, başarılı
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Gol_pozisyonları,_başarılı
+- id: SB_0052
+  name: Shots on target, %
+  name_tr: Shots on target, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Shots_on_target,_%
+- id: SB_0053
+  name: İsabetsiz Şutlar
+  name_tr: İsabetsiz Şutlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/İsabetsiz_Şutlar
+- id: SB_0054
+  name: Engellenen Şutlar
+  name_tr: Engellenen Şutlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Engellenen_Şutlar
+- id: SB_0055
+  name: Direkten dönen şutlar
+  name_tr: Direkten dönen şutlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Direkten_dönen_şutlar
+- id: SB_0056
+  name: Tüm Hareketler
+  name_tr: Tüm Hareketler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Tüm_Hareketler
+- id: SB_0057
+  name: Actions successful
+  name_tr: Actions successful
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Actions_successful
+- id: SB_0058
+  name: Actions successful, %
+  name_tr: Actions successful, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Actions_successful,_%
+- id: SB_0059
+  name: Rakip ceza sahasında hareketler
+  name_tr: Rakip ceza sahasında hareketler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Rakip_ceza_sahasında_hareketler
+- id: SB_0060
+  name: Actions in opponent box successful
+  name_tr: Actions in opponent box successful
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Actions_in_opponent_box_successful
+- id: SB_0061
+  name: Actions in opponent box successful, %
+  name_tr: Actions in opponent box successful, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Actions_in_opponent_box_successful,_%
+- id: SB_0062
+  name: Final third entries
+  name_tr: Final third entries
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 2
+  - 3
+  - 7
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Final_third_entries
+- id: SB_0063
+  name: Final third entries through pass
+  name_tr: Final third entries through pass
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Final_third_entries_through_pass
+- id: SB_0064
+  name: Final third entries through pass, % of total
+  name_tr: Final third entries through pass, % of total
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Final_third_entries_through_pass,_%_of_total
+- id: SB_0065
+  name: Final third entries through carry
+  name_tr: Final third entries through carry
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Final_third_entries_through_carry
+- id: SB_0066
+  name: Final third entries through carry, % of total
+  name_tr: Final third entries through carry, % of total
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Final_third_entries_through_carry,_%_of_total
+- id: SB_0067
+  name: Lost balls after passes
+  name_tr: Lost balls after passes
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Lost_balls_after_passes
+- id: SB_0068
+  name: Bireysel top kayıpları
+  name_tr: Bireysel top kayıpları
+  phase_id: 5_Savunma_Gecisi
+  role: risk
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Bireysel_top_kayıpları
+- id: SB_0069
+  name: Challenges unsuccessful
+  name_tr: Challenges unsuccessful
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Challenges_unsuccessful
+- id: SB_0070
+  name: Dribbles unsuccessful
+  name_tr: Dribbles unsuccessful
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Dribbles_unsuccessful
+- id: SB_0071
+  name: Rakip ceza sahasına girişler
+  name_tr: Rakip ceza sahasına girişler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Rakip_ceza_sahasına_girişler
+- id: SB_0072
+  name: Kötü top kontrolü
+  name_tr: Kötü top kontrolü
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Kötü_top_kontrolü
+- id: SB_0073
+  name: Ofsaytlar
+  name_tr: Ofsaytlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ofsaytlar
+- id: SB_0074
+  name: Ball recoveries
+  name_tr: Ball recoveries
+  phase_id: 1_Organize_Hucum
+  role: success
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis:
+  - 4
+  - 5
+  - 9
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ball_recoveries
+- id: SB_0075
+  name: Rakip sahada geri kazanılan toplar
+  name_tr: Rakip sahada geri kazanılan toplar
+  phase_id: 1_Organize_Hucum
+  role: success
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Rakip_sahada_geri_kazanılan_toplar
+- id: SB_0076
+  name: Ball recoveries after losses within 10 seconds
+  name_tr: Ball recoveries after losses within 10 seconds
+  phase_id: 5_Savunma_Gecisi
+  role: success
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ball_recoveries_after_losses_within_10_seconds
+- id: SB_0077
+  name: Ball recoveries after losses within 10 seconds in the opponent's half of the
+    field
+  name_tr: Ball recoveries after losses within 10 seconds in the opponent's half of
+    the field
+  phase_id: 5_Savunma_Gecisi
+  role: success
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ball_recoveries_after_losses_within_10_seconds_in_the_opponent's_half_of_the_field
+- id: SB_0078
+  name: Ball recoveries after losses within 5 seconds
+  name_tr: Ball recoveries after losses within 5 seconds
+  phase_id: 5_Savunma_Gecisi
+  role: success
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ball_recoveries_after_losses_within_5_seconds
+- id: SB_0079
+  name: Ball recoveries after losses within 5 seconds in the opponent's half of the
+    field
+  name_tr: Ball recoveries after losses within 5 seconds in the opponent's half of
+    the field
+  phase_id: 5_Savunma_Gecisi
+  role: success
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ball_recoveries_after_losses_within_5_seconds_in_the_opponent's_half_of_the_field
+- id: SB_0080
+  name: Geri kazanılan toplarda kaleye ortalama mesafe
+  name_tr: Geri kazanılan toplarda kaleye ortalama mesafe
+  phase_id: 1_Organize_Hucum
+  role: success
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Geri_kazanılan_toplarda_kaleye_ortalama_mesafe
+- id: SB_0081
+  name: Top kayıplarında kaleye ortalama mesafe
+  name_tr: Top kayıplarında kaleye ortalama mesafe
+  phase_id: 5_Savunma_Gecisi
+  role: risk
+  hp_phase: 5_Savunma_Gecisi
+  registry_modules:
+  - counterpressing
+  - recovery_runs
+  - transition_defense
+  triggers_analysis: []
+  recommended_charts:
+  - recovery_timeline
+  - counterpress_success
+  - loss_location
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Top_kayıplarında_kaleye_ortalama_mesafe
+- id: SB_0082
+  name: Paslar adresi bulanlar
+  name_tr: Paslar adresi bulanlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Paslar_adresi_bulanlar
+- id: SB_0083
+  name: Crosses accurate
+  name_tr: Crosses accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Crosses_accurate
+- id: SB_0084
+  name: Progressive passes accurate
+  name_tr: Progressive passes accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Progressive_passes_accurate
+- id: SB_0085
+  name: Uzun paslar - isabetli
+  name_tr: Uzun paslar - isabetli
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Uzun_paslar_-_isabetli
+- id: SB_0086
+  name: Super long passes accurate
+  name_tr: Super long passes accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Super_long_passes_accurate
+- id: SB_0087
+  name: İleriye pas
+  name_tr: İleriye pas
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/İleriye_pas
+- id: SB_0088
+  name: Passes forward accurate
+  name_tr: Passes forward accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Passes_forward_accurate
+- id: SB_0089
+  name: Passes forward accurate, %
+  name_tr: Passes forward accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Passes_forward_accurate,_%
+- id: SB_0090
+  name: Ceza sahasına / İsabetli
+  name_tr: Ceza sahasına / İsabetli
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ceza_sahasına_/_İsabetli
+- id: SB_0091
+  name: Passes from throw-ins
+  name_tr: Passes from throw-ins
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Passes_from_throw-ins
+- id: SB_0092
+  name: Challenges won
+  name_tr: Challenges won
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Challenges_won
+- id: SB_0093
+  name: Savunmada başarılı ikili mücadeleler
+  name_tr: Savunmada başarılı ikili mücadeleler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Savunmada_başarılı_ikili_mücadeleler
+- id: SB_0094
+  name: Hücumda ikili mücadele / Başarılı
+  name_tr: Hücumda ikili mücadele / Başarılı
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Hücumda_ikili_mücadele_/_Başarılı
+- id: SB_0095
+  name: Başarılı hava topu mücadeleleri
+  name_tr: Başarılı hava topu mücadeleleri
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_hava_topu_mücadeleleri
+- id: SB_0096
+  name: Başarılı driplingler
+  name_tr: Başarılı driplingler
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_driplingler
+- id: SB_0097
+  name: Dribbling in the final third successful
+  name_tr: Dribbling in the final third successful
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Dribbling_in_the_final_third_successful
+- id: SB_0098
+  name: Başarılı Top Kapma
+  name_tr: Başarılı Top Kapma
+  phase_id: 1_Organize_Hucum
+  role: success
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_Top_Kapma
+- id: SB_0099
+  name: Pas Arası
+  name_tr: Pas Arası
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Pas_Arası
+- id: SB_0100
+  name: Sahipsiz top kapma
+  name_tr: Sahipsiz top kapma
+  phase_id: 1_Organize_Hucum
+  role: success
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Sahipsiz_top_kapma
+- id: SB_0101
+  name: xG
+  name_tr: xG
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/xG
+- id: SB_0102
+  name: OxG
+  name_tr: OxG
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/OxG
+- id: SB_0103
+  name: NxG
+  name_tr: NxG
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/NxG
+- id: SB_0104
+  name: xPoints
+  name_tr: xPoints
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/xPoints
+- id: SB_0105
+  name: xG dönüştürme
+  name_tr: xG dönüştürme
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/xG_dönüştürme
+- id: SB_0106
+  name: Şut başına xG
+  name_tr: Şut başına xG
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şut_başına_xG
+- id: SB_0107
+  name: OxGPS
+  name_tr: OxGPS
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/OxGPS
+- id: SB_0108
+  name: Gol başına xG
+  name_tr: Gol başına xG
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Gol_başına_xG
+- id: SB_0109
+  name: OxGPG
+  name_tr: OxGPG
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/OxGPG
+- id: SB_0110
+  name: Başarılı takım presi
+  name_tr: Başarılı takım presi
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Başarılı_takım_presi
+- id: SB_0111
+  name: PPDA
+  name_tr: PPDA
+  phase_id: 4_Organize_Savunma
+  role: success
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/PPDA
+- id: SB_0112
+  name: Build up
+  name_tr: Build up
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Build_up
+- id: SB_0113
+  name: No pressing
+  name_tr: No pressing
+  phase_id: 4_Organize_Savunma
+  role: success
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/No_pressing
+- id: SB_0114
+  name: High pressing
+  name_tr: High pressing
+  phase_id: 4_Organize_Savunma
+  role: success
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/High_pressing
+- id: SB_0115
+  name: High pressing successful
+  name_tr: High pressing successful
+  phase_id: 4_Organize_Savunma
+  role: success
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/High_pressing_successful
+- id: SB_0116
+  name: High pressing successful, %
+  name_tr: High pressing successful, %
+  phase_id: 4_Organize_Savunma
+  role: skill
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/High_pressing_successful,_%
+- id: SB_0117
+  name: Low pressing
+  name_tr: Low pressing
+  phase_id: 4_Organize_Savunma
+  role: success
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Low_pressing
+- id: SB_0118
+  name: Low pressing successful
+  name_tr: Low pressing successful
+  phase_id: 4_Organize_Savunma
+  role: success
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Low_pressing_successful
+- id: SB_0119
+  name: Low pressing successful, %
+  name_tr: Low pressing successful, %
+  phase_id: 4_Organize_Savunma
+  role: skill
+  hp_phase: 4_Organize_Savunma
+  registry_modules:
+  - defensive_block
+  - pressing_triggers
+  - compactness
+  triggers_analysis: []
+  recommended_charts:
+  - defensive_line
+  - press_map
+  - block_stability
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Low_pressing_successful,_%
+- id: SB_0120
+  name: Topla oynama, dakika
+  name_tr: Topla oynama, dakika
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Topla_oynama,_dakika
+- id: SB_0121
+  name: Topla oynama, sayı
+  name_tr: Topla oynama, sayı
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Topla_oynama,_sayı
+- id: SB_0122
+  name: Ortalama topla oynama süresi
+  name_tr: Ortalama topla oynama süresi
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Ortalama_topla_oynama_süresi
+- id: SB_0123
+  name: Sol kanat hücumlarının tamamı
+  name_tr: Sol kanat hücumlarının tamamı
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Sol_kanat_hücumlarının_tamamı
+- id: SB_0124
+  name: Şutla biten sol kanat hücumları
+  name_tr: Şutla biten sol kanat hücumları
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_sol_kanat_hücumları
+- id: SB_0125
+  name: Left flank attacks with shots, %
+  name_tr: Left flank attacks with shots, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Left_flank_attacks_with_shots,_%
+- id: SB_0126
+  name: Merkezden hücumlar
+  name_tr: Merkezden hücumlar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Merkezden_hücumlar
+- id: SB_0127
+  name: Şutla biten hücumlar - merkez
+  name_tr: Şutla biten hücumlar - merkez
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_hücumlar_-_merkez
+- id: SB_0128
+  name: Attacks through the center with shots, %
+  name_tr: Attacks through the center with shots, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Attacks_through_the_center_with_shots,_%
+- id: SB_0129
+  name: Sağ kanat hücumları
+  name_tr: Sağ kanat hücumları
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Sağ_kanat_hücumları
+- id: SB_0130
+  name: Şutla biten sağ kanat hücumları
+  name_tr: Şutla biten sağ kanat hücumları
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_sağ_kanat_hücumları
+- id: SB_0131
+  name: Right flank attacks with shots, %
+  name_tr: Right flank attacks with shots, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Right_flank_attacks_with_shots,_%
+- id: SB_0132
+  name: Set Hücumları
+  name_tr: Set Hücumları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Set_Hücumları
+- id: SB_0133
+  name: Şutla biten set hücumları
+  name_tr: Şutla biten set hücumları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_set_hücumları
+- id: SB_0134
+  name: Positional attacks with shots, %
+  name_tr: Positional attacks with shots, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Positional_attacks_with_shots,_%
+- id: SB_0135
+  name: Kontra Ataklar
+  name_tr: Kontra Ataklar
+  phase_id: 2_Hucum_Gecisi
+  role: intent
+  hp_phase: 2_Hucum_Gecisi
+  registry_modules:
+  - transition_speed
+  - counter_attack
+  - recovery_positioning
+  triggers_analysis: []
+  recommended_charts:
+  - transition_timeline
+  - counter_paths
+  - speed_heatmap
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Kontra_Ataklar
+- id: SB_0136
+  name: Şutla biten kontra ataklar
+  name_tr: Şutla biten kontra ataklar
+  phase_id: 2_Hucum_Gecisi
+  role: intent
+  hp_phase: 2_Hucum_Gecisi
+  registry_modules:
+  - transition_speed
+  - counter_attack
+  - recovery_positioning
+  triggers_analysis: []
+  recommended_charts:
+  - transition_timeline
+  - counter_paths
+  - speed_heatmap
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_kontra_ataklar
+- id: SB_0137
+  name: Counter-attacks with shots, %
+  name_tr: Counter-attacks with shots, %
+  phase_id: 2_Hucum_Gecisi
+  role: skill
+  hp_phase: 2_Hucum_Gecisi
+  registry_modules:
+  - transition_speed
+  - counter_attack
+  - recovery_positioning
+  triggers_analysis: []
+  recommended_charts:
+  - transition_timeline
+  - counter_paths
+  - speed_heatmap
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Counter-attacks_with_shots,_%
+- id: SB_0138
+  name: Duran Top Hücumları
+  name_tr: Duran Top Hücumları
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Duran_Top_Hücumları
+- id: SB_0139
+  name: Şutla biten hücumlar - duran toplar
+  name_tr: Şutla biten hücumlar - duran toplar
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_hücumlar_-_duran_toplar
+- id: SB_0140
+  name: Set-piece attacks with shots, %
+  name_tr: Set-piece attacks with shots, %
+  phase_id: 3_DuranTop_Hucum
+  role: skill
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Set-piece_attacks_with_shots,_%
+- id: SB_0141
+  name: Serbest Vuruş hücumları
+  name_tr: Serbest Vuruş hücumları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Serbest_Vuruş_hücumları
+- id: SB_0142
+  name: Şutla biten serbest vuruşlar
+  name_tr: Şutla biten serbest vuruşlar
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_biten_serbest_vuruşlar
+- id: SB_0143
+  name: Free-kick attacks with shots, %
+  name_tr: Free-kick attacks with shots, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Free-kick_attacks_with_shots,_%
+- id: SB_0144
+  name: Korner Hücumları
+  name_tr: Korner Hücumları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Korner_Hücumları
+- id: SB_0145
+  name: Şutla bitirilen kornerler
+  name_tr: Şutla bitirilen kornerler
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_bitirilen_kornerler
+- id: SB_0146
+  name: Corner attacks with shots, %
+  name_tr: Corner attacks with shots, %
+  phase_id: 3_DuranTop_Hucum
+  role: skill
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Corner_attacks_with_shots,_%
+- id: SB_0147
+  name: Taç atışları
+  name_tr: Taç atışları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Taç_atışları
+- id: SB_0148
+  name: Şutla bitirilen taç atışları
+  name_tr: Şutla bitirilen taç atışları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Şutla_bitirilen_taç_atışları
+- id: SB_0149
+  name: Throw-in attacks with shots, %
+  name_tr: Throw-in attacks with shots, %
+  phase_id: 3_DuranTop_Hucum
+  role: skill
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Throw-in_attacks_with_shots,_%
+- id: SB_0150
+  name: Serbest Vuruş Şutları
+  name_tr: Serbest Vuruş Şutları
+  phase_id: 3_DuranTop_Hucum
+  role: intent
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Serbest_Vuruş_Şutları
+- id: SB_0151
+  name: Goller - Serbest vuruş hücumu
+  name_tr: Goller - Serbest vuruş hücumu
+  phase_id: 3_DuranTop_Hucum
+  role: reward
+  hp_phase: 3_DuranTop_Hucum
+  registry_modules:
+  - set_piece_delivery
+  - aerial_dominance
+  - routine_execution
+  triggers_analysis: []
+  recommended_charts:
+  - corner_zones
+  - free_kick_map
+  - delivery_angles
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goller_-_Serbest_vuruş_hücumu
+- id: SB_0152
+  name: Free-kick opponent's goals, %
+  name_tr: Free-kick opponent's goals, %
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Free-kick_opponent's_goals,_%
+- id: SB_0153
+  name: Penaltı
+  name_tr: Penaltı
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Penaltı
+- id: SB_0154
+  name: Penaltı golleri
+  name_tr: Penaltı golleri
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Penaltı_golleri
+- id: SB_0155
+  name: Penaltı golleri, %
+  name_tr: Penaltı golleri, %
+  phase_id: 1_Organize_Hucum
+  role: reward
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Penaltı_golleri,_%
+- id: SB_0156
+  name: Goal kicks short (<15 m.)
+  name_tr: Goal kicks short (<15 m.)
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_short_(<15_m.)
+- id: SB_0157
+  name: Goal kicks short (<15 m.) accurate
+  name_tr: Goal kicks short (<15 m.) accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_short_(<15_m.)_accurate
+- id: SB_0158
+  name: Goal kicks short (<15 m.) accurate, %
+  name_tr: Goal kicks short (<15 m.) accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_short_(<15_m.)_accurate,_%
+- id: SB_0159
+  name: Goal kicks medium (15-40 m.)
+  name_tr: Goal kicks medium (15-40 m.)
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_medium_(15-40_m.)
+- id: SB_0160
+  name: Goal kicks medium (15-40 m.) accurate
+  name_tr: Goal kicks medium (15-40 m.) accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_medium_(15-40_m.)_accurate
+- id: SB_0161
+  name: Goal kicks medium (15-40 m.) accurate, %
+  name_tr: Goal kicks medium (15-40 m.) accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_medium_(15-40_m.)_accurate,_%
+- id: SB_0162
+  name: Goal kicks long (40+ m.)
+  name_tr: Goal kicks long (40+ m.)
+  phase_id: 1_Organize_Hucum
+  role: intent
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_long_(40+_m.)
+- id: SB_0163
+  name: Goal kicks long (40+ m.) accurate
+  name_tr: Goal kicks long (40+ m.) accurate
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_long_(40+_m.)_accurate
+- id: SB_0164
+  name: Goal kicks long (40+ m.) accurate, %
+  name_tr: Goal kicks long (40+ m.) accurate, %
+  phase_id: 1_Organize_Hucum
+  role: skill
+  hp_phase: 1_Organize_Hucum
+  registry_modules:
+  - build_up
+  - progression
+  - chance_creation
+  - finishing
+  triggers_analysis: []
+  recommended_charts:
+  - pass_network
+  - progressive_actions
+  - shot_map
+  - xG_flow
+  normalization: per_90
+  api_endpoint: /api/v1/metrics/Goal_kicks_long_(40+_m.)_accurate,_%

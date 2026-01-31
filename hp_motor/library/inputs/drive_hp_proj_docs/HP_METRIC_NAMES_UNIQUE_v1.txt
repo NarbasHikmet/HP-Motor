@@ -1,0 +1,411 @@
+2025/2026
+Actions in opponent box successful
+Actions in opponent box successful, %
+Actions successful
+Actions successful, %
+Amaç: Tüm kaynak dosyalardan çıkarılan aday metrik/alan isimlerini tek şablonda toplamak.
+Attacks through the center with shots, %
+Average energy expence of a field player, kcal.
+Average max. speed of a field player, m/s
+Average metabolic power, w/kg
+Average speed (ball in play time), m/s
+Average speed of a field player, m/s
+Average speed, m/s
+Ball recoveries
+Ball recoveries after losses within 10 seconds
+Ball recoveries after losses within 10 seconds in the opponent's half of the field
+Ball recoveries after losses within 5 seconds
+Ball recoveries after losses within 5 seconds in the opponent's half of the field
+Başarılı Top Kapma
+Başarılı Top Kapma, %
+Başarılı driplingler
+Başarılı driplingleri, %
+Başarılı hava topu mücadeleleri
+Başarılı hava topu mücadelesi, %
+Başarılı ikili mücadele %
+Başarılı takım presi
+Başarısız eylemler
+Başarıyla sektirilerek kurtarılan şutlar
+Başarıyla sektirilerek kurtarılan şutlar, %
+Bireysel top kayıpları
+Boy
+Build up
+Ceza sahasına / İsabetli
+Ceza sahasına orta
+Challenges unsuccessful
+Challenges won
+Chances successful, %
+Corner attacks with goals
+Corner attacks with shots, %
+Counter-attacks with shots, %
+Covering successful
+Covering successful, %
+Covering unsuccessful
+Cross and pass interception attempts
+Crosses accurate
+Direkten dönen şutlar
+Distance 1st half, m.
+Distance 2nd half, m.
+Distance in defense, m.
+Distance in offense, m.
+Distance, m.
+Dribbles unsuccessful
+Dribbling in the final third
+Dribbling in the final third successful
+Dribbling in the final third successful, %
+Driplingler
+Driplingler.1
+Duran Top Hücumları
+Duran toplardan isabetli paslar
+Duran toptan paslar
+Dışarı yerine
+Elle paslar
+Elle paslar, isabetli
+Elle paslar, isabetli, %
+Energy expence, kcal.
+Engellenen Şutlar
+Faul
+Final third entries
+Final third entries through carry
+Final third entries through carry, % of total
+Final third entries through pass
+Final third entries through pass, % of total
+Free-kick attacks with shots, %
+Free-kick goals, %
+GK xG per goal conceded
+Geri kazanılan toplarda kaleye ortalama mesafe
+Giren oyuncu
+Goal kicks
+Goal kicks accurate
+Goal kicks accurate, %
+Goal kicks long (40+ m.)
+Goal kicks long (40+ m.) accurate
+Goal kicks long (40+ m.) accurate, %
+Goal kicks medium (15-40 m.)
+Goal kicks medium (15-40 m.) accurate
+Goal kicks medium (15-40 m.) accurate, %
+Goal kicks short (<15 m.)
+Goal kicks short (<15 m.) accurate
+Goal kicks short (<15 m.) accurate, %
+Gol
+Gol Pozisyonları
+Gol başına xG
+Gol hücumlarında oyun
+Gol pasları
+Gol pozisyonları, başarılı
+Goller - Serbest vuruş hücumu
+Gollük hatalar
+Havada Hamleler
+Header
+High pressing
+High pressing successful
+High pressing successful, %
+High speed distance (5.51 - 7 m/s) 1st half, m.
+High speed distance (5.51 - 7 m/s) 2nd half, m.
+High speed distance (5.51 - 7 m/s) in defense, m.
+High speed distance (5.51 - 7 m/s) in offense, m.
+High speed distance (5.51 - 7 m/s), m.
+Hücumda başarılı ikili mücadele, %
+Hücumda ikili mücadele / Başarılı
+Hücumda ikili mücadeleler
+ID
+Index
+Jog distance (2,01 - 4 m/s) 1st half, m.
+Jog distance (2,01 - 4 m/s) 2nd half, m.
+Jog distance (2,01 - 4 m/s), m.
+Kademe (kalecinin son savunmacıya kademe yaptığı)
+Key passes accurate
+Key passes accurate, %
+Kilit Pas
+Kilo
+Kontra Ataklar
+Korner Hücumları
+Kornerler
+Kurtarılan penaltı, %
+Kurtarılan penaltılar
+Kurtarılan uzaktan şutlar
+Kurtarılan uzaktan şutlar, %
+Kurtarılan yakın mesafeli şutlar
+Kurtarılan yakın mesafeli şutlar, %
+Kurtarılan şutlar, %
+Kurtarış
+Kurtarışlar
+Kötü sektirilerek kurtarılan şutlar
+Kötü sektirilerek kurtarılan şutlar, %
+Kötü top kontrolü
+Kırmızı Kartlar
+Kısa paslar
+Kısa paslar - isabetli
+Kısa paslar, isabetli, %
+Left flank attacks with shots, %
+Lost balls after passes
+Low pressing
+Low pressing successful
+Low pressing successful, %
+M_AERIAL
+M_BLOCK
+M_CLEARANCE
+M_CORNER
+M_CROSS
+M_CROSS_FAIL
+M_CROSS_OK
+M_DRIBBLE
+M_DRIBBLE_FAIL
+M_DRIBBLE_OK
+M_DUEL
+M_FOUL
+M_FOUL_WON
+M_FREE_KICK
+M_GOAL
+M_GOAL_KICK
+M_INTERCEPTION
+M_PASS
+M_PASS_FAIL
+M_PASS_LONG
+M_PASS_OK
+M_PASS_SHORT
+M_SAVE
+M_SHOT
+M_SHOT_OFF
+M_SHOT_ON
+M_TACKLE
+M_THROW_IN
+Maximum speed, m/s
+Merkezden hücumlar
+Mid range shots
+Mid range shots on target
+Mid range shots saved
+Mid range shots saved, %
+Mistakes
+No pressing
+Number of high speed runs
+Number of high speed runs 1st half
+Number of high speed runs 2nd half
+Number of high speed runs and sprints
+Number of sprints
+Number of sprints 1st half
+Number of sprints 2nd half
+NxG
+Ofsaytlar
+Open play distance, m.
+Open play foot passes
+Open play foot passes accurate
+Open play foot passes accurate, %
+Opponent
+Orta
+Orta mesafeli paslar
+Orta mesafeli paslar - isabetli
+Orta mesafeli paslar - isabetli.1
+Ortalama topla oynama süresi
+Own goals
+OxG
+OxGPG
+OxGPS
+Oynadığı maç
+Oynadığı süre
+Oyuncu
+PPDA
+Pas Arası
+Paslar
+Paslar adresi bulanlar
+Paslar adresi bulanlar, %
+Passes for a shot
+Passes forward (120 degrees) to the final third
+Passes forward (120 degrees) to the final third accurate
+Passes forward (120 degrees) to the final third accurate, %
+Passes forward accurate
+Passes forward accurate, %
+Passes from throw-ins
+Passes into the penalty box accurate, %
+Penaltı
+Penaltı golleri
+Penaltı golleri, %
+Penaltıdan yenen goller
+Penaltılar
+Positional attacks with shots, %
+Pozisyon
+Pozisyonlar
+Progressive open passes
+Progressive passes
+Progressive passes accurate
+Progressive passes accurate, %
+Rakibin kaleyi bulan şutları
+Rakibin korner hücumları
+Rakibin ortaları
+Rakibin serbest vuruş hücumları
+Rakibin taç atışı hücumları
+Rakibin şutla biten korner hücumları
+Rakibin şutla biten korner hücumları, %
+Rakibin şutla biten serbest vuruş hücumları
+Rakibin şutla biten serbest vuruş hücumları, %
+Rakibin şutla biten serbest vuruş hücumları, %.1
+Rakibin şutla biten serbest vuruş hücumları.1
+Rakibin şutla biten taç atışı hücumları
+Rakibin şutla biten taç atışı hücumları, %
+Rakip ceza sahasına girişler
+Rakip ceza sahasında hareketler
+Rakip duran top hücumları
+Rakip sahada geri kazanılan toplar
+Rakip sahaya girişler
+Rakip xG dönüştürme
+Right flank attacks with shots, %
+Run distance (4.01 - 5.5 m/s) 1st half, m.
+Run distance (4.01 - 5.5 m/s) 2nd half, m.
+Run distance (4.01 - 5.5 m/s), m.
+Sahipsiz top kapma
+Sarı Kartlar
+Savunmada başarılı ikili mücadeleler
+Savunmada ikili mücadeleler
+Savunmada kazanılan ikili mücadele, %
+Sağ kanat hücumları
+Score
+Serbest Vuruş hücumları
+Serbest Vuruş Şutları
+Set Hücumları
+Set-piece attacks with goals
+Set-piece attacks with shots, %
+Set-piece crosses accurate, %
+Seçildi: 16
+Seçildi: 6
+Shots on target, %
+Sol kanat hücumlarının tamamı
+Sprint distance (> 7 m/s) 1st half, m.
+Sprint distance (> 7 m/s) 2nd half, m.
+Sprint distance (> 7 m/s) in defense, m.
+Sprint distance (> 7 m/s) in offense, m.
+Sprint distance (> 7 m/s), m.
+Successful cross and pass interception attempts
+Successful cross and pass interception attempts, %
+Super long passes
+Super long passes accurate
+Super long passes accurate, %
+Sutlar / kaleye dogru
+Sıçramadan kurtarışlar
+Sıçrayarak kurtarışlar
+Tactics (initial)
+Takım
+Takım presi
+Tarih
+Taç atışları
+Team pressing successful, %
+Throw-in attacks with shots, %
+Top Kapma
+Top kayıpları
+Top kayıpları / kendi yarı sahasında
+Top kayıplarında kaleye ortalama mesafe
+Topla oynama, %
+Topla oynama, dakika
+Topla oynama, sayı
+Tüm Hareketler
+Unnamed: 0
+Unnamed: 1
+Uzaktan şutlar
+Uzun paslar
+Uzun paslar - isabetli
+Uzun paslar, isabetli, %
+Walk distance (<= 2 m/s) 1st half, m.
+Walk distance (<= 2 m/s) 2nd half, m.
+Walk distance (<= 2 m/s), m.
+Yakalanan şutlar
+Yakalanan şutlar, %
+Yakından isabetli şutlar
+Yakından şutlar
+Yapılan Fauller
+Yaş
+Yenen goller
+_drop
+action
+action_text
+aerial duel
+affects_directly
+aggregation_type
+block
+candidate_name
+clearance
+code
+code_text
+corner
+cross
+cross successful
+cross unsuccessful
+decision_id
+decision_status
+dribble
+dribble successful
+dribble unsuccessful
+duel
+end
+event_id
+family_8
+foul
+foul won
+free kick
+goal
+goal kick
+granularity
+h / a
+half
+interception
+keeper save
+kinds
+layer_3
+locations
+long pass
+occurrences
+pass
+pass successful
+pass unsuccessful
+period
+phase_allowed_6
+polarity
+pos_x
+pos_y
+risk_notes
+save
+short pass
+shot
+shot off target
+shot on target
+sources
+start
+suggested_graphs
+t_end
+t_start
+tackle
+throw in
+unit
+used_in_modules
+user_definition_tr
+user_display_name_tr
+x
+xA
+xG
+xG conceded
+xG dönüştürme
+xG per shot saved
+xGDPS
+xGDPS.1
+xGOPP
+xGT
+xPoints
+y
+Ülkesi
+İkili mücadeleler
+İleriye pas
+İlk 11 maçları
+İsabetli ortalar, %
+İsabetli uzaktan şutlar
+İsabetli Şut
+İsabetsiz Şutlar
+Şut
+Şut başına xG
+Şutla biten hücumlar - duran toplar
+Şutla biten hücumlar - merkez
+Şutla biten kontra ataklar
+Şutla biten sağ kanat hücumları
+Şutla biten serbest vuruşlar
+Şutla biten set hücumları
+Şutla biten sol kanat hücumları
+Şutla bitirilen kornerler
+Şutla bitirilen taç atışları
+№

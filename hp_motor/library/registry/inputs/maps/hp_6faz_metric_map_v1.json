@@ -1,0 +1,249 @@
+{
+  "version": "1.0",
+  "default_audience": "broadcast",
+  "phases": [
+    {
+      "phase_id": "1_Organize_Hucum",
+      "label": "Organize Hücum (Yerleşik oyun)",
+      "desc": "Topa sahipken topu ilerletme, son bölgeye yerleşme, şut/pozisyon üretimi."
+    },
+    {
+      "phase_id": "2_Hucum_Gecisi",
+      "label": "Hücum Geçişi (Kontra / hızlı çıkış)",
+      "desc": "Topu kazandıktan sonra kısa sürede rakip kaleye gidiş, kontra ile şut/pozisyon."
+    },
+    {
+      "phase_id": "3_DuranTop_Hucum",
+      "label": "Duran Top Hücumu",
+      "desc": "Korner, serbest vuruş, taçtan üretilen şut/gol."
+    },
+    {
+      "phase_id": "4_Organize_Savunma",
+      "label": "Organize Savunma (Yerleşik savunma + baskı)",
+      "desc": "Rakibi yerleşik blokta durdurma, ikili mücadele, top kapma, baskı profili."
+    },
+    {
+      "phase_id": "5_Savunma_Gecisi",
+      "label": "Savunma Geçişi (Top kaybı sonrası)",
+      "desc": "Top kaybından sonra geri koşu, anında baskı, kısa sürede topu geri alma ve tehlikeyi önleme."
+    },
+    {
+      "phase_id": "6_DuranTop_Savunma",
+      "label": "Duran Top Savunması",
+      "desc": "Duran toplardan yenen gol/tehlike; korner ve serbest vuruş savunma kalitesi."
+    }
+  ],
+  "pairings": [
+    {
+      "phase_id": "1_Organize_Hucum",
+      "anchor_metric": "Progressive passes / Progressive passes accurate",
+      "functional_enablers": "Final third entries; Rakip sahaya girişler; İleriye pas; Paslar adresi bulanlar, %",
+      "success_validators": "xG; Şut; Pozisyonlar; Rakip ceza sahasına girişler",
+      "broadcast_meaning": "Sadece 'ileri pas' değil; ilerleme->yerleşme->şut zincirini ölçer."
+    },
+    {
+      "phase_id": "1_Organize_Hucum",
+      "anchor_metric": "Final third entries",
+      "functional_enablers": "Final third entries through pass; through carry; Progressive open passes",
+      "success_validators": "Rakip ceza sahasına girişler; Key passes accurate",
+      "broadcast_meaning": "Yerleşik oyunda 'geçiş kapısı': son bölgeye giriş yoksa üretim yok."
+    },
+    {
+      "phase_id": "2_Hucum_Gecisi",
+      "anchor_metric": "Kontra Ataklar",
+      "functional_enablers": "Şutla biten kontra ataklar; Counter-attacks with shots, %",
+      "success_validators": "xG; Şut başına xG",
+      "broadcast_meaning": "Kontra sayısı tek başına değil, şuta/kaliteye dönüşümle anlam kazanır."
+    },
+    {
+      "phase_id": "3_DuranTop_Hucum",
+      "anchor_metric": "Duran Top Hücumları",
+      "functional_enablers": "Kornerler; Serbest Vuruş hücumları; Passes from throw-ins",
+      "success_validators": "Şutla bitirilen kornerler; Şutla biten serbest vuruşlar; Set-piece attacks with shots, %",
+      "broadcast_meaning": "Duran top hacmi + şuta dönüşüm birlikte okunur."
+    },
+    {
+      "phase_id": "4_Organize_Savunma",
+      "anchor_metric": "PPDA",
+      "functional_enablers": "High pressing; High pressing successful, %; Team pressing successful, %",
+      "success_validators": "Rakip sahada geri kazanılan toplar; Ball recoveries",
+      "broadcast_meaning": "PPDA 'niyet'i verir; başarı için pres isabeti + kazanım gerekir."
+    },
+    {
+      "phase_id": "4_Organize_Savunma",
+      "anchor_metric": "Duel/Top kapma başarı oranları",
+      "functional_enablers": "Başarılı ikili mücadele %; Savunmada kazanılan ikili mücadele, %; Başarılı Top Kapma, %",
+      "success_validators": "Faul; Sarı Kartlar",
+      "broadcast_meaning": "Kazandığın ikili mücadele, blok savunmanın kalitesini anlatır; faul/kart maliyetiyle birlikte."
+    },
+    {
+      "phase_id": "5_Savunma_Gecisi",
+      "anchor_metric": "Ball recoveries after losses within 5/10 seconds",
+      "functional_enablers": "Ball recoveries after losses within 5 seconds in opponent half; within 10 seconds",
+      "success_validators": "Top kayıpları; Top kayıpları / kendi yarı sahasında; Top kayıplarında kaleye ortalama mesafe",
+      "broadcast_meaning": "Karşı-presin hızı + kayıp lokasyonu birlikte risk/ödülü belirler."
+    }
+  ],
+  "derived_metrics": [
+    {
+      "type": "SKILL",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "BUILDUP_ACCURACY",
+      "name_tr": "Pas bağlantı kalitesi",
+      "formula": "Paslar adresi bulanlar, %",
+      "broadcast_interpretation": "Yüksek = yerleşik oyunda hatasız bağ kurma."
+    },
+    {
+      "type": "SKILL",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "PROGRESSION_RATE",
+      "name_tr": "İlerletme oranı",
+      "formula": "Progressive passes / Paslar",
+      "broadcast_interpretation": "Yüksek = topu anlamlı ileri taşıma kapasitesi."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "PROG_TO_FT",
+      "name_tr": "İlerletme→Son bölge dönüşümü",
+      "formula": "Final third entries / Progressive passes",
+      "broadcast_interpretation": "Yüksek = ilerletme gerçek yerleşmeye dönüşüyor."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "FT_TO_BOX",
+      "name_tr": "Son bölge→Ceza sahası dönüşümü",
+      "formula": "Rakip ceza sahasına girişler / Final third entries",
+      "broadcast_interpretation": "Yüksek = son bölgede derinlik üretimi."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "BOX_TO_SHOT",
+      "name_tr": "Ceza sahası→Şut dönüşümü",
+      "formula": "Şut / Rakip ceza sahasına girişler",
+      "broadcast_interpretation": "Yüksek = ceza sahası işleme verimi."
+    },
+    {
+      "type": "SKILL",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "SHOT_QUALITY",
+      "name_tr": "Şut kalitesi",
+      "formula": "xG / Şut  (veya Şut başına xG)",
+      "broadcast_interpretation": "Yüksek = daha seçilmiş/kaliteli şutlar."
+    },
+    {
+      "type": "REWARD",
+      "phase_id": "1_Organize_Hucum",
+      "metric_id": "FINISHING",
+      "name_tr": "Bitiricilik",
+      "formula": "Gol / xG  (veya Gol - xG)",
+      "broadcast_interpretation": ">1 = xG üstü bitiriş; <1 = kaçan skor."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "2_Hucum_Gecisi",
+      "metric_id": "COUNTER_SHOT_RATE",
+      "name_tr": "Kontra→Şut dönüşümü",
+      "formula": "Şutla biten kontra ataklar / Kontra Ataklar",
+      "broadcast_interpretation": "Yüksek = hızlı hücum karar kalitesi."
+    },
+    {
+      "type": "SKILL",
+      "phase_id": "2_Hucum_Gecisi",
+      "metric_id": "COUNTER_THREAT",
+      "name_tr": "Kontra tehdidi (kalite)",
+      "formula": "Şutla biten kontra ataklar × Şut başına xG",
+      "broadcast_interpretation": "Kontra sayısı değil, tehdidin toplamı."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "3_DuranTop_Hucum",
+      "metric_id": "SP_SHOT_RATE",
+      "name_tr": "Duran top→Şut dönüşümü",
+      "formula": "Şutla biten hücumlar - duran toplar / Duran Top Hücumları",
+      "broadcast_interpretation": "Yüksek = duran top tasarımı/ikincil plan etkili."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "3_DuranTop_Hucum",
+      "metric_id": "CORNER_SHOT_RATE",
+      "name_tr": "Korner→Şut dönüşümü",
+      "formula": "Şutla bitirilen kornerler / Korner Hücumları",
+      "broadcast_interpretation": "Yüksek = korner organizasyonu ve ikinci top."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "3_DuranTop_Hucum",
+      "metric_id": "FK_SHOT_RATE",
+      "name_tr": "Serbest vuruş→Şut dönüşümü",
+      "formula": "Şutla biten serbest vuruşlar / Serbest Vuruş hücumları",
+      "broadcast_interpretation": "Yüksek = kalite/alternatif varyasyon."
+    },
+    {
+      "type": "SKILL",
+      "phase_id": "4_Organize_Savunma",
+      "metric_id": "PRESS_INTENSITY",
+      "name_tr": "Baskı yoğunluğu",
+      "formula": "1 / PPDA",
+      "broadcast_interpretation": "Yüksek = daha sık savunma aksiyonu (bağlam şart)."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "4_Organize_Savunma",
+      "metric_id": "PRESS_SUCCESS",
+      "name_tr": "Baskı isabeti",
+      "formula": "High pressing successful, % (veya Team pressing successful, %)",
+      "broadcast_interpretation": "Yüksek = baskı doğru zaman/koridor."
+    },
+    {
+      "type": "REWARD",
+      "phase_id": "4_Organize_Savunma",
+      "metric_id": "HIGH_REGAINS",
+      "name_tr": "Yüksek kazanım avantajı",
+      "formula": "Rakip sahada geri kazanılan toplar",
+      "broadcast_interpretation": "Yüksek = rakibi kendi sahasında hataya zorlama."
+    },
+    {
+      "type": "SKILL",
+      "phase_id": "5_Savunma_Gecisi",
+      "metric_id": "LOSS_FIELD_RISK",
+      "name_tr": "Kayıp riski (konum)",
+      "formula": "Top kayıpları / kendi yarı sahasında + Top kayıplarında kaleye ort. mesafe",
+      "broadcast_interpretation": "Daha çok/kaleye yakın kayıp = geçişte kırılganlık."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "5_Savunma_Gecisi",
+      "metric_id": "COUNTERPRESS_RATE_5S",
+      "name_tr": "5 sn karşı-pres geri kazanım oranı",
+      "formula": "Ball recoveries after losses within 5 seconds / Top kayıpları",
+      "broadcast_interpretation": "Yüksek = geçiş savunması hızlı toparlıyor."
+    },
+    {
+      "type": "SUCCESS",
+      "phase_id": "5_Savunma_Gecisi",
+      "metric_id": "COUNTERPRESS_OH_5S",
+      "name_tr": "Rakip yarı sahada 5 sn geri kazanım",
+      "formula": "Ball recoveries after losses within 5 seconds in opponent half / Top kayıpları",
+      "broadcast_interpretation": "Yüksek = riskli bölgede bile topu geri alma."
+    },
+    {
+      "type": "REWARD",
+      "phase_id": "5_Savunma_Gecisi",
+      "metric_id": "FIELD_POSITION_ON_REGAIN",
+      "name_tr": "Kazanımın getirdiği alan",
+      "formula": "Geri kazanılan toplarda kaleye ort. mesafe (küçük=iyi)",
+      "broadcast_interpretation": "Daha yakın kazanım = daha hızlı tehdit."
+    },
+    {
+      "type": "REWARD",
+      "phase_id": "6_DuranTop_Savunma",
+      "metric_id": "FK_CONCEDE_RATE",
+      "name_tr": "Serbest vuruştan yeme oranı",
+      "formula": "Free-kick opponent's goals, %",
+      "broadcast_interpretation": "Yüksek = duran top savunma sorunu."
+    }
+  ]
+}

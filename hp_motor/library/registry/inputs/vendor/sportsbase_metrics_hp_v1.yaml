@@ -1,0 +1,2243 @@
+version: "1.0"
+origin_file: "30.01.2026 - Galatasaray - Comparison.xlsx / sheet Comparison"
+phases:
+  -
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    definition: "Topa sahipken topu ilerletme, son bölgeye yerleşme, şut/pozisyon üretimi."
+    top_metrics_from_files_vs_opponent: "Progressive passes accurate; Progressive passes; Paslar adresi bulanlar, %; Paslar adresi bulanlar; Paslar; Progressive open passes; Progressive passes accurate, %; İleriye pas"
+  -
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    definition: "Topu kazandıktan sonra kısa sürede rakip kaleye gidiş, kontra ile şut/pozisyon."
+    top_metrics_from_files_vs_opponent: "Counter-attacks with shots, %; Şutla biten kontra ataklar; Kontra Ataklar"
+  -
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    definition: "Korner, serbest vuruş, taçtan üretilen şut/gol."
+    top_metrics_from_files_vs_opponent: "Duran Top Hücumları; Free-kick attacks with shots, %; Kornerler; Serbest Vuruş hücumları; Passes from throw-ins; Corner attacks with shots, %; Set-piece attacks with shots, %"
+  -
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    definition: "Rakibi yerleşik blokta durdurma, ikili mücadele, top kapma, baskı profili."
+    top_metrics_from_files_vs_opponent: "No pressing; Hücumda başarılı ikili mücadele, %; Savunmada kazanılan ikili mücadele, %; PPDA; Başarılı ikili mücadele %; Hücumda ikili mücadele / Başarılı; Başarılı Top Kapma, %; Team pressing successful, %"
+  -
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    definition: "Top kaybından sonra geri koşu, anında baskı, kısa sürede topu geri alma ve tehlikeyi önleme."
+    top_metrics_from_files_vs_opponent: "Rakip sahada geri kazanılan toplar; Ball recoveries; Geri kazanılan toplarda kaleye ortalama mesafe; Top kayıplarında kaleye ortalama mesafe; Top kayıpları / kendi yarı sahasında; Lost balls after passes; Top kayıpları; Ball recoveries after losses within 10 seconds"
+  -
+    phase_id: "6_DuranTop_Savunma"
+    phase_name: "Duran Top Savunması"
+    definition: "Duran toplardan yenen gol/tehlike; korner ve serbest vuruş savunma kalitesi."
+    top_metrics_from_files_vs_opponent: nan
+metrics:
+  -
+    metric: "Index"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 207.0
+    Seçildi: 19: 210.0
+    Seçildi: 8: 202.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Gol"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.9
+    Seçildi: 19: 2.26
+    Seçildi: 8: 1.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Pozisyonlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 7.28
+    Seçildi: 19: 8.16
+    Seçildi: 8: 5.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Chances successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.2607
+    Seçildi: 19: 0.2774
+    Seçildi: 8: 0.2195
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: "Yaratılan gol pozisyonlarının gole dönüşme oranı (tanım sağlayıcıya göre “big chance”/“chance” ayrımı olabilir)."
+    source_urls: "https://support.hudl.com/s/article/event-data-glossary-team-metrics"
+  -
+    metric: "Faul"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 11.76
+    Seçildi: 19: 12.05
+    Seçildi: 8: 11.88
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Sarı Kartlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.9
+    Seçildi: 19: 1.89
+    Seçildi: 8: 2.0
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "risk"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Kırmızı Kartlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.1
+    Seçildi: 19: 0.11
+    Seçildi: 8: 0.12
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "risk"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Kornerler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.1
+    Seçildi: 19: 5.26
+    Seçildi: 8: 3.75
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şut"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 14.59
+    Seçildi: 19: 15.53
+    Seçildi: 8: 11.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "İsabetli Şut"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.52
+    Seçildi: 19: 5.89
+    Seçildi: 8: 4.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Rakip sahaya girişler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 60.34
+    Seçildi: 19: 62.47
+    Seçildi: 8: 53.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Top kayıpları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 58.07
+    Seçildi: 19: 58.11
+    Seçildi: 8: 58.25
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "risk"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Top kayıpları / kendi yarı sahasında"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 11.28
+    Seçildi: 19: 11.58
+    Seçildi: 8: 11.75
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "risk"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.07
+    Seçildi: 19: 5.37
+    Seçildi: 8: 4.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 4.55
+    Seçildi: 19: 4.84
+    Seçildi: 8: 4.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.898
+    Seçildi: 19: 0.902
+    Seçildi: 8: 0.8919
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Paslar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 551.41
+    Seçildi: 19: 570.37
+    Seçildi: 8: 506.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Paslar adresi bulanlar, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.8678
+    Seçildi: 19: 0.872
+    Seçildi: 8: 0.8587
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Kilit Pas"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 7.97
+    Seçildi: 19: 9.11
+    Seçildi: 8: 4.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: "Şuta/çok net fırsata giden son pas (key pass). Sağlayıcı tanımına göre “şuta direkt giden pas” veya “bariz gol fırsatı yaratan pas”."
+    source_urls: "https://dataglossary.wyscout.com/key_pass/; https://stats-portal.statsbomb.com/glossary"
+  -
+    metric: "Key passes accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 4.41
+    Seçildi: 19: 5.42
+    Seçildi: 8: 2.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: "Key pass’in (kilit pas) isabetli olanları: sonraki dokunuş takım arkadaşı tarafından gerçekleşen kilit pas."
+    source_urls: "https://dataglossary.wyscout.com/key_pass/"
+  -
+    metric: "Key passes accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5540999999999999
+    Seçildi: 19: 0.5954
+    Seçildi: 8: 0.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Orta"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 14.28
+    Seçildi: 19: 14.74
+    Seçildi: 8: 11.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "İsabetli ortalar, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.3068
+    Seçildi: 19: 0.3036
+    Seçildi: 8: 0.3158
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Progressive passes"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 98.72
+    Seçildi: 19: 101.63
+    Seçildi: 8: 92.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: "Rakip kaleye anlamlı biçimde yaklaşmayı hedefleyen ileri/ilerletici pas sayısı (kriter sağlayan pas)."
+    source_urls: "https://dataglossary.wyscout.com/progressive_pass/; https://theanalyst.com/articles/opta-football-stats-definitions"
+  -
+    metric: "Progressive passes accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.7293000000000001
+    Seçildi: 19: 0.74
+    Seçildi: 8: 0.6977
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Progressive open passes"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 57.79
+    Seçildi: 19: 61.95
+    Seçildi: 8: 46.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: "Set-piece hariç (open play) oynanan progresif paslar. Progressive pass kriteri + open play filtresi."
+    source_urls: "https://sportsbase.world/; https://dataglossary.wyscout.com/progressive_pass/"
+  -
+    metric: "Uzun paslar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 30.66
+    Seçildi: 19: 29.79
+    Seçildi: 8: 33.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Uzun paslar, isabetli, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.6895
+    Seçildi: 19: 0.6926000000000001
+    Seçildi: 8: 0.6868000000000001
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Super long passes"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 9.21
+    Seçildi: 19: 8.0
+    Seçildi: 8: 11.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Super long passes accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5918
+    Seçildi: 19: 0.5395000000000001
+    Seçildi: 8: 0.6842
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ceza sahasına orta"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 32.21
+    Seçildi: 19: 34.0
+    Seçildi: 8: 25.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Passes into the penalty box accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5161
+    Seçildi: 19: 0.5155
+    Seçildi: 8: 0.5147
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "İkili mücadeleler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 136.69
+    Seçildi: 19: 133.79
+    Seçildi: 8: 142.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı ikili mücadele %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5222
+    Seçildi: 19: 0.5334000000000001
+    Seçildi: 8: 0.4996
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Savunmada ikili mücadeleler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 66.48
+    Seçildi: 19: 65.37
+    Seçildi: 8: 68.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Savunmada kazanılan ikili mücadele, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5726
+    Seçildi: 19: 0.5918
+    Seçildi: 8: 0.5418000000000001
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Hücumda ikili mücadeleler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 70.21
+    Seçildi: 19: 68.42
+    Seçildi: 8: 73.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Hücumda başarılı ikili mücadele, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.4745
+    Seçildi: 19: 0.4777
+    Seçildi: 8: 0.4601
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Havada Hamleler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 35.45
+    Seçildi: 19: 33.74
+    Seçildi: 8: 39.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı hava topu mücadelesi, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5224
+    Seçildi: 19: 0.5476
+    Seçildi: 8: 0.4702000000000001
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Driplingler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 22.07
+    Seçildi: 19: 21.95
+    Seçildi: 8: 21.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı driplingleri, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5938
+    Seçildi: 19: 0.5971000000000001
+    Seçildi: 8: 0.5872
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Dribbling in the final third"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 11.55
+    Seçildi: 19: 11.74
+    Seçildi: 8: 10.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Dribbling in the final third successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5493
+    Seçildi: 19: 0.5605
+    Seçildi: 8: 0.5357000000000001
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Top Kapma"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 27.38
+    Seçildi: 19: 27.32
+    Seçildi: 8: 26.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı Top Kapma, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5856
+    Seçildi: 19: 0.605
+    Seçildi: 8: 0.5571
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Takım presi"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 17.97
+    Seçildi: 19: 17.63
+    Seçildi: 8: 18.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Team pressing successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.4914
+    Seçildi: 19: 0.5164
+    Seçildi: 8: 0.4653
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Topla oynama, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5813
+    Seçildi: 19: 0.6117
+    Seçildi: 8: 0.5154
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Own goals"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.03
+    Seçildi: 19: nan
+    Seçildi: 8: 0.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Gol pozisyonları, başarılı"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.9
+    Seçildi: 19: 2.26
+    Seçildi: 8: 1.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Shots on target, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.3783
+    Seçildi: 19: 0.3797
+    Seçildi: 8: 0.4205
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "İsabetsiz Şutlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.69
+    Seçildi: 19: 6.68
+    Seçildi: 8: 3.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Engellenen Şutlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.86
+    Seçildi: 19: 2.37
+    Seçildi: 8: 2.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Direkten dönen şutlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.52
+    Seçildi: 19: 0.58
+    Seçildi: 8: 0.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Tüm Hareketler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 833.31
+    Seçildi: 19: 849.42
+    Seçildi: 8: 791.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Actions successful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 675.28
+    Seçildi: 19: 693.16
+    Seçildi: 8: 631.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Actions successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.8104000000000001
+    Seçildi: 19: 0.816
+    Seçildi: 8: 0.7986
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Rakip ceza sahasında hareketler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 38.34
+    Seçildi: 19: 38.84
+    Seçildi: 8: 31.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Actions in opponent box successful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 18.41
+    Seçildi: 19: 19.21
+    Seçildi: 8: 15.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Actions in opponent box successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.4802
+    Seçildi: 19: 0.4946
+    Seçildi: 8: 0.4743
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Final third entries"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 37.76
+    Seçildi: 19: 41.05
+    Seçildi: 8: 28.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: "Hücumun rakip kaleye yaklaşırken son üçlü bölgeye hangi koridorlardan giriş yaptığını gösteren giriş sayısı (pas/taşıma dahil olabilir, sağlayıcıya göre değişir)."
+    source_urls: "https://www.fifatrainingcentre.com/en/game/tournaments/fifa-womens-world-cup/2023/efi-metrics/final-third-entries.php"
+  -
+    metric: "Final third entries through pass"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 28.34
+    Seçildi: 19: 30.95
+    Seçildi: 8: 21.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Final third entries through pass, % of total"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.7506999999999999
+    Seçildi: 19: 0.7538
+    Seçildi: 8: 0.7733
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Final third entries through carry"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 9.41
+    Seçildi: 19: 10.11
+    Seçildi: 8: 6.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Final third entries through carry, % of total"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.2493
+    Seçildi: 19: 0.2462
+    Seçildi: 8: 0.2267
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Lost balls after passes"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 32.55
+    Seçildi: 19: 32.89
+    Seçildi: 8: 31.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Bireysel top kayıpları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 25.52
+    Seçildi: 19: 25.21
+    Seçildi: 8: 26.75
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "risk"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Challenges unsuccessful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 65.31
+    Seçildi: 19: 62.42
+    Seçildi: 8: 71.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Dribbles unsuccessful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 8.97
+    Seçildi: 19: 8.84
+    Seçildi: 8: 8.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Rakip ceza sahasına girişler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 18.59
+    Seçildi: 19: 19.16
+    Seçildi: 8: 15.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Kötü top kontrolü"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 6.28
+    Seçildi: 19: 6.53
+    Seçildi: 8: 5.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ofsaytlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.69
+    Seçildi: 19: 1.42
+    Seçildi: 8: 2.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ball recoveries"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 46.17
+    Seçildi: 19: 46.11
+    Seçildi: 8: 45.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Rakip sahada geri kazanılan toplar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 12.24
+    Seçildi: 19: 11.42
+    Seçildi: 8: 13.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "success"
+    definition_tr: "Topun rakip yarı sahasında geri kazanıldığı (yüksek kazanım) aksiyon sayısı; presin ‘ödül’ kısmı."
+    source_urls: "https://support.hudl.com/s/article/football-glossary-faqs"
+  -
+    metric: "Ball recoveries after losses within 10 seconds"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 8.59
+    Seçildi: 19: 7.79
+    Seçildi: 8: 10.0
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ball recoveries after losses within 10 seconds in the opponent's half of the field"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 3.31
+    Seçildi: 19: 2.58
+    Seçildi: 8: 4.25
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ball recoveries after losses within 5 seconds"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.28
+    Seçildi: 19: 1.26
+    Seçildi: 8: 1.38
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "success"
+    definition_tr: "Top kaybından sonra 5 saniye içinde topu geri kazanma (counterpressing recovery mantığı)."
+    source_urls: "https://dataglossary.wyscout.com/counterpressing_recovery/; https://dataglossary.wyscout.com/recovery/"
+  -
+    metric: "Ball recoveries after losses within 5 seconds in the opponent's half of the field"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.21
+    Seçildi: 19: 0.21
+    Seçildi: 8: 0.12
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Geri kazanılan toplarda kaleye ortalama mesafe"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 71.2
+    Seçildi: 19: 71.94
+    Seçildi: 8: 70.24
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Top kayıplarında kaleye ortalama mesafe"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 37.92
+    Seçildi: 19: 37.73
+    Seçildi: 8: 39.3
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    role_guess: "risk"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Paslar adresi bulanlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 478.52
+    Seçildi: 19: 497.37
+    Seçildi: 8: 434.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Crosses accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 4.38
+    Seçildi: 19: 4.47
+    Seçildi: 8: 3.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Progressive passes accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 72.0
+    Seçildi: 19: 75.21
+    Seçildi: 8: 64.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Uzun paslar - isabetli"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 21.14
+    Seçildi: 19: 20.63
+    Seçildi: 8: 22.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Super long passes accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.45
+    Seçildi: 19: 4.32
+    Seçildi: 8: 8.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "İleriye pas"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 219.31
+    Seçildi: 19: 225.47
+    Seçildi: 8: 206.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Passes forward accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 172.38
+    Seçildi: 19: 178.32
+    Seçildi: 8: 158.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Passes forward accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.7859999999999999
+    Seçildi: 19: 0.7908
+    Seçildi: 8: 0.7683
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ceza sahasına / İsabetli"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 16.62
+    Seçildi: 19: 17.53
+    Seçildi: 8: 13.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Passes from throw-ins"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 16.31
+    Seçildi: 19: 17.26
+    Seçildi: 8: 15.12
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Challenges won"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 71.38
+    Seçildi: 19: 71.37
+    Seçildi: 8: 71.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Savunmada başarılı ikili mücadeleler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 38.07
+    Seçildi: 19: 38.68
+    Seçildi: 8: 37.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Hücumda ikili mücadele / Başarılı"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 33.31
+    Seçildi: 19: 32.68
+    Seçildi: 8: 33.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı hava topu mücadeleleri"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 18.52
+    Seçildi: 19: 18.47
+    Seçildi: 8: 18.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı driplingler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 13.1
+    Seçildi: 19: 13.11
+    Seçildi: 8: 12.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Dribbling in the final third successful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 6.34
+    Seçildi: 19: 6.58
+    Seçildi: 8: 5.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı Top Kapma"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 16.03
+    Seçildi: 19: 16.53
+    Seçildi: 8: 14.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Pas Arası"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 46.72
+    Seçildi: 19: 45.37
+    Seçildi: 8: 51.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Sahipsiz top kapma"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 44.41
+    Seçildi: 19: 43.74
+    Seçildi: 8: 44.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "xG"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.11
+    Seçildi: 19: 2.28
+    Seçildi: 8: 1.55
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "OxG"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.39
+    Seçildi: 19: 1.18
+    Seçildi: 8: 1.97
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "NxG"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.72
+    Seçildi: 19: 1.1
+    Seçildi: 8: -0.41
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "xPoints"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.66
+    Seçildi: 19: 1.91
+    Seçildi: 8: 0.97
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "xG dönüştürme"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.87
+    Seçildi: 19: 0.97
+    Seçildi: 8: 0.64
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şut başına xG"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.14
+    Seçildi: 19: 0.15
+    Seçildi: 8: 0.14
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: "Şut başına üretilen beklenen gol: şut kalitesinin pratik göstergesi (xG / Shot)."
+    source_urls: "https://github.com/statsbomb/open-data"
+  -
+    metric: "OxGPS"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.14
+    Seçildi: 19: 0.13
+    Seçildi: 8: 0.16
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Gol başına xG"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.15
+    Seçildi: 19: 1.03
+    Seçildi: 8: 1.55
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "OxGPG"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.61
+    Seçildi: 19: 1.6
+    Seçildi: 8: 1.58
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Başarılı takım presi"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 8.83
+    Seçildi: 19: 9.11
+    Seçildi: 8: 8.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "PPDA"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.8
+    Seçildi: 19: 5.2
+    Seçildi: 8: 6.56
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "success"
+    definition_tr: "Rakibe (genelde rakibin final 60%’ında) kaç pas yaptırdığını, bir savunma aksiyonu (tackle/interception/foul vb.) başına ölçer. Düşük PPDA = daha yoğun pres."
+    source_urls: "https://support.hudl.com/s/article/passes-defensive-action; https://dataglossary.wyscout.com/metrics/"
+  -
+    metric: "Build up"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 37.69
+    Seçildi: 19: 38.0
+    Seçildi: 8: 38.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "No pressing"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 19.93
+    Seçildi: 19: 21.0
+    Seçildi: 8: 18.62
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "High pressing"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 9.83
+    Seçildi: 19: 9.32
+    Seçildi: 8: 10.38
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "High pressing successful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.03
+    Seçildi: 19: 4.68
+    Seçildi: 8: 5.75
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "High pressing successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.5123
+    Seçildi: 19: 0.5028
+    Seçildi: 8: 0.5542
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Low pressing"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 8.14
+    Seçildi: 19: 8.32
+    Seçildi: 8: 7.62
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Low pressing successful"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 3.79
+    Seçildi: 19: 4.42
+    Seçildi: 8: 2.62
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "success"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Low pressing successful, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.4661
+    Seçildi: 19: 0.5316
+    Seçildi: 8: 0.3443
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Topla oynama, dakika"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: nan
+    Seçildi: 19: nan
+    Seçildi: 8: nan
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Topla oynama, sayı"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 94.72
+    Seçildi: 19: 96.0
+    Seçildi: 8: 91.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Ortalama topla oynama süresi"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: nan
+    Seçildi: 19: nan
+    Seçildi: 8: nan
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Sol kanat hücumlarının tamamı"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 26.66
+    Seçildi: 19: 28.0
+    Seçildi: 8: 25.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla biten sol kanat hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.9
+    Seçildi: 19: 3.16
+    Seçildi: 8: 2.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Left flank attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.1087
+    Seçildi: 19: 0.1128
+    Seçildi: 8: 0.09949999999999999
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Merkezden hücumlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 20.9
+    Seçildi: 19: 21.37
+    Seçildi: 8: 19.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla biten hücumlar - merkez"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 3.79
+    Seçildi: 19: 4.11
+    Seçildi: 8: 2.5
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Attacks through the center with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.1815
+    Seçildi: 19: 0.1921
+    Seçildi: 8: 0.1307
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Sağ kanat hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 24.41
+    Seçildi: 19: 24.79
+    Seçildi: 8: 22.25
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla biten sağ kanat hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 3.86
+    Seçildi: 19: 4.37
+    Seçildi: 8: 2.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Right flank attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.1582
+    Seçildi: 19: 0.1762
+    Seçildi: 8: 0.1236
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Set Hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 60.62
+    Seçildi: 19: 63.53
+    Seçildi: 8: 54.12
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla biten set hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 7.83
+    Seçildi: 19: 8.84
+    Seçildi: 8: 5.0
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Positional attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.1291
+    Seçildi: 19: 0.1392
+    Seçildi: 8: 0.09240000000000001
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Kontra Ataklar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 11.34
+    Seçildi: 19: 10.63
+    Seçildi: 8: 12.38
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    role_guess: "intent"
+    definition_tr: "Top kazanımından sonra hızlı hücum girişimleri (tanım sağlayıcıya göre süre/şart içerir)."
+    source_urls: "https://support.hudl.com/s/article/live-data-glossary"
+  -
+    metric: "Şutla biten kontra ataklar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.72
+    Seçildi: 19: 2.79
+    Seçildi: 8: 2.75
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    role_guess: "intent"
+    definition_tr: "Kontra atakların şutla sonuçlanan kısmı."
+    source_urls: "https://support.hudl.com/s/article/live-data-glossary"
+  -
+    metric: "Counter-attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.2401
+    Seçildi: 19: 0.2624
+    Seçildi: 8: 0.2222
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Duran Top Hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 9.76
+    Seçildi: 19: 9.68
+    Seçildi: 8: 8.75
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla biten hücumlar - duran toplar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 3.21
+    Seçildi: 19: 3.11
+    Seçildi: 8: 2.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Set-piece attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.3286
+    Seçildi: 19: 0.3207
+    Seçildi: 8: 0.3
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Serbest Vuruş hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.41
+    Seçildi: 19: 2.37
+    Seçildi: 8: 2.75
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla biten serbest vuruşlar"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.69
+    Seçildi: 19: 0.79
+    Seçildi: 8: 0.38
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Free-kick attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.2857
+    Seçildi: 19: 0.3333
+    Seçildi: 8: 0.1364
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Korner Hücumları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 5.1
+    Seçildi: 19: 5.26
+    Seçildi: 8: 3.75
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla bitirilen kornerler"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.93
+    Seçildi: 19: 1.89
+    Seçildi: 8: 1.5
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Corner attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.3784000000000001
+    Seçildi: 19: 0.36
+    Seçildi: 8: 0.4
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Taç atışları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.03
+    Seçildi: 19: 1.95
+    Seçildi: 8: 1.88
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Şutla bitirilen taç atışları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.38
+    Seçildi: 19: 0.32
+    Seçildi: 8: 0.38
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Throw-in attacks with shots, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.1864
+    Seçildi: 19: 0.1622
+    Seçildi: 8: 0.2
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Serbest Vuruş Şutları"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.24
+    Seçildi: 19: 0.32
+    Seçildi: 8: nan
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goller - Serbest vuruş hücumu"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: nan
+    Seçildi: 19: nan
+    Seçildi: 8: nan
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Free-kick opponent's goals, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.0
+    Seçildi: 19: 0.0
+    Seçildi: 8: nan
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Penaltı"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.21
+    Seçildi: 19: 0.11
+    Seçildi: 8: 0.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Penaltı golleri"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.17
+    Seçildi: 19: 0.11
+    Seçildi: 8: 0.38
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Penaltı golleri, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.8333
+    Seçildi: 19: 1.0
+    Seçildi: 8: 1.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "reward"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks short (<15 m.)"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.17
+    Seçildi: 19: 2.37
+    Seçildi: 8: 1.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks short (<15 m.) accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 2.17
+    Seçildi: 19: 2.37
+    Seçildi: 8: 1.88
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks short (<15 m.) accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.0
+    Seçildi: 19: 1.0
+    Seçildi: 8: 1.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks medium (15-40 m.)"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.28
+    Seçildi: 19: 1.42
+    Seçildi: 8: 1.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks medium (15-40 m.) accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.28
+    Seçildi: 19: 1.42
+    Seçildi: 8: 1.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks medium (15-40 m.) accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.0
+    Seçildi: 19: 1.0
+    Seçildi: 8: 1.0
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks long (40+ m.)"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.62
+    Seçildi: 19: 1.58
+    Seçildi: 8: 1.62
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "intent"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks long (40+ m.) accurate"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 1.1
+    Seçildi: 19: 1.05
+    Seçildi: 8: 1.12
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+  -
+    metric: "Goal kicks long (40+ m.) accurate, %"
+    unit_or_type: "Maç başına ortalama"
+    2025/2026: 0.6809000000000001
+    Seçildi: 19: 0.6667000000000001
+    Seçildi: 8: 0.6923
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    role_guess: "skill"
+    definition_tr: ""
+    source_urls: ""
+top_changes_selected_8:
+  -
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    metric: "NxG"
+    season_2025_26: 0.72
+    selected_8: -0.41
+    delta_8: -1.13
+    rel_change_8: -1.5694444422646605
+  -
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    metric: "Super long passes accurate"
+    season_2025_26: 5.45
+    selected_8: 8.12
+    delta_8: 2.669999999999999
+    rel_change_8: 0.4899082567908423
+  -
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    metric: "Key passes accurate"
+    season_2025_26: 4.41
+    selected_8: 2.25
+    delta_8: -2.16
+    rel_change_8: -0.4897959182562821
+  -
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    metric: "Kilit Pas"
+    season_2025_26: 7.97
+    selected_8: 4.5
+    delta_8: -3.4699999999999998
+    rel_change_8: -0.4353826850143811
+  -
+    phase_id: "1_Organize_Hucum"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+    metric: "İsabetsiz Şutlar"
+    season_2025_26: 5.69
+    selected_8: 3.5
+    delta_8: -2.1900000000000004
+    rel_change_8: -0.3848857644314788
+  -
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    metric: "Kontra Ataklar"
+    season_2025_26: 11.34
+    selected_8: 12.38
+    delta_8: 1.040000000000001
+    rel_change_8: 0.09171075836933776
+  -
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    metric: "Counter-attacks with shots, %"
+    season_2025_26: 0.2401
+    selected_8: 0.2222
+    delta_8: -0.0179
+    rel_change_8: -0.07455226957704177
+  -
+    phase_id: "2_Hucum_Gecisi"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+    metric: "Şutla biten kontra ataklar"
+    season_2025_26: 2.72
+    selected_8: 2.75
+    delta_8: 0.029999999999999805
+    rel_change_8: 0.011029411760650878
+  -
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    metric: "Şutla biten set hücumları"
+    season_2025_26: 7.83
+    selected_8: 5.0
+    delta_8: -2.83
+    rel_change_8: -0.3614303958669948
+  -
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    metric: "Kornerler"
+    season_2025_26: 5.1
+    selected_8: 3.75
+    delta_8: -1.3499999999999996
+    rel_change_8: -0.26470588230103803
+  -
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    metric: "Korner Hücumları"
+    season_2025_26: 5.1
+    selected_8: 3.75
+    delta_8: -1.3499999999999996
+    rel_change_8: -0.26470588230103803
+  -
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    metric: "Şutla biten serbest vuruşlar"
+    season_2025_26: 0.69
+    selected_8: 0.38
+    delta_8: -0.30999999999999994
+    rel_change_8: -0.4492753616677168
+  -
+    phase_id: "3_DuranTop_Hucum"
+    phase_name: "Duran Top Hücumu"
+    metric: "Şutla bitirilen kornerler"
+    season_2025_26: 1.93
+    selected_8: 1.5
+    delta_8: -0.42999999999999994
+    rel_change_8: -0.22279792734570053
+  -
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    metric: "Low pressing successful"
+    season_2025_26: 3.79
+    selected_8: 2.62
+    delta_8: -1.17
+    rel_change_8: -0.308707123929101
+  -
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    metric: "High pressing successful"
+    season_2025_26: 5.03
+    selected_8: 5.75
+    delta_8: 0.7199999999999998
+    rel_change_8: 0.1431411530530534
+  -
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    metric: "PPDA"
+    season_2025_26: 5.8
+    selected_8: 6.56
+    delta_8: 0.7599999999999998
+    rel_change_8: 0.1310344827360285
+  -
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    metric: "Low pressing successful, %"
+    season_2025_26: 0.4661
+    selected_8: 0.3443
+    delta_8: -0.12180000000000002
+    rel_change_8: -0.26131731332049496
+  -
+    phase_id: "4_Organize_Savunma"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+    metric: "No pressing"
+    season_2025_26: 19.93
+    selected_8: 18.62
+    delta_8: -1.3099999999999987
+    rel_change_8: -0.06573005518987801
+  -
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    metric: "Ball recoveries after losses within 10 seconds in the opponent's half of the field"
+    season_2025_26: 3.31
+    selected_8: 4.25
+    delta_8: 0.94
+    rel_change_8: 0.283987915322058
+  -
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    metric: "Ball recoveries after losses within 10 seconds"
+    season_2025_26: 8.59
+    selected_8: 10.0
+    delta_8: 1.4100000000000001
+    rel_change_8: 0.16414435388077483
+  -
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    metric: "Ball recoveries after losses within 5 seconds in the opponent's half of the field"
+    season_2025_26: 0.21
+    selected_8: 0.12
+    delta_8: -0.09
+    rel_change_8: -0.42857142653061225
+  -
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    metric: "Bireysel top kayıpları"
+    season_2025_26: 25.52
+    selected_8: 26.75
+    delta_8: 1.2300000000000004
+    rel_change_8: 0.048197492161120806
+  -
+    phase_id: "5_Savunma_Gecisi"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+    metric: "Ball recoveries after losses within 5 seconds"
+    season_2025_26: 1.28
+    selected_8: 1.38
+    delta_8: 0.09999999999999987
+    rel_change_8: 0.07812499993896474
+derived_hp_metrics:
+  -
+    metric_id: "BUILDUP_ACCURACY"
+    name_tr_x: "Pas bağlantı kalitesi"
+    formula: "Paslar adresi bulanlar, %"
+    2025/2026: 0.8678
+    Seçildi: 19: 0.872
+    Seçildi: 8: 0.8587
+    delta_8: -0.009099999999999997
+    delta_19: 0.0041999999999999815
+    type: "SKILL"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "Pas bağlantı kalitesi"
+    primary_formula: "Paslar adresi bulanlar, %"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "PROGRESSION_RATE"
+    name_tr_x: "İlerletme oranı"
+    formula: "Progressive passes / Paslar"
+    2025/2026: 0.1790319363087358
+    Seçildi: 19: 0.17818258323544364
+    Seçildi: 8: 0.18300007903264048
+    delta_8: 0.003968142723904694
+    delta_19: -0.0008493530732921473
+    type: "SKILL"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "İlerletme oranı"
+    primary_formula: "Progressive passes / Paslar"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "PROG_TO_FT"
+    name_tr_x: "İlerletme→Son bölge dönüşümü"
+    formula: "Final third entries / Progressive passes"
+    2025/2026: 0.3824959481361426
+    Seçildi: 19: 0.4039161664862737
+    Seçildi: 8: 0.3036061325847549
+    delta_8: -0.07888981555138774
+    delta_19: 0.02142021835013108
+    type: "SUCCESS"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "İlerletme→Son bölge dönüşümü"
+    primary_formula: "Final third entries / Progressive passes"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "FT_TO_BOX"
+    name_tr_x: "Son bölge→Ceza sahası dönüşümü"
+    formula: "Rakip ceza sahasına girişler / Final third entries"
+    2025/2026: 0.4923199152542373
+    Seçildi: 19: 0.466747868453106
+    Seçildi: 8: 0.5376955903271692
+    delta_8: 0.04537567507293189
+    delta_19: -0.025572046801131287
+    type: "SUCCESS"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "Son bölge→Ceza sahası dönüşümü"
+    primary_formula: "Rakip ceza sahasına girişler / Final third entries"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "BOX_TO_SHOT"
+    name_tr_x: "Ceza sahası→Şut dönüşümü"
+    formula: "Şut / Rakip ceza sahasına girişler"
+    2025/2026: 0.7848305540613233
+    Seçildi: 19: 0.8105427974947808
+    Seçildi: 8: 0.7275132275132276
+    delta_8: -0.05731732654809574
+    delta_19: 0.02571224343345746
+    type: "SUCCESS"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "Ceza sahası→Şut dönüşümü"
+    primary_formula: "Şut / Rakip ceza sahasına girişler"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "SHOT_QUALITY"
+    name_tr_x: "Şut kalitesi"
+    formula: "xG / Şut"
+    2025/2026: 0.14461960246744346
+    Seçildi: 19: 0.1468126207340631
+    Seçildi: 8: 0.1409090909090909
+    delta_8: -0.0037105115583525583
+    delta_19: 0.002193018266619634
+    type: "SKILL"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "Şut kalitesi"
+    primary_formula: "xG / Şut"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "FINISHING"
+    name_tr_x: "Bitiricilik"
+    formula: "Gol / xG"
+    2025/2026: 0.9004739336492891
+    Seçildi: 19: 0.9912280701754386
+    Seçildi: 8: 0.7225806451612904
+    delta_8: -0.17789328848799868
+    delta_19: 0.0907541365261495
+    type: "REWARD"
+    phase_id: "1_Organize_Hucum"
+    name_tr_y: "Bitiricilik"
+    primary_formula: "Gol / xG"
+    phase_name: "Organize Hücum (Yerleşik oyun)"
+  -
+    metric_id: "COUNTER_SHOT_RATE"
+    name_tr_x: "Kontra→Şut dönüşümü"
+    formula: "Şutla biten kontra ataklar / Kontra Ataklar"
+    2025/2026: 0.2398589065255732
+    Seçildi: 19: 0.26246472248353714
+    Seçildi: 8: 0.2221324717285945
+    delta_8: -0.01772643479697872
+    delta_19: 0.02260581595796393
+    type: "SUCCESS"
+    phase_id: "2_Hucum_Gecisi"
+    name_tr_y: "Kontra→Şut dönüşümü"
+    primary_formula: "Şutla biten kontra ataklar / Kontra Ataklar"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+  -
+    metric_id: "COUNTER_THREAT"
+    name_tr_x: "Kontra tehdidi (kalite)"
+    formula: "Şutla biten kontra ataklar × Şut başına xG"
+    2025/2026: 0.3808000000000001
+    Seçildi: 19: 0.4185
+    Seçildi: 8: 0.385
+    delta_8: 0.004199999999999926
+    delta_19: 0.0376999999999999
+    type: "SKILL"
+    phase_id: "2_Hucum_Gecisi"
+    name_tr_y: "Kontra tehdidi (kalite)"
+    primary_formula: "Şutla biten kontra ataklar * Şut başına xG"
+    phase_name: "Hücum Geçişi (Kontra / hızlı çıkış)"
+  -
+    metric_id: "CORNER_SHOT_RATE"
+    name_tr_x: "Korner→Şut dönüşümü"
+    formula: "Şutla bitirilen kornerler / Korner Hücumları"
+    2025/2026: 0.3784313725490196
+    Seçildi: 19: 0.3593155893536122
+    Seçildi: 8: 0.4
+    delta_8: 0.021568627450980427
+    delta_19: -0.01911578319540741
+    type: "SUCCESS"
+    phase_id: "3_DuranTop_Hucum"
+    name_tr_y: "Korner→Şut dönüşümü"
+    primary_formula: "Şutla bitirilen kornerler / Korner Hücumları"
+    phase_name: "Duran Top Hücumu"
+  -
+    metric_id: "FK_SHOT_RATE"
+    name_tr_x: "Serbest vuruş→Şut dönüşümü"
+    formula: "Şutla biten serbest vuruşlar / Serbest Vuruş hücumları"
+    2025/2026: 0.2863070539419087
+    Seçildi: 19: 0.3333333333333333
+    Seçildi: 8: 0.13818181818181818
+    delta_8: -0.1481252357600905
+    delta_19: 0.04702627939142462
+    type: "SUCCESS"
+    phase_id: "3_DuranTop_Hucum"
+    name_tr_y: "Serbest vuruş→Şut dönüşümü"
+    primary_formula: "Şutla biten serbest vuruşlar / Serbest Vuruş hücumları"
+    phase_name: "Duran Top Hücumu"
+  -
+    metric_id: "PRESS_INTENSITY"
+    name_tr_x: "Baskı yoğunluğu (1/PPDA)"
+    formula: "1 / PPDA"
+    2025/2026: 0.1724137931034483
+    Seçildi: 19: 0.1923076923076923
+    Seçildi: 8: 0.1524390243902439
+    delta_8: -0.01997476871320439
+    delta_19: 0.019893899204244003
+    type: "SKILL"
+    phase_id: "4_Organize_Savunma"
+    name_tr_y: "Baskı yoğunluğu"
+    primary_formula: "1 / PPDA"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+  -
+    metric_id: "PRESS_SUCCESS"
+    name_tr_x: "Baskı isabeti"
+    formula: "High pressing successful, %"
+    2025/2026: 0.5123
+    Seçildi: 19: 0.5028
+    Seçildi: 8: 0.5542
+    delta_8: 0.04190000000000005
+    delta_19: -0.009499999999999953
+    type: "SUCCESS"
+    phase_id: "4_Organize_Savunma"
+    name_tr_y: "Baskı isabeti"
+    primary_formula: "High pressing successful, %"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+  -
+    metric_id: "HIGH_REGAINS"
+    name_tr_x: "Yüksek kazanım avantajı"
+    formula: "Rakip sahada geri kazanılan toplar"
+    2025/2026: 12.24
+    Seçildi: 19: 11.42
+    Seçildi: 8: 13.12
+    delta_8: 0.879999999999999
+    delta_19: -0.8200000000000003
+    type: "REWARD"
+    phase_id: "4_Organize_Savunma"
+    name_tr_y: "Yüksek kazanım avantajı"
+    primary_formula: "Rakip sahada geri kazanılan toplar"
+    phase_name: "Organize Savunma (Yerleşik savunma + baskı)"
+  -
+    metric_id: "COUNTERPRESS_RATE_5S"
+    name_tr_x: "5 sn karşı-pres geri kazanım oranı"
+    formula: "Ball recoveries after losses within 5 seconds / Top kayıpları"
+    2025/2026: 0.022042362665748234
+    Seçildi: 19: 0.021683014971605578
+    Seçildi: 8: 0.023690987124463516
+    delta_8: 0.0016486244587152823
+    delta_19: -0.000359347694142656
+    type: "SUCCESS"
+    phase_id: "5_Savunma_Gecisi"
+    name_tr_y: "5 sn karşı-pres geri kazanım oranı"
+    primary_formula: "Ball recoveries after losses within 5 seconds / Top kayıpları"
+    phase_name: "Savunma Geçişi (Top kaybı sonrası)"
+bdp:
+  metric_id: "BDP"
+  name_tr: "Build-up Disruption Percentage (BDP)"
+  definition_tr: "Rakibin build-up (baskı altındayken) pas isabetini, kendi sezon ortalamasına göre ne kadar düşürdüğünü ölçen pres ‘etki’ metriği. PPDA’nın ‘niyet’ini, rakip pas kalitesindeki sapma ile ‘çıktı’ya bağlar."
+  requires: "Rakibin baseline pass completion (lig/sezon) + o maçtaki build-up pass completion (baskı bölgesi filtresi)."
+  source_url: "https://soccerment.com/measuring-pressing-success-buildup-disruption-percentage-bdp/"
+notes:
+  sportsbase_public_glossary: "SportsBase'in public metrik sözlüğü görünmüyor; bu paket SportsBase etiketlerini açık erişim sözlük/spec ile bağlamak için hazırlanmıştır."
+  definition_coverage: "Sadece kritik metrikler için kaynaklı tanım dolduruldu; geri kalanlar için otomatik doldurma/insan onayı gerekir."

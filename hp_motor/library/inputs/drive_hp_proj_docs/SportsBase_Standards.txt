@@ -1,0 +1,1 @@
+SportsBase Veri Standartları: Global futbol veri tanımları ve protokolleri.
