@@ -54,16 +54,24 @@ def run(spec_path: str, base_dir: str, out_path: str, team_names: list[str]) -> 
         Path(out_path).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
         return report
 
-    src = event_sources[0]
-    src_path = _find_source_file(base, src["path"])
-    if not src_path:
-        report["degraded"].append(f"Event source not found: {src['path']}")
+    # Load ALL event csv sources (not just the first one) and concat
+    event_tables = []
+    for es in event_sources:
+        sp = _find_source_file(base, es["path"])
+        if not sp:
+            report["degraded"].append(f"Event source not found: {es['path']}")
+            continue
+        dfi = load_table(str(sp))
+        pop = PopperGate.check(dfi)
+        report["sources"].append({"type": "event_csv", "path": str(sp), "popper": pop, "rows": int(len(dfi))})
+        event_tables.append(dfi)
+
+    if not event_tables:
+        report["degraded"].append("Event sources listed but none could be loaded.")
         Path(out_path).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
         return report
 
-    df = load_table(str(src_path))
-    popper = PopperGate.check(df)
-    report["sources"].append({"type": "event_csv", "path": str(src_path), "popper": popper})
+    df = pd.concat(event_tables, ignore_index=True)
 
     # 2) dictionary alias map (kolon normalizasyonu rapora)
     if dict_df is not None:
@@ -74,7 +82,7 @@ def run(spec_path: str, base_dir: str, out_path: str, team_names: list[str]) -> 
 
     
     # 2.5) other sources (xlsx/csv/xml) -> load for schema + optional match-stats metrics
-    other_sources = [s for s in spec.get('ingest', {}).get('sources', []) if s is not src]
+    other_sources = [s for s in spec.get('ingest', {}).get('sources', []) if s not in event_sources]
     loaded_tables = []  # list of (source_meta, df)
     for s in other_sources:
         sp = _find_source_file(base, s.get('path',''))
