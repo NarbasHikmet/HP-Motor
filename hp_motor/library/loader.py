@@ -79,11 +79,29 @@ def load_vendor_mappings() -> Tuple[Dict[str, Any], LibraryHealth]:
 
 def library_health() -> LibraryHealth:
     # Aggregate health across required artifacts + schema sanity checks
-    _, h1 = _resolve("registry/metric_registry.json")
+    p1, h1 = _resolve("registry/metric_registry.json")
     p2, h2 = _resolve("registry/vendor_mappings_compiled.json")
 
     flags = list(dict.fromkeys(h1.flags + h2.flags))
     roots_checked = h1.roots_checked
+
+    # Schema checks for metric registry
+    if p1 and p1.exists():
+        try:
+            mr = _read_json(p1)
+            metrics = mr.get("metrics")
+            if not isinstance(metrics, list):
+                flags.append("invalid_schema:metric_registry.metrics_not_list")
+            else:
+                for i, it in enumerate(metrics[:50]):
+                    if not isinstance(it, dict):
+                        flags.append(f"invalid_schema:metric_registry.item_not_dict:{i}")
+                        break
+                    if not str(it.get("id", "")).strip():
+                        flags.append(f"invalid_schema:metric_registry.missing_id:{i}")
+                        break
+        except Exception as e:
+            flags.append(f"invalid_json:metric_registry:{type(e).__name__}")
 
     # Schema checks for vendor mappings
     if p2 and p2.exists():
@@ -102,3 +120,4 @@ def library_health() -> LibraryHealth:
     flags = list(dict.fromkeys(flags))
     status = "OK" if not flags else "DEGRADED"
     return LibraryHealth(status=status, flags=flags, roots_checked=roots_checked)
+
