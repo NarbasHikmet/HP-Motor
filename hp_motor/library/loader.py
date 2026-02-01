@@ -30,7 +30,21 @@ def _roots() -> List[Path]:
 
 def _read_json(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    # Some artifacts may be double-encoded (JSON string containing JSON).
+    # Normalize until we get a dict, or fall back to empty dict.
+    tries = 0
+    while isinstance(data, str) and tries < 3:
+        try:
+            data = json.loads(data)
+        except Exception:
+            break
+        tries += 1
+
+    if not isinstance(data, dict):
+        return {}
+    return data
 
 
 def _resolve(rel: str) -> Tuple[Path | None, LibraryHealth]:
@@ -57,17 +71,34 @@ def load_registry() -> Tuple[Dict[str, Any], LibraryHealth]:
 
 
 def load_vendor_mappings() -> Tuple[Dict[str, Any], LibraryHealth]:
-    p, h = _resolve("registry/vendor_mappings.json")
+    p, h = _resolve("registry/vendor_mappings_compiled.json")
     if not p:
         return {"version": "missing", "vendor": {}}, h
     return _read_json(p), h
 
 
 def library_health() -> LibraryHealth:
-    # Aggregate health across required artifacts
+    # Aggregate health across required artifacts + schema sanity checks
     _, h1 = _resolve("registry/metric_registry.json")
-    _, h2 = _resolve("registry/vendor_mappings.json")
+    p2, h2 = _resolve("registry/vendor_mappings_compiled.json")
 
     flags = list(dict.fromkeys(h1.flags + h2.flags))
+    roots_checked = h1.roots_checked
+
+    # Schema checks for vendor mappings
+    if p2 and p2.exists():
+        try:
+            vm = _read_json(p2)
+            vend = vm.get("vendor")
+            if not isinstance(vend, dict):
+                flags.append("invalid_schema:vendor_mappings.vendor_not_dict")
+            else:
+                g = vend.get("generic")
+                if g is not None and not isinstance(g, dict):
+                    flags.append("invalid_schema:vendor_mappings.generic_not_dict")
+        except Exception as e:
+            flags.append(f"invalid_json:vendor_mappings:{type(e).__name__}")
+
+    flags = list(dict.fromkeys(flags))
     status = "OK" if not flags else "DEGRADED"
-    return LibraryHealth(status=status, flags=flags, roots_checked=h1.roots_checked)
+    return LibraryHealth(status=status, flags=flags, roots_checked=roots_checked)

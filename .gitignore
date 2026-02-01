@@ -42,3 +42,18 @@ hp_motor/library/registry/inputs/
 tools/_scratch/
 *.bak_*.json
 hp_motor/library/registry/*.bak_*.json
+
+# local backup proofs (do not commit)
+hp_motor/library/registry/backup_manifests/
+hp_motor/library/registry/backup_archives/
+
+# local
+.venv/
+__pycache__/
+**/__pycache__/
+out/
+*.pyc
+.pytest_cache/
+
+# local single-file data
+data.json

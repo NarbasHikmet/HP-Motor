@@ -12,6 +12,36 @@ def _to_float(v: Any, d: float = 0.0) -> float:
 
 def normalize_events(events: List[Dict[str, Any]], vendor: str = "generic") -> List[Dict[str, Any]]:
     mappings, _ = load_vendor_mappings()
+
+    # type guard: loader may return json string/path instead of dict
+    try:
+        import json
+        from pathlib import Path as _P
+        if isinstance(mappings, str):
+            _pp = _P(mappings)
+            if _pp.exists():
+                mappings = json.loads(_pp.read_text(encoding="utf-8"))
+            else:
+                mappings = json.loads(mappings)
+        if not isinstance(mappings, dict):
+            mappings = {}
+    except Exception:
+        mappings = {}
+
+        # normalize vendor field: vendor mappings may be json string (double-encoded)
+    try:
+        import json
+        vend = mappings.get("vendor", {})
+        tries = 0
+        while isinstance(vend, str) and tries < 3:
+            vend = json.loads(vend)
+            tries += 1
+        if not isinstance(vend, dict):
+            vend = {}
+        mappings["vendor"] = vend
+    except Exception:
+        mappings["vendor"] = {}
+
     vmap = mappings.get("vendor", {}).get(vendor) or mappings.get("vendor", {}).get("generic", {})
     out: List[Dict[str, Any]] = []
     for e in events:

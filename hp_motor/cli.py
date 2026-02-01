@@ -1,8 +1,11 @@
 import argparse
 import json
+import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 from hp_motor.pipeline import run_pipeline
+from hp_motor.library import library_health
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -20,11 +23,35 @@ def main() -> int:
     args = build_parser().parse_args()
 
     if args.cmd == "run":
-        report = run_pipeline(Path(args.events), vendor=args.vendor)
+        events_path = Path(args.events)
+        report = run_pipeline(events_path, vendor=args.vendor)
+
         out = Path(args.out)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        # validation report (P1)
+        lib_h = library_health()
+        validation = {
+            "run_ts": datetime.now(timezone.utc).isoformat(),
+            "python": sys.version.split()[0],
+            "events_path": str(events_path),
+            "vendor_key": args.vendor,
+            "out_report_path": str(out),
+            "report_keys": list(report.keys()),
+            "events_summary": report.get("events_summary", {}),
+            "library_health": {
+                "status": lib_h.status,
+                "flags": list(lib_h.flags),
+                "roots_checked": list(lib_h.roots_checked),
+            },
+        }
+
+        vout = Path(str(out) + ".validation.json")
+        vout.write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8")
+
         print(f"OK: wrote {out}")
+        print(f"OK: wrote {vout}")
         return 0
 
     return 0
